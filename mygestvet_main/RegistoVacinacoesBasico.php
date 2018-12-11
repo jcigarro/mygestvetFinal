@@ -231,13 +231,13 @@ $animal = $conn->query($sql6);
                         <div class="form-group">
                           <h3 style="color: #52b2a4; font-size: 14px"></h3><br>
                           <label class="form-control-label">Nome da Vacina </label>
-                          <input type="text" name="nome" id="nome" class="form-control" required data-msg="Insira o Nome" class="input-material" class="form-control" placeholder="Nome da Vacina">
+                          <input type="text" name="nome" id="nome" class="form-control" required placeholder="Insira o Nome" class="input-material" class="form-control" placeholder="Nome da Vacina">
                         </div>
                         <div class="form-group">
                           
                           <h3 style="color: #52b2a4; font-size: 14px"></h3><br>
                           <label class="form-control-label">Número do Lote</label>
-                          <input type="int" name="lote" id="lote" class="form-control" required data-msg="Insira o Nome" class="input-material" class="form-control" placeholder="Número do Lote">
+                          <input type="number" name="lote" id="lote" class="form-control" required placeholder="Insira o Nome" class="input-material" class="form-control" placeholder="Número do Lote">
                         </div>
                         
                         <div class="form-group">
