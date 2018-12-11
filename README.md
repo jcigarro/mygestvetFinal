@@ -1,2 +1,2 @@
-# mygestvetFinal
-Plataforma para médicos veterinários.
+# mygestvet
+projeto final
