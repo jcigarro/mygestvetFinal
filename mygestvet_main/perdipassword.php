@@ -4,7 +4,7 @@
     // processar o pedido
     $hostname='localhost';
     $user = 'root';
-    $password = '';
+    $password = 'root';
     $mysql_database = 'atual';
     $conn = mysqli_connect($hostname, $user, $password,$mysql_database);
     
@@ -24,14 +24,52 @@
 	  echo "INSERT INTO recuperacao VALUES ('$user_email', '$chave')";
  
       if( mysqli_affected_rows($conn) == 1 ){
+
+        require_once("phpmailer/class.phpmailer.php");
+
+define('GUSER', 'mygestvet@gmail.com'); // <-- Insira aqui o seu GMail
+define('GPWD', 'toufartadisto1234');    // <-- Insira aqui a senha do seu GMail
+
+  function smtpmailer($para, $de, $de_nome, $assunto, $corpo) { 
+  global $error;
+  $mail = new PHPMailer();
+  $mail->IsSMTP();    // Ativar SMTP
+  $mail->SMTPDebug = 0;   // Debugar: 1 = erros e mensagens, 2 = mensagens apenas
+  $mail->SMTPAuth = true;   // Autenticação ativada
+  $mail->SMTPSecure = 'ssl';  // SSL REQUERIDO pelo GMail
+  $mail->Host = 'Smtp.gmail.com'; // SMTP utilizado
+  $mail->Port = 465;      
+  $mail->Username = GUSER;
+  $mail->Password = GPWD;
+   
+  
+  $mail->setFrom($de, $de_nome);
+  $mail->Subject = $assunto;
+  $mail->Body = $corpo;
+  $mail->AddAddress($para);
+  if(!$mail->Send()) {
+    $error = 'Erro ao enviar: '.$mail->ErrorInfo; 
+    return false;
+  } else {
+    $error = 'Mensagem enviada!';
+    return true;
+  }
+}
+
+$Vai = "192.168.1.75:8888/mygestvetFinal/mygestvet_main/recuperar.php?utilizador=$user_email&confirmacao=$chave";
+
+
+
+ if (smtpmailer($user_email, 'mygestvet@gmail.com', 'My Gest Vet', 'Recuperação de password', $Vai)) {
+  //unlink('my_file3.pdf');
+header("Location: perdipassword.php?signup=valid");
+  // Redireciona para uma página de obrigado. Header("location:http://www.dominio.com.br/obrigado.html"); 
+
+}
  
-        $link = "http://atualizado/mygestvet_main/recuperar.php?utilizador=$user_email&confirmacao=$chave";
+  
  
-        if( mail($user_email, 'Recuperação de password', 'Olá '.$user_email.', visite este link '.$link) ){
-         
-           header("Location: perdipassword.php?signup=valid");
- 
-        } else {
+        else {
         
           header("Location: perdipassword.php?signup=email_erro");
  
