@@ -387,7 +387,7 @@ if ($result2->num_rows > 0) {
 
                                           </div>
                                           <div class="modal-footer">
-                                            <button type="submit" class="btn btn-primary" name="update_item"><span class="glyphicon glyphicon-edit"></span> Editar</button>
+                                            <button type="submit" class="btn btn-primary" id="update_item" name="update_item"><span class="glyphicon glyphicon-edit"></span> Editar</button>
                                             <button type="button" data-dismiss="modal" aria-label="Close" class="btn btn-secondary">
                                               Cancelar</button>
                                           </div>

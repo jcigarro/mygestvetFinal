@@ -321,7 +321,7 @@ $foto_perfil4 = "perso1.jpg";
                           <a href="#edit<?php echo $Numero_Cliente;?>" data-toggle="modal">
                             <button type='button' class='btn btn-secondary'><i class="fas fa-user-edit"></i></button>
                           </a>
-                           <a target="_blank" href="https://www.google.com/maps/place/<?php echo $loca_desc;?>" >
+                           <a target="_blank" href="https://www.google.com/maps/place/Herdade+da+Calada/@38.679431,-7.8502603,1293m/data=!3m1!1e3!4m8!1m2!2m1!1sherdade+evora!3m4!1s0xd19e7688a2618fb:0x56a59d285d572a43!8m2!3d38.679258!4d-7.846931" >
                             <button type='button' class='btn btn-primary'><i class="fas fa-map-marked-alt"></i></button>
                           </a>
                           
