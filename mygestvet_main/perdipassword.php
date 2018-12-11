@@ -1,5 +1,6 @@
   
 <?php
+header('Content-Type: text/html; charset=utf-8');
   if( !empty($_POST) ){
     // processar o pedido
     $hostname='localhost';
@@ -56,11 +57,17 @@ define('GPWD', 'toufartadisto1234');    // <-- Insira aqui a senha do seu GMail
   }
 }
 
-$Vai = "192.168.1.75:8888/mygestvetFinal/mygestvet_main/recuperar.php?utilizador=$user_email&confirmacao=$chave";
+$Vai = "
+Bem vindo à recuperação de password da plataforma MyGestVet, se tiver algum problema entre em contacto com a nossa equipa. 
+
+Clique no link para alterar a sua password
+
+
+192.168.1.75:8888/mygestvetFinal/mygestvet_main/recuperar.php?utilizador=$user_email&confirmacao=$chave";
 
 
 
- if (smtpmailer($user_email, 'mygestvet@gmail.com', 'My Gest Vet', 'Recuperação de password', $Vai)) {
+ if (smtpmailer($user_email, 'mygestvet@gmail.com', 'My Gest Vet', 'Recuperar password', $Vai)) {
   //unlink('my_file3.pdf');
 header("Location: perdipassword.php?signup=valid");
   // Redireciona para uma página de obrigado. Header("location:http://www.dominio.com.br/obrigado.html"); 
@@ -76,7 +83,7 @@ header("Location: perdipassword.php?signup=valid");
         }
  
 		// Apenas para testar o link, no caso do e-mail falhar
-		echo '<p>Link: '.$link.' (apresentado apenas para testes; nunca expor a público!)</p>';
+		//echo '<p>Link: '.$link.' (apresentado apenas para testes; nunca expor a público!)</p>';
  
       } else {
         header("Location: perdipassword.php?signup=ger_error");
