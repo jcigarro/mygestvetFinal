@@ -328,7 +328,7 @@ $foto_perfil4 = "perso1.jpg";
                             <button type='button' class='btn btn-primary'><i class="fas fa-map-marked-alt"></i></button>
                           </a>
 
-                          <a href="tel:+351966853612" >
+                          <a href="tel:+351966767766" >
                             <button type='button' class='btn btn-secondary'><i class="fas fa-phone"></i></button>
                           </a>
 
