@@ -333,7 +333,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
         padding: 0px 15px;
     }
     .main-nav li a {
-        font-size: 20px;
+        font-size: 17px;
         -webkit-transition: 0.2s color;
         transition: 0.2s color;
     }

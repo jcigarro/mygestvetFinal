@@ -220,7 +220,7 @@ $materiais= $conn->query($sql12);
               </div>
               <form id="regForm" method="POST" action="Gera_Registo_Servico.php">
                <div class="card-header">
-                <h3 class="h4">Registar Exame Clínico</h3>
+                <h3 class="h4">Registar Serviço</h3>
               </div>
               <!-- One "tab" for each step in the form: -->
               <div class="card-body">
