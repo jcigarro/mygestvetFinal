@@ -204,7 +204,7 @@ if ($result->num_rows > 0) {
                   <div class="dropdown-menu">
                     <a href="RegistoClienteBasico.php" class="dropdown-item"><i class="fas fa-user"></i>Registar Cliente</a>
                     <a href="RegistoAnimalBasico.php" class="dropdown-item"><i class="fas fa-dog"></i>Registar Animal</a>
-                    <a href="PerfilMédicoBásico.php" class="dropdown-item"><i class="fas fa-user-edit"></i>Editar Perfil</a>
+                    <a href="PerfilMedicoBasico.php" class="dropdown-item"><i class="fas fa-user-edit"></i>Editar Perfil</a>
                     <a href="RegistoExameBasico.php" class="dropdown-item"><i class="fas fa-file-medical-alt"></i>Registar Exame Clínico</a>
                     <a href="RegistoVacinacoesBasico.php" class="dropdown-item"><i class="fas fa-syringe"></i>Registar Vacinação</a>
                     
@@ -226,7 +226,7 @@ if ($result->num_rows > 0) {
               <div class="avatar"><img src="uploads/<?php echo $foto_perfil4;?>" width=120 height=120 alt="..." class="img-fluid rounded-circle"></div>
             <div class="title">
               <h1 class="h4"><?php  echo $nome. ' '.$apelidos ?> </h1>
-              <a href="PerfilMédicoBásico.php">
+              <a href="PerfilMedicoBasico.php">
               <p>Editar Perfil</p>
               </a>
             </div>
@@ -336,7 +336,7 @@ if ($result->num_rows > 0) {
                                           }}
 
 
-                       $exame6 = "SELECT animal.Numero_Animal, count(*) as quantidade from animal, cliente where cliente.Numero_Cliente=animal.Numero_Cliente and cliente.Numero_Cliente=$Numero_Cliente ";
+                       $exame6 = "SELECT cliente.Numero_Cliente, count(*) as quantidade from animal, cliente where cliente.Numero_Cliente=animal.Numero_Cliente and cliente.Numero_Cliente=$Numero_Cliente  GROUP BY cliente.Numero_Cliente";
                         
                         $result113 = $conn->query($exame6);
                         if ($result113->num_rows > 0) {
@@ -438,7 +438,7 @@ if ($result->num_rows > 0) {
                                                         </div>
                                                       </div>
                                                           
-                                                    </div>	
+                                                    </div>  
                                                       <div class="row">
                                                         <div class="col-sm-6 col-md-6">
                                                           <div class="form-group mb-4"> 
@@ -506,8 +506,8 @@ if ($result->num_rows > 0) {
                                                           </div>
                                                         </div>
                                                       </div>
-													  
-													                             <div class="row">
+                            
+                                                       <div class="row">
                                                         <div class="col-sm-6 col-md-6">
                                                           <div class="form-group mb-4"> 
                                                             <label class=" form-control-label">Morada:</label>
@@ -517,7 +517,7 @@ if ($result->num_rows > 0) {
                                                       </div>
 
 
-                          												    <div class="row">
+                                                      <div class="row">
                                                         <div class="col-sm-6 col-md-6">
                                                           <div class="form-group mb-4">
                                                             <label class=" form-control-label">Localidade</label>

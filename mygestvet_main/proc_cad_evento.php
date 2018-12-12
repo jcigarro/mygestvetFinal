@@ -89,7 +89,7 @@ $result = $conn->query($query1);
 	//Verificar se salvou no banco de dados através "mysqli_insert_id" o qual verifica se existe o ID do último dado inserido
 	if(mysqli_insert_id($conn)){
 		$_SESSION['msg'] = "<div class='alert alert-success' role='alert'>Evento adicionado com sucesso<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
-		$Vai 		= "Caro(a) $Nome, Informamos que no dia $start terá consulta com o seu animal $Nome_Animal. Caso não possa comparecer, por favor entre em contacto connosco.\n Obrigada.";
+		$Vai 		= "Caro(a) $Nome, $Email_Medico Informamos que no dia $start terá consulta com o seu animal $Nome_Animal. Caso não possa comparecer, por favor entre em contacto connosco.\n Obrigada.";
 
 require_once("phpmailer/class.phpmailer.php");
 
@@ -99,6 +99,7 @@ define('GPWD', 'toufartadisto1234');		// <-- Insira aqui a senha do seu GMail
 function smtpmailer($para, $de, $de_nome, $assunto, $corpo) { 
 	global $error;
 	$mail = new PHPMailer();
+	$mail->CharSet="UTF-8";
 	$mail->IsSMTP();		// Ativar SMTP
 	$mail->SMTPDebug = 0;		// Debugar: 1 = erros e mensagens, 2 = mensagens apenas
 	$mail->SMTPAuth = true;		// Autenticação ativada

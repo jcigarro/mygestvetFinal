@@ -110,7 +110,7 @@ $foto_perfil4 = $row1['linkimagem'];
                   <div class="dropdown-menu">
                     <a href="RegistoClienteBasico.php" class="dropdown-item"><i class="fas fa-user"></i>Registar Cliente</a>
                     <a href="RegistoAnimalBasico.php" class="dropdown-item"><i class="fas fa-dog"></i>Registar Animal</a>
-                    <a href="PerfilMédicoBásico.php" class="dropdown-item"><i class="fas fa-user-edit"></i>Editar Perfil</a>
+                    <a href="PerfilMedicoBasico.php" class="dropdown-item"><i class="fas fa-user-edit"></i>Editar Perfil</a>
                     <a href="RegistoExameBasico.php" class="dropdown-item"><i class="fas fa-file-medical-alt"></i>Registar Exame Clínico</a>
                     <a href="RegistoVacinacoesBasico.php" class="dropdown-item"><i class="fas fa-syringe"></i>Registar Vacinação</a>
                     
@@ -133,7 +133,7 @@ $foto_perfil4 = $row1['linkimagem'];
             <div class="avatar"><img src="uploads/<?php echo $foto_perfil4;?>" width=120 height=120 alt="..." class="img-fluid rounded-circle"></div>
             <div class="title">
               <h1 class="h4"><?php  echo $nome. ' '.$apelidos ?> </h1>
-              <a href="PerfilMédicoBásico.php">
+              <a href="PerfilMedicoBasico.php">
                 <p>Editar Perfil</p>
               </a>
             </div>
@@ -225,7 +225,7 @@ $foto_perfil4 = $row1['linkimagem'];
                       <div class="form-group">
                         <label class=" form-control-label">Espécie</label>
                         <select  id="Tipo_Animal"  name="Tipo_Animal" onchange="showCustomer(this.value)"  class="form-control mb-3">
-                          <option value= "0"> SELECIONE A ESPECIE</option>
+                          <option value= "0"> Selecione a Espécie</option>
                           <option value= "1"> Cão</option>
                           <option value= "2"> Gato</option>
                           <option value= "3"> Cavalo</option>

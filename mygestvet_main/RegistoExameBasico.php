@@ -44,7 +44,7 @@ $Codigo_Porte=$row1['Codigo_Porte'];
 }
 }
 }
-$sql6 = "SELECT animal.Nome, animal.Numero_Animal from animal,cliente WHERE cliente.Numero_Cliente=animal.Numero_Cliente AND cliente.Numero_Medico=$Numero_Medico";
+$sql6 = "SELECT animal.Nome, animal.Numero_Animal, animal.Numero_Chip from animal,cliente WHERE cliente.Numero_Cliente=animal.Numero_Cliente AND cliente.Numero_Medico=$Numero_Medico";
 $animal = $conn->query($sql6);
 $query2 = "SELECT linkimagem FROM utilizador WHERE utilizador.Numero_Medico=$Numero_Medico";
 $result2 = $conn->query($query2);
@@ -110,7 +110,7 @@ $materiais= $conn->query($sql12);
                   <div class="dropdown-menu">
                     <a href="RegistoClienteBasico.php" class="dropdown-item"><i class="fas fa-user"></i>Registar Cliente</a>
                     <a href="RegistoAnimalBasico.php" class="dropdown-item"><i class="fas fa-dog"></i>Registar Animal</a>
-                    <a href="PerfilMédicoBásico.php" class="dropdown-item"><i class="fas fa-user-edit"></i>Editar Perfil</a>
+                    <a href="PerfilMedicoBasico.php" class="dropdown-item"><i class="fas fa-user-edit"></i>Editar Perfil</a>
                     <a href="RegistoExameBasico.php" class="dropdown-item"><i class="fas fa-file-medical-alt"></i>Registar Exame Clínico</a>
                     <a href="RegistoVacinacoesBasico.php" class="dropdown-item"><i class="fas fa-syringe"></i>Registar Vacinação</a>
                     
@@ -131,7 +131,7 @@ $materiais= $conn->query($sql12);
             <div class="avatar"><img src="uploads/<?php echo $foto_perfil4;?>" width=120 height=120 alt="..." class="img-fluid rounded-circle"></div>
             <div class="title">
               <h1 class="h4"><?php  echo $nome. ' '.$apelidos ?> </h1>
-              <a href="PerfilMédicoBásico.php">
+              <a href="PerfilMedicoBasico.php">
                 <p>Editar Perfil</p>
               </a>
             </div>
@@ -200,16 +200,15 @@ $materiais= $conn->query($sql12);
             </div>
             <div class="card-body">
               <div class="row">
-                <form id="regForm" method="POST" >
                 <div class="col-sm-6 col-md-6">
                   <div class="form-group mb-4">
                     <div class="form-group">
-                      
+                      <form id="regForm" method="POST" action="GeraRegistoVacinacao.php">
                         <label class=" form-control-label">Selecione o Animal:</label>
-                        <select  id="numero_animal"  name="numero_animal" class="form-control mb-3" required>
-                          <option value= ""> Selecione um Animal </option>
+                        <select  id="numero_animal"  name="numero_animal" class="form-control mb-3">
+                          <option value= ""> --Selecione um animal-- </option>
                           <?php while ($row1 = mysqli_fetch_array($animal)):;?>
-                          <option value= "<?php  echo $row1[1]; ?>"> <?php  echo $row1[0]; ?></option>
+                          <option value= "<?php  echo $row1[1]; ?>"> <?php  echo 'Nome: '.$row1[0].'  | Numero De Chip: '.$row1[2]; ?></option>
                           <?php endwhile;?>
                         </select>
                       </div>

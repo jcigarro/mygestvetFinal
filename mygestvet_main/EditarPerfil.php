@@ -55,7 +55,7 @@
          
 
           echo "<script>alert('Alterado com sucesso!'); </script>";
-          echo "<script>location.href='PerfilMédicoBásico.php'</script>";
+          echo "<script>location.href='PerfilMedicoBasico.php'</script>";
 
          
          }

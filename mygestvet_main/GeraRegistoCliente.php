@@ -43,7 +43,9 @@
 		echo "<script>alert('Esse cliente ja se encontra registado!'); history.back();</script>";
 	} else {
 		$login1 = mysqli_query($conn,"INSERT INTO cliente VALUES(NULL,'$nome','$sexo',$telefone,'$email_cliente',$nif,'$morada','$codigo_postal','Portugal',$codigo_localidade,$numero);");
-		echo "<script>alert('Cliente registado com sucesso!');history.back(); </script>";
+		
+		echo "<script>alert('Cliente registado com sucesso!'); </script>";
+		header("Location: RegistoClienteBasico.php");
 	
 				 
  		

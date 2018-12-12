@@ -161,7 +161,7 @@ if ($result2->num_rows > 0) {
                   <div class="dropdown-menu">
                     <a href="RegistoClientePremium.php" class="dropdown-item"><i class="fas fa-user"></i>Registar Cliente</a>
                     <a href="RegistoAnimalPremium.php" class="dropdown-item"><i class="fas fa-dog"></i>Registar Animal</a>
-                    <a href="PerfilMédicoPremium.php" class="dropdown-item"><i class="fas fa-user-edit"></i>Editar Perfil</a>
+                    <a href="PerfilMedicoPremium.php" class="dropdown-item"><i class="fas fa-user-edit"></i>Editar Perfil</a>
                     <a href="AgendaPremium.php" class="dropdown-item"><i class="fas fa-calendar-alt"></i>Agenda</a>
                     <a href="MapaPremium.php" class="dropdown-item"><i class="fas fa-map-marker-alt"></i>Mapa</a>
                     
@@ -180,7 +180,7 @@ if ($result2->num_rows > 0) {
                 <!-- Side Navbar -->
                 <nav class="side-navbar">
                   <!-- Sidebar Header-->
-                  <div class="sidebar-header d-flex align-items-center"><a href="PerfilMédicoPremium.php">
+                  <div class="sidebar-header d-flex align-items-center"><a href="PerfilMedicoPremium.php">
                     <div class="avatar"><img src="uploads/<?php echo $foto_perfil7;?>" alt="..." class="img-fluid rounded-circle"></div></a>
                     <div class="title">
                       <h1 class="h4"><?php  echo $nome.' '.$apelidos ?></h1>
@@ -322,7 +322,7 @@ if ($result2->num_rows > 0) {
                     <div class="card-body">
                       <!--Upload foto-->
                     
-                    <form method="POST" action="PerfilMédicoPremium.php" enctype="multipart/form-data">
+                    <form method="POST" action="PerfilMedicoPremium.php" enctype="multipart/form-data">
                         <input type="hidden" name="size" value="1000000">
                         <div>
                           <input type="file" name="image" style="font-size: 11px">

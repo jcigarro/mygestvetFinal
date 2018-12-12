@@ -18,6 +18,7 @@ echo '
         <tr>
             <th>Nome</th>
             <th>Data</th>
+            <th>Número de Chip</th>
 
         </tr>
     </thead>
@@ -36,6 +37,8 @@ $id_exame = $row['Codigo_Exame_Clinico'];
 
 $nomeAnimal = $row['Nome'];
 
+$numeroChip = $row['Numero_Chip'];
+
 
 
 echo '
@@ -48,7 +51,7 @@ echo '
       <td>
           <span class="block-email">'.$data.'</span>
       </td>
-
+      <td>'.$numeroChip.'</td>
   </tr>
   <tr class="spacer"></tr>
 ';

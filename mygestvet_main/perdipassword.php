@@ -63,7 +63,7 @@ Bem vindo à recuperação de password da plataforma MyGestVet, se tiver algum p
 Clique no link para alterar a sua password
 
 
-192.168.1.75:8888/mygestvetFinal/mygestvet_main/recuperar.php?utilizador=$user_email&confirmacao=$chave";
+192.168.2.9:8888/mygestvetFinal/mygestvet_main/recuperar.php?utilizador=$user_email&confirmacao=$chave";
 
 
 

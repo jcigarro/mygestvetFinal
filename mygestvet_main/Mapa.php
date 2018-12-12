@@ -151,7 +151,7 @@ include("config.php");
                   <div class="dropdown-menu">
                     <a href="RegistoClientePremium.php" class="dropdown-item"><i class="fas fa-user"></i>Registar Cliente</a>
                     <a href="RegistoAnimalPremium.php" class="dropdown-item"><i class="fas fa-dog"></i>Registar Animal</a>
-                    <a href="PerfilMédicoPremium.php" class="dropdown-item"><i class="fas fa-user-edit"></i>Editar Perfil</a>
+                    <a href="PerfilMedicoPremium.php" class="dropdown-item"><i class="fas fa-user-edit"></i>Editar Perfil</a>
                     <a href="" class="dropdown-item"><i class="fas fa-coins"></i>Atualizar para Premium</a>
                     <a href="#response" class="dropdown-item" data-toggle="modal" data-target="#response"><i class="fas fa-trash-alt"></i>Apagar Conta</a>
                   </div>
@@ -170,11 +170,11 @@ include("config.php");
         <!-- Side Navbar -->
         <nav class="side-navbar">
           <!-- Sidebar Header-->
-          <div class="sidebar-header d-flex align-items-center"><a href="PerfilMédicoPremium.php">
+          <div class="sidebar-header d-flex align-items-center"><a href="PerfilMedicoPremium.php">
               <div class="avatar"><img src="uploads/<?php echo $foto_perfil10;?>" alt="..." class="img-fluid rounded-circle"></div></a>
             <div class="title">
               <h1 class="h4"><?php  echo $nome. ' ' .$apelidos ?></h1>
-              <a href="PerfilMédicoPremium.php">
+              <a href="PerfilMedicoPremium.php">
               <p>Editar Perfil</p>
               </a>
             </div>

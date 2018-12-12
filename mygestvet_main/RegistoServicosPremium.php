@@ -158,7 +158,7 @@ $materiais= $conn->query($sql12);
                   <div class="dropdown-menu">
                     <a href="RegistoClientePremium.php" class="dropdown-item"><i class="fas fa-user"></i>Registar Cliente</a>
                     <a href="RegistoAnimalPremium.php" class="dropdown-item"><i class="fas fa-dog"></i>Registar Animal</a>
-                    <a href="PerfilMédicoPremium.php" class="dropdown-item"><i class="fas fa-user-edit"></i>Editar Perfil</a>
+                    <a href="PerfilMedicoPremium.php" class="dropdown-item"><i class="fas fa-user-edit"></i>Editar Perfil</a>
                     <a href="AgendaPremium.php" class="dropdown-item"><i class="fas fa-calendar-alt"></i>Agenda</a>
                     <a href="MapaPremium.php" class="dropdown-item"><i class="fas fa-map-marker-alt"></i>Mapa</a>
                     
@@ -182,7 +182,7 @@ $materiais= $conn->query($sql12);
           <div class="avatar"><img src="uploads/<?php echo $foto_perfil4;?>" width=120 height=120 alt="..." class="img-fluid rounded-circle"></div>
           <div class="title">
             <h1 class="h4"><?php  echo $nome. ' '.$apelidos ?> </h1>
-            <a href="PerfilMédicoPremium.php">
+            <a href="PerfilMedicoPremium.php">
               <p>Editar Perfil</p>
             </a>
           </div>

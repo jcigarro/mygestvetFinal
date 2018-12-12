@@ -1,6 +1,6 @@
 <?php
 include("config.php");
-
+//include_once "config_exemploassinatura.php";
 
 
  if(!(isset($_SESSION['email_cod']) && $_SESSION['email_cod'] != "") || $_SESSION['tipo_conta'] != 1){
@@ -119,8 +119,9 @@ $foto_perfil4 = $row1['linkimagem'];
     <!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
-
+  <link rel="stylesheet" href="assets/signature/css/signature-pad.css">
   </head>
+  <body style="background-color:white;">
   <div class="page">
     <!-- Main Navbar-->
     <header class="header">
@@ -151,7 +152,7 @@ $foto_perfil4 = $row1['linkimagem'];
                   <div class="dropdown-menu">
                     <a href="RegistoClienteBasico.php" class="dropdown-item"><i class="fas fa-user"></i>Registar Cliente</a>
                     <a href="RegistoAnimalBasico.php" class="dropdown-item"><i class="fas fa-dog"></i>Registar Animal</a>
-                    <a href="PerfilMédicoBásico.php" class="dropdown-item"><i class="fas fa-user-edit"></i>Editar Perfil</a>
+                    <a href="PerfilMedicoBasico.php" class="dropdown-item"><i class="fas fa-user-edit"></i>Editar Perfil</a>
                     <a href="RegistoExameBasico.php" class="dropdown-item"><i class="fas fa-file-medical-alt"></i>Registar Exame Clínico</a>
                     <a href="RegistoVacinacoesBasico.php" class="dropdown-item"><i class="fas fa-syringe"></i>Registar Vacinação</a>
                     
@@ -173,7 +174,7 @@ $foto_perfil4 = $row1['linkimagem'];
           <div class="avatar"><img src="uploads/<?php echo $foto_perfil4;?>" width=120 height=120 alt="..." class="img-fluid rounded-circle"></div>
           <div class="title">
             <h1 class="h4"><?php  echo $nome. ' '.$apelidos ?> </h1>
-            <a href="PerfilMédicoBásico.php">
+            <a href="PerfilMedicoBasico.php">
               <p>Editar Perfil</p>
             </a>
           </div>
@@ -492,7 +493,7 @@ $foto_perfil4 = $row1['linkimagem'];
                     </form>
                   </div>
                   <div id="receita<?php echo $Codigo_Servico; ?>"  tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade text-left"  role="dialog">
-                    <form method="post"  role="form">
+                    <form>
                       <div class="modal-dialog ">
                         <!-- Modal content-->
                         <div class="modal-content">
@@ -576,22 +577,39 @@ $foto_perfil4 = $row1['linkimagem'];
                                 </div>
                               </div>
                              
-                                <div class="col-sm-8 col-md-8">
-                                  <div class="form-group mb-4"> 
-                                    <div class="form-group">
-                                      <label>Assinatura do Médico Veterinário</label>
-                                      <br><br>
-                                      <hr>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>                            
+                              <div class="col-lg-12">
+                              <h4> Assinatura Digital</h4><br>
                               
-                           
+                              
+                              
+                              <br>
+                                <div class="col-lg-12 " style='height:300px;' id="assinatura">
+                                      <div id='signature-pad' class='m-signature-pad'>
+                                          <div class='m-signature-pad--body'>
+                                              <canvas></canvas>
+                                          </div>
+                                          <div class='m-signature-pad--footer'>
+                                            <div class='description'>Assinatura</div>
+                                              <div class='left'>
+                                                  <button type='button' class='button clear' data-action='clear'>Limpar</button>
+                                              </div>
+                                              <div class='right'>
+                                                  <button style='visibility: hidden;' data-action='save-png'></button>
+                                                  <button type='button' class='button save' data-action='save-svg'>Guardar</button>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class='clearfix'></div><br><br>
+                                  <div class='col-lg-12' id='tab'>
+
+                              </div>
+                              </div>
+    
                             </div>
                           
-                            <div class="modal-footer">
-                              <form>
+                         
+                              
                 
                       
                    
@@ -646,23 +664,97 @@ $foto_perfil4 = $row1['linkimagem'];
 
 
 
-    <script type="text/javascript">
-var doc = new jsPDF();
-var specialElementHandlers = {
-    '#editor': function (element, renderer) {
-        return true;
-    }
-};
 
-$('#btGerarPDF').click(function () {
-    doc.fromHTML($('#conteudo').html(), 15, 15, {
-        'width': 170,
-            'elementHandlers': specialElementHandlers
-    });
-    doc.save('exemplo-pdf.pdf');
-});
-    </script>
     
+   
+
+<script>
+  function loadsig(){
+      var wrapper = document.getElementById("signature-pad"),
+      clearButton = wrapper.querySelector("[data-action=clear]"),
+      savePNGButton = wrapper.querySelector("[data-action=save-png]"),
+      saveSVGButton = wrapper.querySelector("[data-action=save-svg]"),
+      canvas = wrapper.querySelector("canvas"),
+      signaturePad;
+      // Adjust canvas coordinate space taking into account pixel ratio,
+      // to make it look crisp on mobile devices.
+      // This also causes canvas to be cleared.
+      function resizeCanvas() {
+          // When zoomed out to less than 100%, for some very strange reason,
+          // some browsers report devicePixelRatio as less than 1
+          // and only part of the canvas is cleared then.
+          var ratio =  Math.max(window.devicePixelRatio || 1, 1);
+          canvas.width = canvas.offsetWidth * ratio;
+          canvas.height = canvas.offsetHeight * ratio;
+          canvas.getContext("2d").scale(ratio, ratio);
+      }
+
+      window.onresize = resizeCanvas;
+      resizeCanvas();
+
+      signaturePad = new SignaturePad(canvas);
+
+      clearButton.addEventListener("click", function (event) {
+          signaturePad.clear();
+      });
+
+      savePNGButton.addEventListener("click", function (event) {
+          if (signaturePad.isEmpty()) {
+              if(document.getElementById('lang').innerHTML == 1){
+                  alert("Forneça a assinatura primeiro.");
+              }else{
+                  alert("S'il vous plaît fournir la signature d'abord.");
+              }
+          } else {
+              window.open(signaturePad.toDataURL());
+          }
+      });
+
+      saveSVGButton.addEventListener("click", function (event) {
+          if (signaturePad.isEmpty()) {
+              if(document.getElementById('lang').innerHTML == 1){
+                  alert("Forneça a assinatura primeiro.");
+              }else{
+                  alert("S'il vous plaît fournir la signature d'abord.");
+              }
+          } else {
+              //window.open(signaturePad.toDataURL('image/svg+xml'));
+
+              var assinatura = signaturePad.toDataURL('image/svg+xml');
+
+                $.ajax({
+                    type: 'POST',
+                    url: 'assidb.php?op=1',
+                    data: {sig:assinatura,nome:$('#nome').val()},
+                    success: function(data) {
+                        var info = JSON.parse(data);
+                        if(info['val'] == 1){
+                          alert(info['msg']);
+                          
+                        }else{
+                          alert(info['msg']);
+                        }
+                    }
+                });
+
+              signaturePad.clear();
+              $("#nome").val("");
+          }
+      });
+      //$('head').append('<link rel="stylesheet" type="text/css" href="js/plugins/signature/css/signature-pad.css">');
+  }
+
+
+  document.addEventListener("DOMContentLoaded", function(event) {
+    loadsig();
+  });
+</script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="assets/signature/js/signature_pad.js"></script>
     <!-- JavaScript files-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/popper.js/umd/popper.min.js"> </script>
@@ -689,6 +781,8 @@ $('#btGerarPDF').click(function () {
     <!-- Main File-->
     <script src="js/front.js"></script>
     <!-- Data Tables-->
+    
+
     <script src="vendor/datatables.net/js/jquery.dataTables.js"></script>
     <script src="vendor/datatables.net-bs4/js/dataTables.bootstrap4.js"></script>
     <script src="vendor/datatables.net-responsive/js/dataTables.responsive.min.js"></script>

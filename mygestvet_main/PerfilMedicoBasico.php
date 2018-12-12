@@ -163,7 +163,7 @@ if ($result2->num_rows > 0) {
                   <div class="dropdown-menu">
                     <a href="RegistoClienteBasico.php" class="dropdown-item"><i class="fas fa-user"></i>Registar Cliente</a>
                     <a href="RegistoAnimalBasico.php" class="dropdown-item"><i class="fas fa-dog"></i>Registar Animal</a>
-                    <a href="PerfilMédicoBásico.php" class="dropdown-item"><i class="fas fa-user-edit"></i>Editar Perfil</a>
+                    <a href="PerfilMedicoBasico.php" class="dropdown-item"><i class="fas fa-user-edit"></i>Editar Perfil</a>
                     <a href="RegistoExameBasico.php" class="dropdown-item"><i class="fas fa-file-medical-alt"></i>Registar Exame Clínico</a>
                     <a href="RegistoVacinacoesBasico.php" class="dropdown-item"><i class="fas fa-syringe"></i>Registar Vacinação</a>
                     
@@ -186,7 +186,7 @@ if ($result2->num_rows > 0) {
               <div class="avatar"><img src="uploads/<?php echo $foto_perfil7;?>" width=120 height=120 alt="..." class="img-fluid rounded-circle"></div>
             <div class="title">
               <h1 class="h4"><?php  echo $nome. ' '.$apelidos ?> </h1>
-              <a href="PerfilMédicoBásico.php">
+              <a href="PerfilMedicoBasico.php">
               <p>Editar Perfil</p>
               </a>
             </div>
@@ -319,7 +319,7 @@ if ($result2->num_rows > 0) {
                    <div class="card-body">
                       <!--Upload foto-->
                     
-                      <form method="POST" action="PerfilMédicoBásico.php" enctype="multipart/form-data">
+                      <form method="POST" action="PerfilMedicoBasico.php" enctype="multipart/form-data">
                           <input type="hidden" name="size" value="1000000">
                           <div>
                             <input type="file" name="image" style="font-size: 11px" required>

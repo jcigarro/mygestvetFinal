@@ -42,12 +42,12 @@
 					echo "<script>location.href='Login.php'</script>";
 				}else {
 					echo "<script>alert('As passwords não coincidem!');</script>";
-					echo "<script>location.href='PerfilMédicoBásico.php'</script>";
+					echo "<script>location.href='PerfilMedicoBasico.php'</script>";
 				}
 
 			}else{
 					echo "<script>alert('Password antiga incorreta!'); </script>";
-					echo "<script>location.href='PerfilMédicoBásico.php'</script>";
+					echo "<script>location.href='PerfilMedicoBasico.php'</script>";
 			}
 
 

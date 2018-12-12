@@ -139,7 +139,7 @@ if ($result2->num_rows > 0) {
                 <div class="dropdown-menu">
                   <a href="RegistoClienteBasico.php" class="dropdown-item"><i class="fas fa-user"></i>Registar Cliente</a>
                   <a href="RegistoAnimalBasico.php" class="dropdown-item"><i class="fas fa-dog"></i>Registar Animal</a>
-                  <a href="PerfilMédicoBásico.php" class="dropdown-item"><i class="fas fa-user-edit"></i>Editar Perfil</a>
+                  <a href="PerfilMedicoBasico.php" class="dropdown-item"><i class="fas fa-user-edit"></i>Editar Perfil</a>
                   <a href="RegistoExameBasico.php" class="dropdown-item"><i class="fas fa-file-medical-alt"></i>Registar Exame Clínico</a>
                   <a href="RegistoVacinacoesBasico.php" class="dropdown-item"><i class="fas fa-syringe"></i>Registar Vacinação</a>
 
@@ -160,7 +160,7 @@ if ($result2->num_rows > 0) {
           <div class="avatar"><img src="uploads/<?php echo $foto_perfil4;?>" width=120 height=120 alt="..." class="img-fluid rounded-circle"></div>
           <div class="title">
             <h1 class="h4"><?php  echo $nome. ' '.$apelidos ?> </h1>
-            <a href="PerfilMédicoBásico.php">
+            <a href="PerfilMedicoBasico.php">
               <p>Editar Perfil</p>
             </a>
           </div>
@@ -327,7 +327,7 @@ if ($result2->num_rows > 0) {
 
                                 <!--Edit Item Modal -->
                                 <div id="edit<?php echo $Numero_Animal; ?>"  tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade text-left"  role="dialog">
-
+                                    <form method="post">
                                   <div class="modal-dialog ">
                                     <!-- Modal content-->
                                     <div class="modal-content">
@@ -387,13 +387,14 @@ if ($result2->num_rows > 0) {
 
                                           </div>
                                           <div class="modal-footer">
-                                            <button type="submit" class="btn btn-primary" id="update_item" name="update_item"><span class="glyphicon glyphicon-edit"></span> Editar</button>
+                                            <button type="submit" class="btn btn-primary" name="update_item"><span class="glyphicon glyphicon-edit"></span> Editar</button>
                                             <button type="button" data-dismiss="modal" aria-label="Close" class="btn btn-secondary">
                                               Cancelar</button>
                                           </div>
                                         </div>
                                     </div>
                                   </div>
+                                </form>
                                 </div>
                                   <?php
                                 }
@@ -413,7 +414,7 @@ if ($result2->num_rows > 0) {
 
 
                               $sql = "UPDATE animal SET Nome='$Nome_update', Numero_Cliente=$Numero_Cliente_Update, Alergias='$Alergias_Update' WHERE Numero_Animal=$edit_item_id ";
-
+                           
                               if ($conn->query($sql) === TRUE) {
                                 echo '<script>window.location.href="ListaAnimaisBasico.php"</script>';
                               } else {

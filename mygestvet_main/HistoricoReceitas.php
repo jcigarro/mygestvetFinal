@@ -198,7 +198,7 @@ $localidade_query = "SELECT Codigo_Localidade,Descricao from localidade";
                   <div class="dropdown-menu">
                     <a href="RegistoClienteBasico.php" class="dropdown-item"><i class="fas fa-user"></i>Registar Cliente</a>
                     <a href="RegistoAnimalBasico.php" class="dropdown-item"><i class="fas fa-dog"></i>Registar Animal</a>
-                    <a href="PerfilMédicoBásico.php" class="dropdown-item"><i class="fas fa-user-edit"></i>Editar Perfil</a>
+                    <a href="PerfilMedicoBasico.php" class="dropdown-item"><i class="fas fa-user-edit"></i>Editar Perfil</a>
                     <a href="" class="dropdown-item"><i class="fas fa-file-medical-alt"></i>Registar Exame Clínico</a>
                     <a href="" class="dropdown-item"><i class="fas fa-syringe"></i>Registar Vacinação</a>
                     
@@ -220,7 +220,7 @@ $localidade_query = "SELECT Codigo_Localidade,Descricao from localidade";
               <div class="avatar"><img src="uploads/<?php echo $foto_perfil4;?>" width=120 height=120 alt="..." class="img-fluid rounded-circle"></div>
             <div class="title">
               <h1 class="h4"><?php  echo $nome. ' '.$apelidos ?> </h1>
-              <a href="PerfilMédicoBásico.php">
+              <a href="PerfilMedicoBasico.php">
               <p>Editar Perfil</p>
               </a>
             </div>
