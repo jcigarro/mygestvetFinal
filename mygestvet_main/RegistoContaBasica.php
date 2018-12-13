@@ -5,7 +5,7 @@
          
        $hostname='localhost';
        $user = 'root';
-       $password = 'root';
+       $password = '';
        $mysql_database = 'atual';
        $conn = mysqli_connect($hostname, $user, $password,$mysql_database);
  

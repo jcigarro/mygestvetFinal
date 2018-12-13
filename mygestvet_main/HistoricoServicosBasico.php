@@ -494,7 +494,7 @@ $foto_perfil4 = $row1['linkimagem'];
                   </div>
                   <div id="receita<?php echo $Codigo_Servico; ?>"  tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade text-left"  role="dialog">
                     <form>
-                      <div class="modal-dialog ">
+                      <div class="modal-dialog " id='signature-pad' class='m-signature-pad'>
                         <!-- Modal content-->
                         <div class="modal-content">
                           <div class="modal-header">
@@ -564,7 +564,7 @@ $foto_perfil4 = $row1['linkimagem'];
                                 <div class="col-sm-6 col-md-6">
                                   <div class="form-group mb-4">
                                     <label class=" form-control-label">Posologia:</label>
-                                    <input type="text" placeholder="Posologia" name="posologia" class="form-control" required data-msg="Insira a posologia" class="input-material" class="form-control">
+                                    <input type="text" placeholder="Posologia" id="posologia" name="posologia" class="form-control" required data-msg="Insira a posologia" class="input-material" class="form-control">
                                   </div>
                                 </div>
                               </div>
@@ -594,8 +594,18 @@ $foto_perfil4 = $row1['linkimagem'];
                                                   <button type='button' class='button clear' data-action='clear'>Limpar</button>
                                               </div>
                                               <div class='right'>
+											  	<input type="hidden" name="morada_med" id="morada_med" value="<?php echo $morada_med; ?>">
+												  <input type="hidden" name="nome" id="nome" value="<?php echo $nome; ?>">
+												  <input type="hidden" name="apelidos" id="apelidos" value="<?php echo $apelidos; ?>">
+												  <input type="hidden" name="telefone_med" id="telefone_med" value="<?php echo $telefone_med; ?>">
+												  <input type="hidden" name="descricao_localidade" id="descricao_localidade" value="<?php echo $descricao_localidade; ?>">
+										<input type="hidden" name="Telefone_Cliente" id="Telefone_Cliente" value="<?php echo $Telefone_Cliente; ?>">
+										  <input type="hidden" name="Localidade_Cliente" id="Localidade_Cliente" value="<?php echo $descricao_localidade; ?>">
+										  <input type="hidden" name="Morada_Cliente" id="Morada_Cliente" value="<?php echo $Morada_Cliente; ?>">
+                              
+                
                                                   <button style='visibility: hidden;' data-action='save-png'></button>
-                                                  <button type='button' class='button save' data-action='save-svg'>Guardar</button>
+                                                  
                                               </div>
                                           </div>
                                       </div>
@@ -608,14 +618,12 @@ $foto_perfil4 = $row1['linkimagem'];
     
                             </div>
                           
-                         
-                              
-                
+						
                       
                    
                     
-
-                              <button type="submit" name="submit" id="submit" formaction="GeraRegistoReceita.php" class="btn btn-primary">Criar Receita</button>
+								<button type='button'   class='btn btn-primary button save' data-action='save-svg'>Criar Receita</button>
+                              
                               <button type="button" data-dismiss="modal" aria-label="Close" class="btn btn-secondary">
                               Cancelar</button>
                             </div>
@@ -725,7 +733,22 @@ $foto_perfil4 = $row1['linkimagem'];
                 $.ajax({
                     type: 'POST',
                     url: 'assidb.php?op=1',
-                    data: {sig:assinatura,nome:$('#nome').val()},
+                    data: {sig:assinatura,nome:$('#nome').val(),apelidos:$('#apelidos').val(),
+					morada_med:$('#morada_med').val(),
+					telefone_med:$('#telefone_med').val(),
+					descricao_localidade:$('#descricao_localidade').val(),
+					receita:$('#receita').val(),
+					observacoes:$('#observacoes').val(),
+					posologia:$('#posologia').val(),
+					NomeA:$('#NomeA').val(),
+					NomeC:$('#NomeC').val(),
+					Numero_Chip:$('#Numero_Chip').val(),
+					Telefone_Cliente:$('#Telefone_Cliente').val(),
+					Morada_Cliente:$('#Morada_Cliente').val(),
+					Localidade_Cliente:$('#Localidade_Cliente').val(),
+					Codigo_Servico:$('#Codigo_Servico').val(),
+					
+					},
                     success: function(data) {
                         var info = JSON.parse(data);
                         if(info['val'] == 1){
@@ -739,6 +762,7 @@ $foto_perfil4 = $row1['linkimagem'];
 
               signaturePad.clear();
               $("#nome").val("");
+			  $("#apelidos").val("");
           }
       });
       //$('head').append('<link rel="stylesheet" type="text/css" href="js/plugins/signature/css/signature-pad.css">');
