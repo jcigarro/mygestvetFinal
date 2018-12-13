@@ -578,7 +578,7 @@ $foto_perfil4 = $row1['linkimagem'];
                               </div>
                              
                               <div class="col-lg-12">
-                              <h4> Assinatura Digital</h4><br>
+                              <h4> Assinatura do Médico Veterinário</h4><br>
                               
                               
                               
@@ -653,7 +653,7 @@ $foto_perfil4 = $row1['linkimagem'];
 
     </section>
 
-          <!-- Page Footer
+          <!-- Page Footer-->
           <footer class="main-footer">
             <div class="container-fluid">
               <div class="row">
@@ -666,7 +666,7 @@ $foto_perfil4 = $row1['linkimagem'];
               </div>
             </div>
           </footer>
-       -->
+       
       </div>
     </div>
 
