@@ -35,6 +35,7 @@
 
         move_uploaded_file($_FILES['arquivo']['tmp_name'], $link);
         $sql = "INSERT INTO utilizador VALUES ('$email','$link')";
+		echo $sql;
         if (mysqli_query($conn,$sql) === TRUE) {
               $msg = "Utilizador registado com Sucesso.";
               $val = 1;
@@ -65,11 +66,7 @@
             if (mysqli_query($conn,$login1) === TRUE) {
               $msg = "Utilizador registado com Sucesso.";
               $val = 1;
-        }else {
-              $msg .= "Error: " . $sql . "<br>" . mysqli_error($conn);
-              $val = 2;
-            }
-            
+        }
             echo "<script>alert('Registo efetuado com sucesso!'); </script>";
             echo "<script>location.href='Login.php'</script>";
             exit();

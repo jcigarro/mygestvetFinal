@@ -95,6 +95,27 @@ $foto_perfil4 = $row1['linkimagem'];
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="robots" content="all,follow">
+
+
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
+        <meta charset="utf-8">
+    
+   
+    
+    
+    <!-- Loader -->
+    <link rel="stylesheet" href="css/loader.css">
+    <script src="js/jquery-1.12.4.js"></script>
+    <link rel="stylesheet" type="text/css" href="dashboard/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" href="css/responsive.bootstrap.min.css">
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.dataTables.min.js"></script>
+
+
     <!-- Bootstrap CSS-->
     <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
     <!-- Font Awesome CSS-->
@@ -107,21 +128,25 @@ $foto_perfil4 = $row1['linkimagem'];
     <link rel="stylesheet" href="css/style.default.premium.css" id="theme-stylesheet">
     <!-- Custom stylesheet - for your changes-->
     <link rel="stylesheet" href="css/custom.css">
+
     <!-- Bootstrap Datepicker CSS-->
     <link rel="stylesheet" href="vendor/bootstrap-datepicker/css/bootstrap-datepicker3.css">
-    <!-- DataTables CSS-->
+
+     <!-- DataTables CSS-->
     <link rel="stylesheet" href="vendor/datatables.net-bs4/css/dataTables.bootstrap4.css">
     <link rel="stylesheet" href="vendor/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css">
+
     
-    
+ 
     <link rel="icon" sizes="76x76" href="img/logo2-pequeno.png">
     <link rel="icon" type="image/png" sizes="96x96" href="img/logo2-pequeno.png">
+
     <!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
   <link rel="stylesheet" href="assets/signature/css/signature-pad.css">
   </head>
-  <body style="background-color:white;">
+  <body>
   <div class="page">
     <!-- Main Navbar-->
     <header class="header">
@@ -250,7 +275,7 @@ $foto_perfil4 = $row1['linkimagem'];
                   
                   <tr>
                     
-                    <th>Numero de Serviço</th>
+                    <th>Número de Serviço</th>
                     <th>Data</th>
                     <th>Cliente</th>
                     <th>Animal</th>
@@ -363,14 +388,15 @@ $foto_perfil4 = $row1['linkimagem'];
                     </a>
                     
                   </td>
+                </tr>
                   
-                  <div id="ver<?php echo $Codigo_Servico; ?>"  tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade text-left"  role="dialog">
+                  <div id="ver<?php echo $Codigo_Servico; ?>"  tabindex="-1" aria-labelledby="modalver" aria-hidden="true" class="modal fade text-left"  role="dialog">
                     <form method="post"  role="form">
                       <div class="modal-dialog ">
                         <!-- Modal content-->
                         <div class="modal-content">
                           <div class="modal-header">
-                            <h4 id="exampleModalLabel" class="modal-title">Serviço Número : <?php echo  $Codigo_Servico; ?></h4>
+                            <h4 id="modalver" class="modal-title">Serviço Número : <?php echo  $Codigo_Servico; ?></h4>
                             <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
                           </div>
                           <div class="modal-body">
@@ -419,7 +445,7 @@ $foto_perfil4 = $row1['linkimagem'];
                                   <div class="form-group mb-12">
                                     <label class=" form-control-label"></label>
                                     <div class="modal-header">
-                                      <h4 id="exampleModalLabel" class="modal-title">Exame Clínico</h4>
+                                      <h4 id="modalver" class="modal-title">Exame Clínico</h4>
                                     </div>
                                    
                                     <div class="row">
@@ -492,12 +518,16 @@ $foto_perfil4 = $row1['linkimagem'];
                       </div>
                     </form>
                   </div>
-                  <div id="receita<?php echo $Codigo_Servico; ?>"  tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade text-left"  role="dialog">
+                  <div id="receita<?php echo $Codigo_Servico; ?>"  tabindex="-1" aria-labelledby="modalreceita" aria-hidden="true" class="modal fade text-left"  role="dialog">
                     <form>
                       <div class="modal-dialog " id='signature-pad' class='m-signature-pad'>
                         <!-- Modal content-->
                         <div class="modal-content">
                           <div class="modal-header">
+                            <h4 id="modalreceita" class="modal-title">Prescrição-Médica</h4>
+                            <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
+                          </div>
+                           <div class="modal-body">
               						  <input type="hidden" name="morada_med" id="morada_med" value="<?php echo $morada_med; ?>">
               						  <input type="hidden" name="nome" id="nome" value="<?php echo $nome; ?>">
               						  <input type="hidden" name="apelidos" id="apelidos" value="<?php echo $apelidos; ?>">
@@ -506,12 +536,7 @@ $foto_perfil4 = $row1['linkimagem'];
                             <input type="hidden" name="Telefone_Cliente" id="Telefone_Cliente" value="<?php echo $Telefone_Cliente; ?>">
                               <input type="hidden" name="Localidade_Cliente" id="Localidade_Cliente" value="<?php echo $descricao_localidade; ?>">
                               <input type="hidden" name="Morada_Cliente" id="Morada_Cliente" value="<?php echo $Morada_Cliente; ?>">
-						  
-                            <h4 id="exampleModalLabel" class="modal-title">Prescrição-Médica</h4>
-                            <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
-                          </div>
-                          <div class="modal-body">
-                        
+
                                   <center>
                                     <label><?php echo $nome; echo ' '.$apelidos; ?></label><br>
                                     <label>Médico Veterinário</label><br>
@@ -520,120 +545,116 @@ $foto_perfil4 = $row1['linkimagem'];
                                     <label><?php echo $descricao_localidade ?></label><br>
                                   </center>
 
-                            <div  method="POST">
-                              <input type="hidden" name="Codigo_Servico" id="Codigo_Servico" value="<?php echo $Codigo_Servico; ?>">
-                              
-                              <div class="row">
-                                <div class="col-sm-6 col-md-6">
-                                  <div class="form-group mb-4">
-                                    <label class=" form-control-label">Cliente:</label>
-                                    <label class=" form-control-label"><?php echo $Nome_Cliente; ?></label>
-									                   <input type="hidden" name="NomeC" id="NomeC" value="<?php echo $Nome_Cliente; ?>">
+                              <div  method="POST">
+                                <input type="hidden" name="Codigo_Servico" id="Codigo_Servico" value="<?php echo $Codigo_Servico; ?>">
+                                
+                                <div class="row">
+                                  <div class="col-sm-6 col-md-6">
+                                    <div class="form-group mb-4">
+                                      <label class=" form-control-label">Cliente:</label>
+                                      <label class=" form-control-label"><?php echo $Nome_Cliente; ?></label>
+  									                   <input type="hidden" name="NomeC" id="NomeC" value="<?php echo $Nome_Cliente; ?>">
+                                    </div>
+                                  </div>
+                                </div>                              
+                               
+                                <div class="row">
+                                  <div class="col-sm-6 col-md-8">
+                                    <div class="form-group mb-8">
+                                      <label class=" form-control-label">Nº do Chip do Animal:</label>
+                                      <label class=" form-control-label"><?php echo $Numero_Chip; ?></label>
+                                      <input type="hidden" name="Numero_Chip" id="Numero_Chip" value="<?php echo $Numero_Chip; ?>">
+                                    </div>
                                   </div>
                                 </div>
-                              </div>                              
+                                <div class="row">
+                                  <div class="col-sm-6 col-md-8">
+                                    <div class="form-group mb-8">
+                                      <label class=" form-control-label">Nome do Animal:</label>
+                                      <label class=" form-control-label"><?php echo $Nome_Animal; ?></label>
+  									                 <input type="hidden" name="NomeA" id="NomeA" value="<?php echo $Nome_Animal; ?>">
+                                      
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-sm-6 col-md-6">
+                                    <div class="form-group mb-4">
+                                      <label class=" form-control-label">Receita:</label>
+                                      <input type="text" placeholder="Receita" id="receita" name="receita" class="form-control" required data-msg="Insira a receita" class="input-material" class="form-control">
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-sm-6 col-md-6">
+                                    <div class="form-group mb-4">
+                                      <label class=" form-control-label">Posologia:</label>
+                                      <input type="text" placeholder="Posologia" id="posologia" name="posologia" class="form-control" required data-msg="Insira a posologia" class="input-material" class="form-control">
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-sm-6 col-md-6">
+                                    <div class="form-group mb-4">
+                                      <label class=" form-control-label">Observações:</label>
+                                      <input type="text" placeholder="Observações"id="observacoes" name="observacoes" class="form-control" class="input-material" class="form-control">
+                                    </div>
+                                  </div>
+                                </div>
                              
-                              <div class="row">
-                                <div class="col-sm-6 col-md-8">
-                                  <div class="form-group mb-8">
-                                    <label class=" form-control-label">Nº do Chip do Animal:</label>
-                                    <label class=" form-control-label"><?php echo $Numero_Chip; ?></label>
-                                    <input type="hidden" name="Numero_Chip" id="Numero_Chip" value="<?php echo $Numero_Chip; ?>">
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="row">
-                                <div class="col-sm-6 col-md-8">
-                                  <div class="form-group mb-8">
-                                    <label class=" form-control-label">Nome do Animal:</label>
-                                    <label class=" form-control-label"><?php echo $Nome_Animal; ?></label>
-									<input type="hidden" name="NomeA" id="NomeA" value="<?php echo $Nome_Animal; ?>">
-                                    
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="row">
-                                <div class="col-sm-6 col-md-6">
-                                  <div class="form-group mb-4">
-                                    <label class=" form-control-label">Receita:</label>
-                                    <input type="text" placeholder="Receita" id="receita" name="receita" class="form-control" required data-msg="Insira a receita" class="input-material" class="form-control">
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="row">
-                                <div class="col-sm-6 col-md-6">
-                                  <div class="form-group mb-4">
-                                    <label class=" form-control-label">Posologia:</label>
-                                    <input type="text" placeholder="Posologia" id="posologia" name="posologia" class="form-control" required data-msg="Insira a posologia" class="input-material" class="form-control">
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="row">
-                                <div class="col-sm-6 col-md-6">
-                                  <div class="form-group mb-4">
-                                    <label class=" form-control-label">Observações:</label>
-                                    <input type="text" placeholder="Observações"id="observacoes" name="observacoes" class="form-control" class="input-material" class="form-control">
-                                  </div>
-                                </div>
-                              </div>
-                             
-                              <div class="col-lg-12">
-                              <h4> Assinatura do Médico Veterinário</h4><br>
+                                <div class="col-lg-12">
+                                <h4> Assinatura do Médico Veterinário</h4><br>
                               
                               
                               
                               <br>
                                 <div class="col-lg-12 " style='height:300px;' id="assinatura">
-                                      <div id='signature-pad' class='m-signature-pad'>
-                                          <div class='m-signature-pad--body'>
-                                              <canvas></canvas>
-                                          </div>
-                                          <div class='m-signature-pad--footer'>
-                                            <div class='description'>Assinatura</div>
-                                              <div class='left'>
-                                                  <button type='button' class='button clear' data-action='clear'>Limpar</button>
-                                              </div>
-                                              <div class='right'>
-											  	<input type="hidden" name="morada_med" id="morada_med" value="<?php echo $morada_med; ?>">
-												  <input type="hidden" name="nome" id="nome" value="<?php echo $nome; ?>">
-												  <input type="hidden" name="apelidos" id="apelidos" value="<?php echo $apelidos; ?>">
-												  <input type="hidden" name="telefone_med" id="telefone_med" value="<?php echo $telefone_med; ?>">
-												  <input type="hidden" name="descricao_localidade" id="descricao_localidade" value="<?php echo $descricao_localidade; ?>">
-										<input type="hidden" name="Telefone_Cliente" id="Telefone_Cliente" value="<?php echo $Telefone_Cliente; ?>">
-										  <input type="hidden" name="Localidade_Cliente" id="Localidade_Cliente" value="<?php echo $descricao_localidade; ?>">
-										  <input type="hidden" name="Morada_Cliente" id="Morada_Cliente" value="<?php echo $Morada_Cliente; ?>">
+                                  <div id='signature-pad' class='m-signature-pad'>
+                                    <div class='m-signature-pad--body'>
+                                      <canvas></canvas>
+                                    </div>
+                                    <div class='m-signature-pad--footer'>
+                                      <div class='description'>Assinatura</div>
+                                        <div class='left'>
+                                          <button type='button' class='button clear' data-action='clear'>Limpar</button>
+                                        </div>
+                                      <div class='right'>
+              											  	<input type="hidden" name="morada_med" id="morada_med" value="<?php echo $morada_med; ?>">
+              												  <input type="hidden" name="nome" id="nome" value="<?php echo $nome; ?>">
+              												  <input type="hidden" name="apelidos" id="apelidos" value="<?php echo $apelidos; ?>">
+              												  <input type="hidden" name="telefone_med" id="telefone_med" value="<?php echo $telefone_med; ?>">
+              												  <input type="hidden" name="descricao_localidade" id="descricao_localidade" value="<?php echo $descricao_localidade; ?>">
+              										      <input type="hidden" name="Telefone_Cliente" id="Telefone_Cliente" value="<?php echo $Telefone_Cliente; ?>">
+              										      <input type="hidden" name="Localidade_Cliente" id="Localidade_Cliente" value="<?php echo $descricao_localidade; ?>">
+              										      <input type="hidden" name="Morada_Cliente" id="Morada_Cliente" value="<?php echo $Morada_Cliente; ?>">
                               
                 
-                                                  <button style='visibility: hidden;' data-action='save-png'></button>
+                                        <button style='visibility: hidden;' data-action='save-png'></button>
                                                   
-                                              </div>
-                                          </div>
                                       </div>
+                                    </div>
                                   </div>
+                                </div>
+                                  
                                   <div class='clearfix'></div><br><br>
-                                  <div class='col-lg-12' id='tab'>
+                                  <div class='col-lg-12' id='tab'></div>
 
-                              </div>
-                              </div>
+                                  
+                            </div>
     
-                            </div>
-                          
-						
-                      
-                   
-                    
-								<button type='button'   class='btn btn-primary button save' data-action='save-svg'>Criar Receita</button>
-                              
-                              <button type="button" data-dismiss="modal" aria-label="Close" class="btn btn-secondary">
-                              Cancelar</button>
-                            </div>
-                          </form>
-                        
                           </div>
-                      </div>
-                     </div>
-                    </form>
+                    
+								          <button type='button' class='btn btn-primary button save' data-action='save-svg'>Criar Receita</button>
+                              
+                          <button type="button" data-dismiss="modal" aria-label="Close" class="btn btn-secondary">Cancelar</button>
+                        </div>
+                      </form>
+                        
+                    </div>
+                  </div>
                 </div>
+              </form>
+            </div>
                   
                   
                 <?php
@@ -760,9 +781,7 @@ $foto_perfil4 = $row1['linkimagem'];
                     }
                 });
 
-              signaturePad.clear();
-              $("#nome").val("");
-			  $("#apelidos").val("");
+              s
           }
       });
       //$('head').append('<link rel="stylesheet" type="text/css" href="js/plugins/signature/css/signature-pad.css">');
@@ -773,13 +792,9 @@ $foto_perfil4 = $row1['linkimagem'];
     loadsig();
   });
 </script>
-<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <script src="assets/signature/js/signature_pad.js"></script>
-    <!-- JavaScript files-->
+     <!-- JavaScript files-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/popper.js/umd/popper.min.js"> </script>
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
@@ -804,14 +819,14 @@ $foto_perfil4 = $row1['linkimagem'];
     <script src="js/forms-advanced.js"></script>
     <!-- Main File-->
     <script src="js/front.js"></script>
-    <!-- Data Tables-->
-    
 
+    <!-- Data Tables-->
     <script src="vendor/datatables.net/js/jquery.dataTables.js"></script>
     <script src="vendor/datatables.net-bs4/js/dataTables.bootstrap4.js"></script>
     <script src="vendor/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
     <script src="vendor/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
     <script src="js/tables-datatable.js"></script>
   </body>
+  
   <!-- Mirrored from demo.bootstrapious.com/admin-premium/1-4-4/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 07 Nov 2018 10:50:32 GMT -->
 </html>

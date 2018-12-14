@@ -85,7 +85,7 @@
             <div class="col-lg-6 bg-white">
               <div class="form d-flex align-items-center">
                 <div class="content">
-                  <form class="form-validate" action="GeraRegistoContaBasica.php" method="POST" enctype="multipart/form-data">
+                  <form class="form-validate"  action="GeraRegistoContaBasica.php" method="POST" enctype="multipart/form-data">
 
 
                     <div class="row">
@@ -117,12 +117,12 @@
 
                     <div class="row">
                       <div class="form-group col-6">
-                        <input id="telefone" type="int" name="telefone" required data-msg="Insira o seu nº de telefone/telemóvel" class="input-material">
+                        <input id="telefone" type="tel" name="telefone" size="9" minlength="9" maxlength="9" required data-msg="Insira o seu nº de telefone/telemóvel (9 digitos)" class="input-material">
                         <label for="telef" class="label-material">Telefone/Telemóvel</label>
                       </div>
 
                       <div class="form-group col-6">
-                        <input id="nif" type="int" name="nif" required data-msg="Insira o seu Número de Identificação Fiscal" class="input-material">
+                        <input id="nif" type="tel" size="9" maxlength="9"  name="nif" minlength="9" maxlength="9"  required data-msg="Insira o seu nº de Identificação Fiscal (9 digitos)" class="input-material">
                         <label for="nif" class="label-material">Nif de Faturação</label>
                       </div>
                     </div>
@@ -135,11 +135,11 @@
                     </div>
                     
                     <div class="row">
-                      <div class="form-group col-6">
+                      <div class="form-group col-8">
                               <label class=" form-control-label">Localidade</label>
-                              <div class="col-sm-9">
-                                 <select name="codigo_localidade" class="form-control mb-3">
-                                  <option disabled selected value> -- escolha a localidade -- </option>
+                              <div class="col-lg-10">
+                                 <select required data-msg="Selecione a sua localidade" name="codigo_localidade" class="form-control mb-3">
+                                  <option disabled selected value> -- Escolha a localidade -- </option>
                                 <?php while ($row1 = mysqli_fetch_array($localidade)):;?> 
                                                               
                                 <option value= "<?php  echo $row1[0]; ?>"> <?php  echo $row1[1]; ?></option>
@@ -148,7 +148,7 @@
                               </div>
                       </div>
                       <div class="form-group col-6">
-                        <input id="codigo_postal" type="text" name="codigo_postal" required data-msg="Insira o Código-Postal" class="input-material">
+                        <input id="codigo_postal" type="text" name="codigo_postal"  maxlength="8" patern="[0-9]{4}[\-]?[0-9]{3}" minlength="8" maxlength="8"   required data-msg="Insira o Código-Postal (xxxx-xxx)" class="input-material">
                         <label for="codigoPostal" class="label-material">Código-Postal</label>
                       </div>
                     </div>
@@ -174,6 +174,8 @@
                         <label for="confirmapassword" class="label-material">Confirma a Password</label>
                       </div>
                     </div>
+					
+					
 
                    
 
@@ -197,6 +199,7 @@
     </div>
     
     <!-- JavaScript files-->
+
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/popper.js/umd/popper.min.js"> </script>
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>

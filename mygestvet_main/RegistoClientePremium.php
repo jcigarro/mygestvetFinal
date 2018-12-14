@@ -223,98 +223,109 @@ include("config.php");
             </ul>
           </div>
           <!-- Forms Section-->
-           <section>
-        
-           
-            <div class="container-fluid">
-              <div class="row">
-                <!-- Basic Form-->
-                <div class="col-lg-6">
-                  <div class="card">
-                    <form class="form-validate">
-                    <div class="card-header d-flex align-items-center">
-                      <h3 class="h4">Novo Registo</h3>
+      <section>
+  <div class="col-lg-6 col-sm-6 col-md-6">
+  <?php
+                      @session_start();
+                      if(isset($_SESSION['erromsg'])){
+                      echo $_SESSION['erromsg'];
+                      unset($_SESSION['erromsg']);
+                      }
+                      ?>
+</div>
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Basic Form-->
+		 
+        <div class="col-lg-6 col-sm-6 col-md-6">
+          <div class="card">
+            <form class="form-validate">
+              <div class="card-header d-flex align-items-center">
+                <h3 class="h4">Novo Registo</h3>
+              </div>
+              <div class="card-body">
+                <form>
+                  <div class="form-group">
+                    <label class="form-control-label">Nome</label>
+                    <input type="text" name="nome" placeholder="Nome" class="form-control" required data-msg="Insira o Nome do cliente" class="input-material" class="form-control">
+                  </div>
+                  
+                  <div class="row">
+                    <div class="form-group col-6">
+                      <label class=" form-control-label">Sexo</label>
                     </div>
-                    <div class="card-body">
-                      <form>
-
-                        <div class="form-group">
-                          <label class="form-control-label">Nome</label>
-                          <input type="text" name="nome" placeholder="Nome" class="form-control" required data-msg="Insira o Nome!" class="input-material" class="form-control">
-                        </div>
+                  </div>
+                  
+                  <div class="form-group col-6">
+                    <input id="sexo" type="radio" checked="" value="Masculino" name="sexo">
+                    
+                    <label for="optionsRadios1" class="checkbox-inline" style="color: #aaa; font-size: 14px">Masculino</label>
+                    <input id="sexo" type="radio" value="Feminino" name="sexo">
+                    <label for="sexp" style="color: #aaa; font-size: 14px">Feminino</label>
+                    
+                  </div>
+                  
+                  <div class="form-group ">
+                    <label class="form-control-label">E-mail</label>
+                    <input type="email" placeholder="E-mail" name="email_cliente"  class="form-control" class="input-material" class="form-control">
+                  </div>
+				  <div class="row">
+                  <div class="form-group col-6">
+                    <label class="form-control-label">Telefone/Telemóvel</label>
+                        <input id="telefone" type="tel" name="telefone" size="9" minlength="9" maxlength="9" required data-msg="Insira o seu Numero  de telefone/telemóvel   (9 digitos)" class="input-material">
+                  </div>
+                  <div class="form-group col-6">
+                    <label class="form-control-label">Nif</label>
+                    <input id="nif" type="tel" size="9" maxlength="9"  name="nif" minlength="9" maxlength="9"  required data-msg="Insira o seu Numero de Identificação Fiscal (9 digitos)" class="input-material">
+                  </div>
+				  </div>
+                  <div class="form-group">
+                    <label class="form-control-label">Morada</label>
+                    <input type="text" placeholder="Morada" name="morada" class="form-control" required data-msg="Insira a morada do cliente" class="input-material" class="form-control">
+                  </div>
+                  <div class="row">
+                    <div class="form-group col-lg-6">
+                      <label class=" form-control-label">Localidade</label>
+                  
+                      <select name="codigo_localidade"required data-msg="Selecione a Localidade do cliente" class="form-control mb-3">
+                        <option disabled selected value> -- Escolha a localidade -- </option>
+                        <?php while ($row1 = mysqli_fetch_array($localidade)):;?>
+                        
+                        <option value= "<?php  echo $row1[0]; ?>"> <?php  echo $row1[1]; ?></option>
+                        <?php endwhile;?>
+                      </select>
+                    </div>
+				 
 
                  
-
-                        <div class="row">
-                          <div class="form-group col-6">
-                            <label class=" form-control-label">Sexo</label>
-                          </div>
-                        </div>
-                          
-                          <div class="form-group col-6">
-                            <input id="sexo" type="radio" checked="" value="Masculino" name="sexo">
-                                
-                            <label for="optionsRadios1" class="checkbox-inline" style="color: #aaa; font-size: 14px">Masculino</label>
-                            <input id="sexo" type="radio" value="Feminino" name="sexo">
-                            <label for="sexp" style="color: #aaa; font-size: 14px">Feminino</label>
-                            
-                          </div>
-                      
-
-
-                        <div class="form-group ">       
-                          <label class="form-control-label">E-mail</label>
-                          <input type="text" placeholder="E-mail" name="email_cliente" class="form-control" class="input-material" class="form-control">
-                        </div>
-                        <div class="form-group">       
-                          <label class="form-control-label">Telefone/Telemóvel</label>
-                          <input type="text" placeholder="Telefone" name="telefone" class="form-control" required data-msg="Insira o telefone!" class="input-material" class="form-control">
-                        </div>
-                        <div class="form-group">       
-                          <label class="form-control-label">Nif</label>
-                          <input type="text" placeholder="Nif" name="nif" class="form-control" required data-msg="Insira o nif!" class="input-material" class="form-control">
-                        </div>
-                        <div class="form-group">       
-                          <label class="form-control-label">Morada</label>
-                          <input type="text" placeholder="Morada" name="morada" class="form-control" required data-msg="Insira a morada!" class="input-material" class="form-control">
-                        </div>
-
-                        <div class="row">
-                          <div class="form-group col-6">
-                              <label class=" form-control-label">Localidade</label>
-                          </div>
-                         
-                          <div class="col-sm-9">
-                            <select name="codigo_localidade" class="form-control mb-3">
-                              <option disabled selected value> -- escolha a localidade -- </option>     
-                            <?php while ($row1 = mysqli_fetch_array($localidade)):;?> 
-                                                           
-                              <option value= "<?php  echo $row1[0]; ?>"> <?php  echo $row1[1]; ?></option>
-                              <?php endwhile;?>
-                            </select>
-                          </div>
-                        </div>
-                        
-                       
-
-                      <div class="form-group">       
-                        <label class="form-control-label">Código Postal</label>
-                        <input type="text" placeholder="Codigo Postal" name="codigo_postal" class="form-control" required data-msg="Insira o codigo postal!" class="input-material" class="form-control">
-                      </div>
-                        
-                        
-
-                      <div class="form-group">       
-                        <input type="submit" formaction="GeraRegistoCliente.php" value="Registar" class="btn btn-primary">
-                      </div>
-                    </div>
-                  </form>
+                  
+                  
+                  <div class="form-group">
+                    <label class="form-control-label">Código Postal</label>
+                   <input id="codigo_postal" type="text" name="codigo_postal"  maxlength="8" patern="[0-9]{4}[\-]?[0-9]{3}" minlength="8" maxlength="8"   required data-msg="Insira o Código-Postal (xxxx-xxx)" class="input-material">
+                  </div><br>
+                   </div>
+                  
+                  <div class="form-group">
+                    <input type="submit" formaction="GeraRegistoClientePremium.php" value="Registar" class="btn btn-primary">
+                  </div>
                 </div>
-              </div>
+              </form>
             </div>
-          </section>
-
+          </div>
           
+          
+          
+          <!-------------------------publicidade------------------------------>
+          <div class="card-body" align="center" style="margin-top: 100px;">
+            
+            <img src="img/pub6.jpg"><br><br>
+            <button type="submit" align="center" class="btn btn-secundary" >Activar Conta Premium</button>
+            
+          </div>
+        </div>
+      </div>
+    </section>
           <!-- Page Footer-->
           <footer class="main-footer">
             <div class="container-fluid">

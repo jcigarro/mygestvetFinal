@@ -8,7 +8,7 @@
 
     }
     $nome=$_REQUEST["nome"];
-    $apelidos=$_REQUEST["apelidos"];
+    $apelidos=$_REQUEST["apelido"];
     $telefone=$_REQUEST["telefone"];
     $sexo=$_REQUEST["sexo"];
     $morada=$_REQUEST["morada"];
@@ -21,7 +21,7 @@
     $password = md5($_REQUEST["password"]);
     $password_confirm = md5($_REQUEST["password_confirm"]);
     
-    $codigo_tipo_conta=$_REQUEST["codigo_tipo_conta"];
+   
 
 
     $msg=false;
@@ -35,6 +35,7 @@
 
         move_uploaded_file($_FILES['arquivo']['tmp_name'], $link);
         $sql = "INSERT INTO utilizador VALUES ('$email','$link')";
+		echo $sql;
         if (mysqli_query($conn,$sql) === TRUE) {
               $msg = "Utilizador registado com Sucesso.";
               $val = 1;
@@ -60,9 +61,12 @@
 
             $_SESSION['email'] = $email;
 
-            $login1 = mysqli_query($conn,"INSERT INTO medico VALUES(NULL,'$password','$nome','$apelidos','$sexo',$telefone,'$email',$nif,'$morada','$codigo_postal','Portugal',$codigo_localidade,2,1);");
+            $login1 = mysqli_query($conn,"INSERT INTO medico VALUES(NULL,'$password','$nome','$apelidos','$sexo',$telefone,'$email',$nif,'$morada','$codigo_postal','Portugal',$codigo_localidade,2);");
             
-            
+            if (mysqli_query($conn,$login1) === TRUE) {
+              $msg = "Utilizador registado com Sucesso.";
+              $val = 1;
+        }
             echo "<script>alert('Registo efetuado com sucesso!'); </script>";
             echo "<script>location.href='Login.php'</script>";
             exit();
