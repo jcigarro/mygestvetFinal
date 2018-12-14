@@ -90,7 +90,7 @@ if(!(isset($_SESSION['email_cod']) && $_SESSION['email_cod'] != "") || $_SESSION
     }
 
 
-    $query6 = "SELECT sexo, count(*) as quantidade FROM medico GROUP BY medico.Sexo";
+    $query6 = "SELECT sexo, count(*) as quantidade FROM medico where medico.Codigo_Tipo_Conta NOT IN (3) GROUP BY medico.Sexo";
     $result6 = $conn->query($query6); 
  
 
