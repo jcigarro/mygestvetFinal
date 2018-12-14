@@ -322,7 +322,7 @@ if ($result2->num_rows > 0) {
 
                                     <form method='post'>
                                       <input type="hidden" name="Numero_Animal" id="Numero_Animal" value="<?php echo $Numero_Animal;?>">
-                                      <button type='submit'name="Numero_Animal" id="Numero_Animal" value="<?php echo $Numero_Animal;?>" formaction="PerfilAnimal.php" class='btn btn-primary '><i class="fas fa-eye"></i></button>
+                                      <button type='submit'name="Numero_Animal" id="Numero_Animal" value="<?php echo $Numero_Animal;?>" formaction="PerfilAnimalBasico.php" class='btn btn-primary '><i class="fas fa-eye"></i></button>
                                     </form>
                                   </td>
                                   <td align="left"  style="padding-left: .1rem;">

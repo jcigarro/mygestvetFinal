@@ -260,7 +260,7 @@ if ($result2->num_rows > 0) {
                         <div class="form-group">
                           <fieldset disabled>
                             <label class="form-label">Nome</label>
-                            <input value="<?php  echo $nome; ?>" class="form-control">
+                            <input value="<?php  echo $nome. ' '.$apelidos; ?>" class="form-control">
                           </fieldset>
                         </div>
                       </div>
