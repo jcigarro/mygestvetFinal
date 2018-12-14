@@ -292,11 +292,11 @@ $localidade_query = "SELECT Codigo_Localidade,Descricao from localidade";
 
                             <thead>
                               <tr>
-                                  <th>Numero de Vacina</th>
-                                  <th>Animal</th>
+                                  <th>Número de Vacinação</th>
                                   <th>Vacina</th>
                                   <th>Data</th>
-                                 
+                                  <th>Animal</th>
+                                  <th>Cliente Associado</th>
                                   <th></th>
                                   
                               </tr>
@@ -305,7 +305,7 @@ $localidade_query = "SELECT Codigo_Localidade,Descricao from localidade";
                           <tbody>
                               <?php 
                                   
-                                  $sql4 = "SELECT vacinacao.Numero_Vacinacao, vacinacao.Nome as Nome_Vacina, vacinacao.Data, vacinacao.Lote, vacinacao.Validade, animal.Nome as Nome_Animal FROM animal,vacinacao, medico, cliente WHERE vacinacao.Numero_Animal=animal.Numero_Animal and animal.Numero_Cliente=cliente.Numero_Cliente and cliente.Numero_Medico=medico.Numero_Medico and medico.Email='$email'";
+                                  $sql4 = "SELECT vacinacao.Numero_Vacinacao, vacinacao.Nome as Nome_Vacina, vacinacao.Data, vacinacao.Lote, vacinacao.Validade, cliente.Nome as NomeC, animal.Nome as Nome_Animal FROM animal,vacinacao, medico, cliente WHERE vacinacao.Numero_Animal=animal.Numero_Animal and animal.Numero_Cliente=cliente.Numero_Cliente and cliente.Numero_Medico=medico.Numero_Medico and medico.Email='$email'";
                                   $result4 = $conn->query($sql4);
                                   if ($result4->num_rows > 0) {
                                       // output data of each row
@@ -316,6 +316,7 @@ $localidade_query = "SELECT Codigo_Localidade,Descricao from localidade";
                                           $Lote=$row['Lote'];
                                           $Validade = $row['Validade'];
                                           $Nome_Animal=$row['Nome_Animal'];
+                                          $Nome=$row['NomeC'];
                                          
                                          
                                          
@@ -330,15 +331,20 @@ $localidade_query = "SELECT Codigo_Localidade,Descricao from localidade";
                                   <td>
                                       <?php echo $Numero_Vacinacao; ?>
                                   </td>
-                                  <td>
-                                      <?php echo $Nome_Animal; ?>
-                                  </td>
+                                  
                                   <td>
                                       <?php echo $Nome_Vacina; ?>
                                   </td>
                                    <td>
                                       <?php echo $Data; ?>
                                   </td>
+                                  <td>
+                                      <?php echo $Nome_Animal; ?>
+                                  </td>
+                                   <td>
+                                      <?php echo $Nome; ?>
+                                  </td>
+
                                    
 
                                    
@@ -371,7 +377,7 @@ $localidade_query = "SELECT Codigo_Localidade,Descricao from localidade";
                                                       <div class="row">
                                                         <div class="col-sm-6 col-md-6">
                                                           <div class="form-group mb-4"> 
-                                                            <label class=" form-control-label"><b>Numero de Vacinação:</b></label>
+                                                            <label class=" form-control-label"><b>Número de Vacinação:</b></label>
                                                               <?php echo $Numero_Vacinacao; ?> 
                                                           </div>
                                                         </div>
