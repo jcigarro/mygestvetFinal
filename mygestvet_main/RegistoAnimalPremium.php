@@ -249,101 +249,117 @@ include("config.php");
           </div>
           <!-- Forms Section-->
           <section>
+           
+  <div class="col-lg-6 col-sm-6 col-md-6">
+  <?php
+                      @session_start();
+                      if(isset($_SESSION['erromsg'])){
+                      echo $_SESSION['erromsg'];
+                      unset($_SESSION['erromsg']);
+                      }
+                      ?>
+</div>
+    
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Basic Form-->
+        <div class="col-lg-6">
+          <div class="card">
             
-            <div class="container-fluid">
-              <div class="row">
-                <!-- Basic Form-->
-                <div class="col-lg-6">
-                  <div class="card">                              
-                
-                      <form method='post'>
-                        <div class="form-group">
-                          <div id="Div1"  >
-                            <div class="card-header d-flex align-items-center">
-                              <h3 class="h4">Novo Registo</h3>
-                            </div>
-                            <div class="card-body">
-                              <form>
-                              
-                                <div class="form-group"> 
-                                  <label class="form-control-label">Nome</label>
-                                  <input type="text" name="Nome_Pequeno_Porte" placeholder="Nome" class="form-control" required data-msg="Insira o seu nome completo!" class="input-material" class="form-control">
-                                </div>
-                                <div class="form-group">
-                                  <label class=" form-control-label">Cliente Associado</label>
-                                  <select name="Numero_Cliente_Pequeno_Porte" class="form-control mb-3">
-                                    <?php while ($row1 = mysqli_fetch_array($cliente)):;?> 
-                                                                                                      
-                                    <option value= "<?php  echo $row1[1]; ?>"> <?php  echo $row1[0]; ?></option>
-                                    <?php endwhile;?>
-                                  </select>
-                                </div> 
-                                <div class="form-group">
-                                  <label class=" form-control-label">Espécie</label>
-                                  <select name="Tipo_Animal_Pequeno_Porte" class="form-control mb-3">
-                                    <option value= "1"> Cão</option>
-                                    <option value= "2"> Gato</option>
-                                     <option value= "3"> Cavalo</option>
-                                     <option value= "4"> Outro</option>
-                                  </select>
-                                </div>                          
-                                <div class="form-group">       
-                                  <label class="form-control-label">Nº do Chip</label>
-                                  <input type="int" placeholder="Nº do Chip" name="Numero_Chip_Pequeno_Porte" class="form-control" required data-msg="Insira o seu nome completo!" class="input-material" class="form-control">
-                                </div>        
-                                <div class="form-group">
-                                  <label class="form-control-label">Data de Nascimento</label>
-                                  <input  type="data" placeholder='<?php echo date("d/m/Y"); ?>' name="Data_Nascimento_Pequeno_Porte" class="form-control input-datepicker" >
-                                </div>                                                                    
-                                <div class="form-group">                           
-                                  <label class=" form-control-label">Sexo</label>                                                       
-                                    <?php while ($row1 = mysqli_fetch_array($sexoPortePequeno)):;?>
-                                    <input name="Codigo_Tipo_Sexo_Pequeno_Porte" type="radio"  value="<?php  echo $row1[1]; ?>" id="Codigo_Tipo_Sexo_Pequeno_Porte">            
-                                    <label for="optionsRadios1" class="checkbox-inline" style="color: #aaa; font-size: 14px"><?php  echo $row1[0]; ?>
-                                    <?php endwhile;?>
-                                  </label>
-                                </div>
-                                <div class="form-group ">       
-                                  <label class="form-control-label">Raça</label>
-                                  <input type="text" placeholder="Raça" name="Raca_Pequeno_Porte" class="form-control" required data-msg="Insira o seu nome completo!" class="input-material" class="form-control">
-                                </div>                                 
-                                <div class="form-group">
-                                  <label class=" form-control-label">Porte</label>                   
-                                  <select  name="Codigo_Porte_Pequeno_Porte" class="form-control mb-3">
-                                    <?php while ($row1 = mysqli_fetch_array($portePequeno)):;?>                
-                                    <option value= "<?php  echo $row1[1]; ?>"> <?php  echo $row1[0]; ?></option>
-                                    <?php endwhile;?>
-                                  </select>
-                                </div>           
-                                <div class="form-group">       
-                                  <label class="form-control-label">Alergias/Doenças Crónicas</label>
-                                  <input type="text" placeholder="Alergias" name="Alergias_Pequeno_Porte" class="form-control" class="input-material" class="form-control">
-                                </div>
-                
-                                <div class="form-group">       
-                                  <label class="form-control-label">Outras Informações</label>
-                                  <input type="text" placeholder="Outras Informações" id="outrasInformacoes" name="outrasInformacoes" class="form-control" class="input-material" class="form-control">
-                                </div>
-                                  
-                                  
-                        
-                                <br>
-                                
-                                
-                                <form>
-                                 <button class="btn btn-primary"  formaction="GeraRegistoAnimalPortePequeno.php" type="submit" id="animal" name="animal" >Registar </button>
-                                </form>
-                              </form>
-
-                            </div>
-                          </div>     
-                        </div>
+            <form method='post' class="form-validate">
+              <div class="form-group">
+                <div id="Div1"  >
+                  <div class="card-header d-flex align-items-center">
+                    <h3 class="h4">Novo Registo</h3>
+                  </div>
+                  <div class="card-body">
+                    <form>
+                      
+                      <div class="form-group">
+                        <label class="form-control-label">Nome</label>
+                        <input type="text" name="Nome" placeholder="Nome" class="form-control" required data-msg="Insira o Nome do Animal" class="input-material" class="form-control">
+                      </div>
+                      <div class="form-group">
+                        <label class=" form-control-label">Cliente Associado</label>
+                        <select name="Numero_Cliente"required data-msg="Selecione o Cliente Associado" class="form-control mb-3">
+						<option value= "">-- Selecione o Cliente Associado --</option>
+                          <?php while ($row1 = mysqli_fetch_array($cliente)):;?>
+                          
+                          <option value= "<?php  echo $row1[1]; ?>"> <?php  echo $row1[0]; ?></option>
+                          <?php endwhile;?>
+                        </select>
+                      </div>
+                      <div class="row">
+                       <div class="form-group col-sm-6">
+                        <label class="form-control-label">Nº de Identificação Nacional</label>
+                         <input id="Numero_Chip" type="number" name="Numero_Chip" required data-msg="Insira o Numero de Identificação do Animal" class="input-material">
+						</div>
+					   <div class="form-group col-sm-6">
+                        <label class="form-control-label">Data de Nascimento</label>
+                        <input  type="data" placeholder='<?php echo date("d/m/Y"); ?>' required data-msg="Selecione a Data de Nascimento do Animal" name="Data_Nascimento" class="form-control input-datepicker" >
+						</div>
+					  
+					  
+					    </div>
+                      
+                      
+					    <div class="row">
+                     
+                      <div class="form-group  col-sm-6">
+                        <label class=" form-control-label">Espécie</label>
+                        <select  id="Tipo_Animal"  name="Tipo_Animal" required data-msg="Selecione a Espécie do Animal" onchange="showCustomer(this.value)"  class="form-control mb-3">
+                          <option value= "0">-- Selecione a Espécie --</option>
+                          <option value= "1"> Cão</option>
+                          <option value= "2"> Gato</option>
+                          <option value= "3"> Cavalo</option>
+                          <option value= "4"> Outro</option>
+                        </select>
+						
+                      </div>
+					  <div class="form-group col-sm-6 ">
+                        <label class="form-control-label">Raça</label>
+                        <input type="text" placeholder="Raça" name="Raca" class="form-control" required data-msg="Insira a Raça do Animal" class="input-material" class="form-control">
+                      </div>
+					  </div>
+                      <p class="" id="txtHint"></p>
+                      <input type="hidden" method="POST" id="Animalnumber" name="q">
+					  
+                      <div class="form-group">
+                        <label class="form-control-label">Alergias/Doenças Crónicas</label>
+                        <input type="text" placeholder="Alergias/Doenças Crónicas" name="Alergias" class="form-control" class="input-material" class="form-control">
+                      </div>
+                      
+                      <div class="form-group">
+                        <label class="form-control-label">Outras Informações</label>
+                        <input type="text" placeholder="Outras Informações" id="outrasInformacoes" name="outrasInformacoes" class="form-control" class="input-material" class="form-control">
+                      </div>
+                      
+                      
+                      
+                      <br>
+                      
+                      
+                      <form>
+                        <button class="btn btn-primary"  formaction="GeraRegistoAnimalPremium.php" type="submit" id="animal" name="animal" >Registar </button>
                       </form>
+                    </form>
                   </div>
                 </div>
               </div>
-            </div>
-    
+            </form>
+          </div>
+        </div>
+      
+
+
+   <div class="card-body" align="center" style="margin-top: 100px;">
+            
+            <img src="img/pub8.jpg"><br><br>
+            <button type="submit" align="center" class="btn btn-secundary" >Activar Conta Premium</button>
+            
+          </div>
+        </div>
+      </div>
           </section>
           <!-- Page Footer-->
           <footer class="main-footer">
@@ -365,46 +381,34 @@ include("config.php");
   
    
    
-  <script type="text/javascript">
-  
-  
-  
-  
-  
-  
-function switchVisible1() {
-    
 
-        if (document.getElementById('Div1').style.display == 'block') {
-            document.getElementById('Div1').style.display = 'none';
-            
-            document.getElementById('Div2').style.display = 'none';
-        } else{
-            document.getElementById('Div1').style.display = 'block';
-           
-            document.getElementById('Div2').style.display = 'none';
-       }
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+function showCustomer(str) {
+var xhttp;
+if (str == "") {
+document.getElementById("txtHint").innerHTML = "";
+return;
+}
+xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+if (this.readyState == 4 && this.status == 200) {
+document.getElementById("Animalnumber").value=str;
+//animernumber2 (copy paste)
+
+
+
+document.getElementById("txtHint").innerHTML = this.responseText;
+}
+};
+xhttp.open("GET", "getPorte.php?q="+str, true);
+xhttp.send();
+    
+    
     
 }
+  
 </script>
-<script type="text/javascript">
-function switchVisible2() {
-    
-
-        if (document.getElementById('Div2').style.display == 'block') {
-            document.getElementById('Div2').style.display = 'none';
-            
-            document.getElementById('Div1').style.display = 'none';
-        } else{
-            document.getElementById('Div2').style.display = 'block';
-           
-            document.getElementById('Div1').style.display = 'none';
-       }
-    
-}
-</script>
-
-
 
 
       

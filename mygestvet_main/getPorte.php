@@ -23,11 +23,11 @@ $sexo = $conn->query($sql7);
 		
 	
 	?>
-			
-	<div class="form-group">
-      
-        <label>Selecione o Porte:</label>
-        <select id="Codigo_Porte" name='Codigo_Porte'  class='form-control mb-3'>
+		<form method='post' class="form-validate">	
+		<div class="form-group ">
+                        <label class=" form-control-label">Porte</label>
+        
+        <select id="Codigo_Porte" name='Codigo_Porte'  required data-msg="Selecione o Porte do Animal"  class=' form-control mb-3'>
 			<option value=""> Selecione o Porte </option>
 			
 			<?php while($row3 = mysqli_fetch_array($animal)):;?> 
@@ -35,19 +35,21 @@ $sexo = $conn->query($sql7);
 			<option id="Codigo_Porte" value="<?php echo $row3[0]; ?>" ><?php echo $row3[1]; ?></option>
 			<?php endwhile;?>
 	  </select>	
-     
-    </div>
-			  
-	<div class="form-group">                           
+     </div>
+ 
+	
+
+              
 	  <label class=" form-control-label">Sexo</label>                                                       
 		<?php while ($row1 = mysqli_fetch_array($sexo)):;?>
-		<input name="Codigo_Tipo_Sexo" type="radio"  value="<?php  echo $row1[0]; ?>" id="Codigo_Tipo_Sexo">            
-		<label for="optionsRadios1" class="checkbox-inline" style="color: #aaa; font-size: 14px"><?php  echo $row1[1]; ?>
+		<input name="Codigo_Tipo_Sexo"    required data-msg="Selecione o Sexo do Animal"   type="radio" value="<?php  echo $row1[0]; ?>" id="Codigo_Tipo_Sexo">            
+		<label for="optionsRadios1"      class="checkbox-inline" style="color: #aaa; font-size: 14px"><?php  echo $row1[1]; ?>
 		<?php endwhile;?>
 	  </label>
-	</div>
-	
-	
+
+
+
+	</form>
 	
 	
 

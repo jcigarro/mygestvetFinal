@@ -55,7 +55,7 @@ $foto_perfil4 = $row1['linkimagem'];
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Registar Animal</title>
+    <title>Registar Cliente</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="robots" content="all,follow">
@@ -71,16 +71,12 @@ $foto_perfil4 = $row1['linkimagem'];
     <link rel="stylesheet" href="css/style.default.premium.css" id="theme-stylesheet">
     <!-- Custom stylesheet - for your changes-->
     <link rel="stylesheet" href="css/custom.css">
-    <!-- Bootstrap Datepicker CSS-->
-    <link rel="stylesheet" href="vendor/bootstrap-datepicker/css/bootstrap-datepicker3.css">
     
     
-    <link rel="icon" sizes="76x76" href="img/icon.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="img/icon.png">
+    <link rel="icon" sizes="76x76" href="img/logo2-pequeno.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/logo2-pequeno.png">
     <!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-    <style type="text/css">.hidden { display: none;}
-    </style>
   </head>
   <body>
     <div class="page">
@@ -189,6 +185,16 @@ $foto_perfil4 = $row1['linkimagem'];
     </ul>
   </div>
   <section>
+  
+  <div class="col-lg-6 col-sm-6 col-md-6">
+  <?php
+                      @session_start();
+                      if(isset($_SESSION['erromsg'])){
+                      echo $_SESSION['erromsg'];
+                      unset($_SESSION['erromsg']);
+                      }
+                      ?>
+</div>
     
     <div class="container-fluid">
       <div class="row">
@@ -196,7 +202,7 @@ $foto_perfil4 = $row1['linkimagem'];
         <div class="col-lg-6">
           <div class="card">
             
-            <form method='post'>
+            <form method='post' class="form-validate">
               <div class="form-group">
                 <div id="Div1"  >
                   <div class="card-header d-flex align-items-center">
@@ -207,51 +213,56 @@ $foto_perfil4 = $row1['linkimagem'];
                       
                       <div class="form-group">
                         <label class="form-control-label">Nome</label>
-                        <input type="text" name="Nome" placeholder="Nome" class="form-control" required data-msg="Insira o seu nome completo!" class="input-material" class="form-control">
+                        <input type="text" name="Nome" placeholder="Nome" class="form-control" required data-msg="Insira o Nome do Animal" class="input-material" class="form-control">
                       </div>
                       <div class="form-group">
                         <label class=" form-control-label">Cliente Associado</label>
-                        <select name="Numero_Cliente" class="form-control mb-3">
+                        <select name="Numero_Cliente"required data-msg="Selecione o Cliente Associado" class="form-control mb-3">
+						<option value= "">-- Selecione o Cliente Associado --</option>
                           <?php while ($row1 = mysqli_fetch_array($cliente)):;?>
                           
                           <option value= "<?php  echo $row1[1]; ?>"> <?php  echo $row1[0]; ?></option>
                           <?php endwhile;?>
                         </select>
                       </div>
+                      <div class="row">
+                       <div class="form-group col-sm-6">
+                        <label class="form-control-label">Nº de Identificação Nacional</label>
+                         <input id="Numero_Chip" type="number" name="Numero_Chip" required data-msg="Insira o Numero de Identificação do Animal" class="input-material">
+						</div>
+					   <div class="form-group col-sm-6">
+                        <label class="form-control-label">Data de Nascimento</label>
+                        <input  type="data" placeholder='<?php echo date("d/m/Y"); ?>' required data-msg="Selecione a Data de Nascimento do Animal" name="Data_Nascimento" class="form-control input-datepicker" >
+						</div>
+					  
+					  
+					    </div>
                       
                       
-                      
-                      
-                      <div class="form-group">
+					    <div class="row">
+                     
+                      <div class="form-group  col-sm-6">
                         <label class=" form-control-label">Espécie</label>
-                        <select  id="Tipo_Animal"  name="Tipo_Animal" onchange="showCustomer(this.value)"  class="form-control mb-3">
-                          <option value= "0"> Selecione a Espécie</option>
+                        <select  id="Tipo_Animal"  name="Tipo_Animal" required data-msg="Selecione a Espécie do Animal" onchange="showCustomer(this.value)"  class="form-control mb-3">
+                          <option value= "0">-- Selecione a Espécie --</option>
                           <option value= "1"> Cão</option>
                           <option value= "2"> Gato</option>
                           <option value= "3"> Cavalo</option>
                           <option value= "4"> Outro</option>
                         </select>
+						
                       </div>
-                      <p id="txtHint"></p>
-                      <input type="hidden" method="POST" id="Animalnumber" name="q">
-                      
-                      <div class="form-group">
-                        <label class="form-control-label">Nº do Chip</label>
-                        <input type="int" placeholder="Nº do Chip" name="Numero_Chip" class="form-control" required data-msg="Insira o seu nome completo!" class="input-material" class="form-control">
-                      </div>
-                      <div class="form-group">
-                        <label class="form-control-label">Data de Nascimento</label>
-                        <input  type="data" placeholder='<?php echo date("d/m/Y"); ?>' name="Data_Nascimento" class="form-control input-datepicker" >
-                      </div>
-                      
-                      <div class="form-group ">
+					  <div class="form-group col-sm-6 ">
                         <label class="form-control-label">Raça</label>
-                        <input type="text" placeholder="Raça" name="Raca" class="form-control" required data-msg="Insira o seu nome completo!" class="input-material" class="form-control">
+                        <input type="text" placeholder="Raça" name="Raca" class="form-control" required data-msg="Insira a Raça do Animal" class="input-material" class="form-control">
                       </div>
-                      
+					  </div>
+                      <p class="" id="txtHint"></p>
+                      <input type="hidden" method="POST" id="Animalnumber" name="q">
+					  
                       <div class="form-group">
                         <label class="form-control-label">Alergias/Doenças Crónicas</label>
-                        <input type="text" placeholder="Alergias" name="Alergias" class="form-control" class="input-material" class="form-control">
+                        <input type="text" placeholder="Alergias/Doenças Crónicas" name="Alergias" class="form-control" class="input-material" class="form-control">
                       </div>
                       
                       <div class="form-group">
@@ -265,7 +276,7 @@ $foto_perfil4 = $row1['linkimagem'];
                       
                       
                       <form>
-                        <button class="btn btn-primary"  formaction="GeraRegistoAnimal.php" type="submit" id="animal" name="animal" >Registar </button>
+                        <button class="btn btn-primary"  formaction="GeraRegistoAnimalBasico.php" type="submit" id="animal" name="animal" >Registar </button>
                       </form>
                     </form>
                   </div>
