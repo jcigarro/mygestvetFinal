@@ -72,10 +72,12 @@ if ($result2->num_rows > 0) {
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
         <meta charset="utf-8">
-
-
-
-<link rel="stylesheet" href="css/loader.css">
+    
+   
+    
+    
+    <!-- Loader -->
+    <link rel="stylesheet" href="css/loader.css">
     <script src="js/jquery-1.12.4.js"></script>
     <link rel="stylesheet" type="text/css" href="dashboard/vendor/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/jquery.dataTables.min.css">
@@ -86,30 +88,33 @@ if ($result2->num_rows > 0) {
 
 
 
-  <!-- Bootstrap CSS-->
-  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
-  <!-- Font Awesome CSS-->
-  <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
-  <!-- Fontastic Custom icon font-->
-  <link rel="stylesheet" href="css/fontastic.css">
-  <!-- Google fonts - Poppins -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
-  <!-- theme stylesheet-->
-  <link rel="stylesheet" href="css/style.default.premium.css" id="theme-stylesheet">
-  <!-- Custom stylesheet - for your changes-->
-  <link rel="stylesheet" href="css/custom.css">
-  <!-- Bootstrap Datepicker CSS-->
-  <link rel="stylesheet" href="vendor/bootstrap-datepicker/css/bootstrap-datepicker3.css">
-  <!-- DataTables CSS-->
-  <link rel="stylesheet" href="vendor/datatables.net-bs4/css/dataTables.bootstrap4.css">
-  <link rel="stylesheet" href="vendor/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css">
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome CSS-->
+    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+    <!-- Fontastic Custom icon font-->
+    <link rel="stylesheet" href="css/fontastic.css">
+    <!-- Google fonts - Poppins -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="css/style.default.premium.css" id="theme-stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="css/custom.css">
 
+    <!-- Bootstrap Datepicker CSS-->
+    <link rel="stylesheet" href="vendor/bootstrap-datepicker/css/bootstrap-datepicker3.css">
 
-  <link rel="icon" sizes="76x76" href="img/logo2-pequeno.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="img/logo2-pequeno.png">
-  <!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">-->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+     <!-- DataTables CSS-->
+    <link rel="stylesheet" href="vendor/datatables.net-bs4/css/dataTables.bootstrap4.css">
+    <link rel="stylesheet" href="vendor/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css">
+
+    
+ 
+    <link rel="icon" sizes="76x76" href="img/logo2-pequeno.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/logo2-pequeno.png">
+
+    <!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 </head>
 
 
@@ -237,6 +242,7 @@ if ($result2->num_rows > 0) {
                         <tr>
 
                           <th>Nome do Animal</th>
+                          <th>Nº de Chip</th>
                           <th>Cliente Associado</th>
                           <th></th>
 
@@ -304,7 +310,11 @@ if ($result2->num_rows > 0) {
                                   <td>
                                     <?php echo $Nome; ?>
                                   </td>
+                                 
                                   <td>
+                                    <?php echo $Numero_Chip; ?>
+                                  </td>
+                                   <td>
                                     <?php echo $Nome_Cliente; ?>
                                   </td>
 
@@ -451,44 +461,43 @@ if ($result2->num_rows > 0) {
               </div>
             </footer>
           </div>
-           </div>
+ 
 
 
 
 
 
+           <!-- JavaScript files-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/popper.js/umd/popper.min.js"> </script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
+    <script src="vendor/chart.js/Chart.min.js"></script>
+    <script src="vendor/jquery-validation/jquery.validate.min.js"></script>
+    <!-- Bootstrap Select-->
+    <script src="vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
+    <!-- Bootstrap Touchspin-->
+    <script src="vendor/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+    <!-- Bootstrap No UI Slider-->
+    <script src="vendor/nouislider/nouislider.min.js"></script>
+    <!-- Bootstrap DatePicker-->
+    <script src="vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+    <!-- Bootstrap Tags Input-->
+    <script src="vendor/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+    <!-- Jasny Bootstrap - Input Masks-->
+    <script src="vendor/jasny-bootstrap/js/jasny-bootstrap.min.js"> </script>
+    <!-- MultiSelect-->
+    <script src="vendor/multiselect/js/jquery.multi-select.js"> </script>
+    <!-- Forms init-->
+    <script src="js/forms-advanced.js"></script>
+    <!-- Main File-->
+    <script src="js/front.js"></script>
 
-          <!-- JavaScript files-->
-          <script src="vendor/jquery/jquery.min.js"></script>
-          <script src="vendor/popper.js/umd/popper.min.js"> </script>
-          <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-          <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
-          <script src="vendor/chart.js/Chart.min.js"></script>
-          <script src="vendor/jquery-validation/jquery.validate.min.js"></script>
-          <script src='vendor/moment/min/moment.min.js'></script>
-          <!-- Bootstrap Select-->
-          <script src="vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
-          <!-- Bootstrap Touchspin-->
-          <script src="vendor/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
-          <!-- Bootstrap No UI Slider-->
-          <script src="vendor/nouislider/nouislider.min.js"></script>
-          <!-- Bootstrap DatePicker-->
-          <script src="vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
-          <!-- Bootstrap Tags Input-->
-          <script src="vendor/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
-          <!-- Jasny Bootstrap - Input Masks-->
-          <script src="vendor/jasny-bootstrap/js/jasny-bootstrap.min.js"> </script>
-          <!-- MultiSelect-->
-          <script src="vendor/multiselect/js/jquery.multi-select.js"> </script>
-          <!-- Forms init-->
-          <script src="js/forms-advanced.js"></script>
-          <!-- Main File-->
-          <script src="js/front.js"></script>
-          <!-- Data Tables-->
-          <script src="vendor/datatables.net/js/jquery.dataTables.js"></script>
-          <script src="vendor/datatables.net-bs4/js/dataTables.bootstrap4.js"></script>
-          <script src="vendor/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-          <script src="vendor/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
-          <script src="js/tables-datatable.js"></script>
+    <!-- Data Tables-->
+    <script src="vendor/datatables.net/js/jquery.dataTables.js"></script>
+    <script src="vendor/datatables.net-bs4/js/dataTables.bootstrap4.js"></script>
+    <script src="vendor/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="vendor/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
+    <script src="js/tables-datatable.js"></script>
         </body>
         </html>

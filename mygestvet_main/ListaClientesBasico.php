@@ -299,7 +299,7 @@ if ($result->num_rows > 0) {
                       
                           <thead>
                               <tr>
-                                  <th>Numero de Cliente</th>
+                                  <th>Número de Cliente</th>
                                   <th>Nome</th>
                                   <th>Email</th>
                                   <th>Animais Associados</th>
@@ -335,7 +335,7 @@ if ($result->num_rows > 0) {
                                               $descricao_localidade=$row['Descricao'];
                                           }}
 
-/*
+
                        $exame6 = "SELECT cliente.Numero_Cliente, count(*) as quantidade from animal, cliente where cliente.Numero_Cliente=animal.Numero_Cliente and cliente.Numero_Cliente=$Numero_Cliente  GROUP BY cliente.Numero_Cliente";
                         
                         $result113 = $conn->query($exame6);
@@ -345,7 +345,7 @@ if ($result->num_rows > 0) {
                               $quantidade=$row1['quantidade'];
                           }
                         }
-*/
+
 
                                           
                                          
@@ -360,8 +360,8 @@ if ($result->num_rows > 0) {
                                   <td>
                                       <?php echo $Email; ?>
                                   </td>
-                                   <td>
-                                      
+                                  <td>
+                                      <?php echo $quantidade; ?>
                                   </td>
 
                                    
