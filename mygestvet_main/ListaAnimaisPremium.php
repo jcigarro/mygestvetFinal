@@ -8,65 +8,54 @@ include("config.php");
     header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
     header('Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token');
 
-
 $email = $_SESSION['email'];
 $sql = "SELECT * from medico where Email = '$email';";
-
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
-// output data of each row
-while($row = $result->fetch_assoc()) {
-      $numero_medico=$row['Numero_Medico'];
-$nome = $row['Primeiro_Nome'];
-$apelidos=$row['Apelidos'];
-
+  // output data of each row
+  while($row = $result->fetch_assoc()) {
+    $numero_medico=$row['Numero_Medico'];
+    $nome = $row['Primeiro_Nome'];
+    $apelidos=$row['Apelidos'];
+  }
 }
-}
-
-
-
-
 $medico = mysqli_query($conn,"SELECT Numero_Medico FROM medico WHERE email = '$email';");
 if ($medico->num_rows > 0) {
-// output data of each row
-while($row = $medico->fetch_assoc()) {
-$numero = $row['Numero_Medico'];
-    
+  // output data of each row
+  while($row = $medico->fetch_assoc()) {
+    $numero = $row['Numero_Medico'];
+
     $sql2 = "SELECT Nome, Numero_Cliente from cliente WHERE Numero_Medico=$numero";
-$cliente1 = $conn->query($sql2);
+    $cliente1 = $conn->query($sql2);
+  }
 }
-}
-
-
 $sql1 = "SELECT animal.Nome, Numero_Animal from Animal, Medico, Cliente WHERE Medico.Numero_Medico=cliente.Numero_Medico AND animal.Numero_Animal=cliente.Numero_Animal AND medico.Numero_Medico=$numero";
 $Animal = $conn->query($sql1);
-
-
 $sql3="SELECT Descricao, Codigo_Especie from Especie";
 $especie = $conn->query($sql3);
 $dadosAnimal="SELECT * FROM Animal;";
 $animal1 = $conn->query($dadosAnimal);
 if ($animal1->num_rows > 0) {
-// output data of each row
-while($row = $animal1->fetch_assoc()) {
-$nomeAnimal = $row['Nome'];
-$Data_nascimento=$row['Data_Nascimento'];
-$nrcliente= $row['Numero_Animal'];
-$nrchip=$row['Numero_Chip'];
-$raca=$row['Raca'];
-$sexo=$row['Codigo_Sexo'];
-$alergias=$row['Alergias'];
-$especie1=$row['Codigo_Tipo_Animal'];
-}
+  // output data of each row
+  while($row = $animal1->fetch_assoc()) {
+    $nomeAnimal = $row['Nome'];
+    $Data_nascimento=$row['Data_Nascimento'];
+    $nrcliente= $row['Numero_Animal'];
+    $nrchip=$row['Numero_Chip'];
+    $raca=$row['Raca'];
+    $sexo=$row['Codigo_Sexo'];
+    $alergias=$row['Alergias'];
+    $especie1=$row['Codigo_Tipo_Animal'];
+  }
 }
 $localidade_query = "SELECT Codigo_Localidade,Descricao from localidade";
 $Localidade2 = $conn->query($localidade_query);
 $query2 = "SELECT linkimagem FROM utilizador WHERE utilizador.Numero_Medico=$numero";
 $result2 = $conn->query($query2);
 if ($result2->num_rows > 0) {
-while ($row1 = $result2->fetch_assoc()) {
-$foto_perfil4 = $row1['linkimagem'];
-}
+  while ($row1 = $result2->fetch_assoc()) {
+    $foto_perfil4 = $row1['linkimagem'];
+  }
 }
 ?>
 
@@ -169,7 +158,7 @@ $foto_perfil4 = $row1['linkimagem'];
               <div class="avatar"><img src="uploads/<?php echo $foto_perfil4;?>" width=120 height=120 alt="..." class="img-fluid rounded-circle"></div>
             <div class="title">
               <h1 class="h4"><?php  echo $nome. ' '.$apelidos ?> </h1>
-              <a href="PerfilMedicoBasico.php">
+              <a href="PerfilMedicoPremium.php">
               <p>Editar Perfil</p>
               </a>
             </div>
@@ -191,21 +180,21 @@ $foto_perfil4 = $row1['linkimagem'];
                     </li>
                      <li><a href="#chartsDropdown1" aria-expanded="false" data-toggle="collapse"> <i class="fas fa-user-md"></i>Serviços</a>
                       <ul id="chartsDropdown1" class="collapse list-unstyled ">
-                        <li><a href="RegistoExameBasico.php">Registar Exame Clínico</a></li>
+                        <li><a href="RegistoExamePremium.php">Registar Exame Clínico</a></li>
                         <li><a href="RegistoServicosPremium.php">Registar Serviço</a></li>
                         <li><a href="RegistoMaterialServico.php">Registar Material Utilizado</a></li>
-                        <li><a href="HistoricoServicosBasico.php">Histórico de Serviços</a></li>
+                        <li><a href="HistoricoServicosPremium.php">Histórico de Serviços</a></li>
                       </ul>
                     </li>
                     <li><a href="#chartsDropdown2" aria-expanded="false" data-toggle="collapse"> <i class="fas fa-syringe"></i>Vacinações</a>
                       <ul id="chartsDropdown2" class="collapse list-unstyled ">
-                        <li><a href="RegistoVacinacoesBasico.php">Registar Vacinação</a></li>
-                        <li><a href="ListaVacinacoesBasico.php">Histórico de Vacinações</a></li>
+                        <li><a href="RegistoVacinacoesPremium.php">Registar Vacinação</a></li>
+                        <li><a href="ListaVacinacoesPremium.php">Histórico de Vacinações</a></li>
                       </ul>
                     </li>
                     <li><a href="#chartsDropdown3" aria-expanded="false" data-toggle="collapse"> <i class="fas fa-file-invoice"></i>Documentos</a>
                       <ul id="chartsDropdown3" class="collapse list-unstyled ">
-                        <li><a href="HistoricoServicosBasico.php">Receitas</a></li>
+                        <li><a href="HistoricoServicosPremium.php">Receitas</a></li>
                         <li><a href="HistoricoReceitas.php">Histórico de Receitas</a></li>
                         <li><a href="">Faturas/Recibos</a></li>
                       </ul>
@@ -233,446 +222,224 @@ $foto_perfil4 = $row1['linkimagem'];
     </div>
      <section>
       
-      
-      <div class="container-fluid">
-        <div class="card">
-          <div class="card-header">
-            <h3 class="h4">Lista de Animais</h3>
-          </div>
-          <div class="card-body">
-            <div class="table-responsive">
-              <table id="datatable1" style="width: 100%;" class="table">
-                
-                <thead>
-                  <tr>
-                    
-                    <th>Nome do Animal</th>
-                    <th>Cliente Associado</th>
-                    <th></th>
-                    
-                  </tr>
-                </thead>
-                
-                <tbody>
-                  <?php
-                                
-                                $sql = "SELECT animal.Numero_Animal, animal.Nome, animal.Data_Nascimento, animal.Numero_Cliente, animal.Numero_Chip, animal.Raca, animal.Alergias, animal.Codigo_Sexo, animal.Codigo_Tipo_Animal, animal.Codigo_Porte from animal,cliente, medico where animal.Numero_Cliente=cliente.Numero_Cliente AND cliente.Numero_Medico=medico.Numero_Medico AND medico.Numero_Medico=$numero";
-                                        $result = $conn->query($sql);
-                                        if ($result->num_rows > 0) {
-                                          // output data of each row
-                                          while($row = $result->fetch_assoc()) {
-                                            $Numero_Animal=$row['Numero_Animal'];
-                                                                      $Nome=$row['Nome'];
-                                            $Data_Nascimento=$row['Data_Nascimento'];
-                                            $Numero_Cliente=$row['Numero_Cliente'];
-                                            $Numero_Chip=$row['Numero_Chip'];
-                                            $Raca=$row['Raca'];
-                                            $Alergias=$row['Alergias'];
-                                            $Codigo_Sexo=$row['Codigo_Sexo'];
-                                            $Codigo_Tipo_Animal=$row['Codigo_Tipo_Animal'];
-                                            $Codigo_Porte=$row['Codigo_Porte'];
 
-                                            $sql4 = "SELECT * from tipo_animal WHERE Codigo_Tipo_Animal=$Codigo_Tipo_Animal";
-                                            $result4 = $conn->query($sql4);
-                                            if ($result4->num_rows > 0) {
-                                              // output data of each row
-                                              while($row = $result4->fetch_assoc()) {
-                                                
-                                                $Descricao1=$row['Descricao'];
+            <div class="container-fluid">
+              <div class="card">
+                <div class="card-header">
+                  <h3 class="h4">Lista de Animais</h3>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table id="datatable1" style="width: 100%;" class="table">
 
-                                              }
-                                            }
+                      <thead>
+                        <tr>
 
-                                            $sql5 = "SELECT * from sexo WHERE Codigo_Sexo=$Codigo_Sexo";
-                                            $result5 = $conn->query($sql5);
-                                            if ($result5->num_rows > 0) {
-                                              // output data of each row
-                                              while($row = $result5->fetch_assoc()) {
-                                                
-                                                $Descricao2=$row['Descricao'];
+                          <th>Nome do Animal</th>
+                          <th>Nº de Identificação Nacional</th>
+                          <th>Cliente Associado</th>
+                          <th></th>
 
-                                              }
-                                            }
+                        </tr>
+                      </thead>
 
-                                            $sql6 = "SELECT * from porte WHERE Codigo_Porte=$Codigo_Porte";
-                                            $result6 = $conn->query($sql6);
-                                            if ($result6->num_rows > 0) {
-                                              // output data of each row
-                                              while($row = $result6->fetch_assoc()) {
-                                                
-                                                $Descricao3=$row['Descricao'];
+                      <tbody>
+                        <?php
 
-                                              }
-                                            }
-                                            
-                                            
-                                            
-                                            
-                                            $sql1 = "SELECT * from cliente WHERE Numero_Cliente=$Numero_Cliente";
-                                            $result1 = $conn->query($sql1);
-                                            if ($result1->num_rows > 0) {
-                                              // output data of each row
-                                              while($row = $result1->fetch_assoc()) {
-                                                
-                                                $Nome_Cliente=$row['Nome'];
+                        $sql = "SELECT animal.Numero_Animal, animal.Nome, animal.Data_Nascimento, animal.Numero_Cliente, animal.Numero_Chip, animal.Raca, animal.Alergias, animal.Codigo_Sexo, animal.Codigo_Tipo_Animal, animal.Codigo_Porte from animal,cliente, medico where animal.Numero_Cliente=cliente.Numero_Cliente AND cliente.Numero_Medico=medico.Numero_Medico AND medico.Numero_Medico=$numero";
+                        $result = $conn->query($sql);
+                        if ($result->num_rows > 0) {
+                          // output data of each row
+                          while($row = $result->fetch_assoc()) {
+                            $Numero_Animal=$row['Numero_Animal'];
+                            $Nome=$row['Nome'];
+                            $Data_Nascimento=$row['Data_Nascimento'];
+                            $Numero_Cliente=$row['Numero_Cliente'];
+                            $Numero_Chip=$row['Numero_Chip'];
+                            $Raca=$row['Raca'];
+                            $Alergias=$row['Alergias'];
+                            $Codigo_Sexo=$row['Codigo_Sexo'];
+                            $Codigo_Tipo_Animal=$row['Codigo_Tipo_Animal'];
+                            $Codigo_Porte=$row['Codigo_Porte'];
+                            $sql4 = "SELECT * from tipo_animal WHERE Codigo_Tipo_Animal=$Codigo_Tipo_Animal";
+                            $result4 = $conn->query($sql4);
+                            if ($result4->num_rows > 0) {
+                              // output data of each row
+                              while($row = $result4->fetch_assoc()) {
 
-                                                
-                                                
-                                                
-                                      
-                                      
-                  
-                  ?>
-                  <tr>
-                    <td>
-                      <?php echo $Nome; ?>
-                    </td>
-                    <td>
-                      <?php echo $Nome_Cliente; ?>
-                    </td>
-                    
-                    <td>
-                      <a href="#ver<?php echo $Numero_Animal;?>" data-toggle="modal">
-                        <button type='button' class='btn btn-primary '><i class="fas fa-eye"></i></button>
-                      </a>
+                                $Descricao1=$row['Descricao'];
+                              }
+                            }
+                            $sql5 = "SELECT * from sexo WHERE Codigo_Sexo=$Codigo_Sexo";
+                            $result5 = $conn->query($sql5);
+                            if ($result5->num_rows > 0) {
+                              // output data of each row
+                              while($row = $result5->fetch_assoc()) {
 
-                      <a href="#edit<?php echo $Numero_Animal;?>" data-toggle="modal">
-                        <button type='button' class='btn btn-secondary'><i class="fas fa-user-edit"></i></button>
-                      </a>
-                      
-                      
-                      
-                    </td>
-                    
-                <div  id="ver<?php echo $Numero_Animal; ?>"  id="visualizar"class="modal fade" tabindex="-1" role="dialog">
-              <div class="modal-dialog modal-lg" role="document">
-                  <div class="modal-content">
-                      <div class="modal-header">
-                          <h4 class="modal-title text-center">Dados do Evento</h4>
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                              <span aria-hidden="true">&times;</span>
-                          </button>
-                      </div>
-                      <div class="modal-body">
+                                $Descricao2=$row['Descricao'];
+                              }
+                            }
+                            $sql6 = "SELECT * from porte WHERE Codigo_Porte=$Codigo_Porte";
+                            $result6 = $conn->query($sql6);
+                            if ($result6->num_rows > 0) {
+                              // output data of each row
+                              while($row = $result6->fetch_assoc()) {
 
-                        <!--  Div dos dados do animal -->
-                          <div class="visualizar">
-                              <input type="hidden" name="edit_item_id" name="Numero_Animal" id="Numero_Animal" value="<?php echo $Numero_Animal; ?>">
-                                    
-                                    <div class="row">
-                                      <div class="col-sm-6 col-md-6">
-                                        <div class="form-group mb-4">
-                                          <label class=" form-control-label">Nome:</label>
-                                          <?php echo $Nome; ?>
-                                        </div>
+                                $Descricao3=$row['Descricao'];
+                              }
+                            }
+
+
+
+
+                            $sql1 = "SELECT * from cliente WHERE Numero_Cliente=$Numero_Cliente";
+                            $result1 = $conn->query($sql1);
+                            if ($result1->num_rows > 0) {
+                              // output data of each row
+                              while($row = $result1->fetch_assoc()) {
+
+                                $Nome_Cliente=$row['Nome'];
+                                ?>
+                                <tr>
+                                  <td>
+                                    <?php echo $Nome; ?>
+                                  </td>
+                                 
+                                  <td>
+                                    <?php echo $Numero_Chip; ?>
+                                  </td>
+                                   <td>
+                                    <?php echo $Nome_Cliente; ?>
+                                  </td>
+
+                                  <td align="right"  style="padding-right: .1rem;">
+
+                                    <form method='post'>
+                                      <input type="hidden" name="Numero_Animal" id="Numero_Animal" value="<?php echo $Numero_Animal;?>">
+                                      <button type='submit'name="Numero_Animal" id="Numero_Animal" value="<?php echo $Numero_Animal;?>" formaction="PerfilAnimalPremium.php" class='btn btn-primary '><i class="fas fa-eye"></i></button>
+                                    </form>
+                                  </td>
+                                  <td align="left"  style="padding-left: .1rem;">
+                                    <a href="#edit<?php echo $Numero_Animal;?>" data-toggle="modal">
+                                      <button type='button' class='btn btn-secondary'><i class="fas fa-user-edit"></i></button>
+                                    </a>
+
+
+                                  </td>
+                                </tr>
+
+
+
+                                <!--Edit Item Modal -->
+                                <div id="edit<?php echo $Numero_Animal; ?>"  tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade text-left"  role="dialog">
+                                    <form method="post">
+                                  <div class="modal-dialog ">
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <h4 id="exampleModalLabel" class="modal-title">Editar</h4>
+                                        <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
                                       </div>
-                                    </div>
+                                      <div class="modal-body">
+                                        <div  method="POST">
+                                          <input type="hidden" name="edit_item_id" name="Numero_Cliente" id="Numero_Cliente" value="<?php echo $Numero_Animal; ?>">
 
-                                    <div class="row">
-                                      <div class="col-sm-6 col-md-6">
-                                        <div class="form-group mb-4">
-                                          <label class=" form-control-label">Cliente Associado:</label>
-                                          <?php echo $Nome_Cliente; ?>
-                                        </div>
-                                      </div>
-                                    </div>
+                                          <div class="row">
+                                            <div class="col-sm-6 col-md-6">
+                                              <div class="form-group mb-4">
+                                                <label class=" form-control-label">Nome:</label>
+                                                <input type="text" class="form-control" id="Nome" name="Nome" value="<?php echo $Nome ?>" placeholder="Nome" required autofocus>
+                                              </div>
+                                            </div>
+                                          </div>
 
-                                   <div class="row">
-                                      <div class="col-sm-6 col-md-6">
-                                        <div class="form-group mb-4">
-                                          <label class=" form-control-label">Espécie:</label>
-                                          <?php echo $Descricao1; ?>
-                                        </div>
-                                      </div>
-                                    </div>
-
-                                    <div class="row">
-                                      <div class="col-sm-6 col-md-6">
-                                        <div class="form-group mb-4">
-                                          <label class=" form-control-label">Raça:</label>
-                                          <?php echo $Raca; ?>
-                                        </div>
-                                      </div>
-                                    </div>
-
-                                    <div class="row">
-                                      <div class="col-sm-6 col-md-6">
-                                        <div class="form-group mb-4">
-                                          <label class=" form-control-label">Número de Chip:</label>
-                                          <?php echo $Numero_Chip; ?>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    
-                                    <div class="row">
-                                      <div class="col-sm-6 col-md-6">
-                                        <div class="form-group mb-4">
-                                          <label class=" form-control-label">Data de Nascimento:</label>
-                                          <?php echo $Data_Nascimento; ?>
-                                        </div>
-                                      </div>
-                                    </div>
-
-                                    <div class="row">
-                                      <div class="col-sm-6 col-md-6">
-                                        <div class="form-group mb-4">
-                                          <label class=" form-control-label">Sexo:</label>
-                                          <?php echo $Descricao2; ?>
-                                        </div>
-                                      </div>
-                                    </div>
-
-                                    <div class="row">
-                                      <div class="col-sm-6 col-md-6">
-                                        <div class="form-group mb-4">
-                                          <label class=" form-control-label">Porte:</label>
-                                          <?php echo $Descricao3; ?>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    
-                                    
-                                    <div class="row">
-                                      <div class="col-sm-6 col-md-6">
-                                        <div class="form-group mb-4">
-                                          <label class=" form-control-label">Alergias/Doenças Crónicas:</label>
-                                          <?php
-                                               if($Alergias==''){
+                                          <div class="row">
+                                            <div class="col-sm-6 col-md-6">
+                                              <div class="form-group mb-4">
+                                                <label class=" form-control-label">Alergias:</label>
+                                                <input type="text" class="form-control" id="Alergias" name="Alergias" value="<?php if($Alergias==''){
                                                   echo ' Nao tem alergias ou doenças crónicas.';
-                                               }else{
-                                                  echo $Alergias;
+                                                }else{
+                                                  echo $Alergias; } ?>" >
+                                                </div>
+                                              </div>
+                                            </div>
 
-                                              }
-                                          ?>
+                                            <div class="row">
+                                              <div class="col-sm-6 col-md-6">
+                                                <div class="form-group mb-4">
+
+                                                  <label class=" form-control-label">Cliente Associado</label>
+                                                  <select name="Numero_Cliente" class="form-control mb-3">
+                                                    <?php
+                                                    $sql2 = "SELECT Nome, Numero_Cliente from cliente WHERE Numero_Medico=$numero";
+                                                    $cliente1 = $conn->query($sql2);
+
+
+                                                    while ($row1 = mysqli_fetch_array($cliente1)){?>
+
+
+                                                      <option value= "<?php  echo $row1[1]; ?>"> <?php  echo $row1[0]; ?></option>
+                                                    <?php }?>
+                                                  </select>
+
+
+                                                </div>
+                                              </div>
+                                            </div>
+
+
+
+                                          </div>
+                                          <div class="modal-footer">
+                                            <button type="submit" class="btn btn-primary" name="update_item"><span class="glyphicon glyphicon-edit"></span> Editar</button>
+                                            <button type="button" data-dismiss="modal" aria-label="Close" class="btn btn-secondary">
+                                              Cancelar</button>
+                                          </div>
                                         </div>
-                                      </div>
                                     </div>
                                   </div>
-                              <button class="btn btn-canc-vis btn-primary">Ver histórico do Animal</button>
-                              <a href="" id="apagar_evento" class="btn btn-secondary" role="button">Cancelar</a>
-                          </div>   
-                          <!-- div da tabela dos serviços -->
-                          <div class="form" style="display: none;">
-                              
-                                  <div class="form-group">
-                                      <div class="form-group col-md-12">
-                                          
-                                          <div class="table-responsive">
-           
+                                </form>
+                                </div>
+                                  <?php
+                                }
+                              }
+                            }
 
-                                            Aqui fica o histórico! 
 
-                                            
-                                      </div>
-                                  </div>
-                  
-                                
-                          </div>
-                      </div>
+
+                            //Update Items
+                            if(isset($_POST['update_item'])){
+                              $edit_item_id = $_POST['edit_item_id'];
+                              $Nome_update = $_POST['Nome'];
+                              $Alergias_Update = $_POST['Alergias'];
+
+                              $Numero_Cliente_Update=$_POST['Numero_Cliente'];
+
+
+
+                              $sql = "UPDATE animal SET Nome='$Nome_update', Numero_Cliente=$Numero_Cliente_Update, Alergias='$Alergias_Update' WHERE Numero_Animal=$edit_item_id ";
+                           
+                              if ($conn->query($sql) === TRUE) {
+                                echo '<script>window.location.href="ListaAnimaisPremium.php"</script>';
+                              } else {
+                                echo "Error updating record: " . $conn->error;
+                              }
+                            }
+
+
+
+                          }
+
+                          ?>
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
+                </div>
               </div>
-          </div>
-                   
-                    
-                    <!--Edit Item Modal -->
-                    <div id="edit<?php echo $Numero_Animal; ?>"  tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade text-left"  role="dialog">
-                      <form method="post"  role="form">
-                        <div class="modal-dialog ">
-                          <!-- Modal content-->
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <h4 id="exampleModalLabel" class="modal-title">Editar</h4>
-                              <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
-                            </div>
-                            <div class="modal-body">
-                              <div  method="POST">
-                                <input type="hidden" name="edit_item_id" name="Numero_Cliente" id="Numero_Cliente" value="<?php echo $Numero_Animal; ?>">
-                                
-                                <div class="row">
-                                  <div class="col-sm-6 col-md-6">
-                                    <div class="form-group mb-4">
-                                      <label class=" form-control-label">Nome:</label>
-                                      <input type="text" class="form-control" id="Nome" name="Nome" value="<?php echo $Nome ?>" placeholder="Nome" required autofocus>
-                                    </div>
-                                  </div>
-                                </div>
-                                
-                                
-                                
-                                
-                                
-                                
-                                <div class="row">
-                                  <div class="col-sm-6 col-md-6">
-                                    <div class="form-group mb-4">
-                                      <label class=" form-control-label">Alergias:</label>
-                                      <input type="text" class="form-control" id="Alergias" name="Alergias" value="<?php if($Alergias==''){
-                                        echo ' Nao tem alergias ou doenças crónicas.';
-                                                                    }else{
-                                      echo $Alergias; } ?>" >
-                                    </div>
-                                  </div>
-                                </div>
-                                
-                                <div class="row">
-                                  <div class="col-sm-6 col-md-6">
-                                    <div class="form-group mb-4">
-                                      
-                                      <label class=" form-control-label">Cliente Associado</label>
-                                      <select name="Numero_Cliente" class="form-control mb-3">
-                                        <?php
-                                        $sql2 = "SELECT Nome, Numero_Cliente from cliente WHERE Numero_Medico=$numero";
-                                        $cliente1 = $conn->query($sql2);
-                                        
-                                        
-                                        while ($row1 = mysqli_fetch_array($cliente1)){?>
-                                        
-                                        
-                                        <option value= "<?php  echo $row1[1]; ?>"> <?php  echo $row1[0]; ?></option>
-                                        <?php }?>
-                                      </select>
-                                      
-                                      
-                                    </div>
-                                  </div>
-                                </div>
-                                
-                              </div>
-                              
-                            </div>
-                            <div class="modal-footer">
-                              <button type="submit" class="btn btn-primary" name="update_item"><span class="glyphicon glyphicon-edit"></span> Editar</button>
-                              <button type="button" data-dismiss="modal" aria-label="Close" class="btn btn-secondary">
-                              Cancelar</button>
-                            </div>
-                          </div>
-                        </div>
-                      </form>
-                    </div>
-                    
-                    <!--Registar Serviço Item Modal -->
-                    <div id="regist<?php echo $Numero_Animal; ?>"  tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade text-left"  role="dialog">
-                      <form method="post"  role="form">
-                        <div class="modal-dialog ">
-                          <!-- Modal content-->
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <h4 id="exampleModalLabel" class="modal-title">Registar Serviço</h4>
-                              <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
-                            </div>
-                            <div class="modal-body">
-                              
-                              
-                            </div>
-                            <div class="modal-footer">
-                              <button type="submit" class="btn btn-primary" name="update_item"><span class="glyphicon glyphicon-edit"></span> Editar</button>
-                              <button type="button" data-dismiss="modal" aria-label="Close" class="btn btn-secondary">
-                              Cancelar</button>
-                            </div>
-                          </div>
-                        </div>
-                      </form>
-                    </div>
-                    
-                    
-                    
-                    
-                  <?php
-                  }
-                                        }
-                                    }
-                  
-                                  
-                                  
-                                  
-                                      if(isset($_POST['update_item'])){
-                  $edit_item_id = $_POST['edit_item_id'];
-                  $Nome_update = $_POST['Nome'];
-                  $Alergias_Update = $_POST['Alergias'];
-                  
-                  $Numero_Cliente_Update=$_POST['Numero_Cliente'];
-                  
-                  
-                  
-                  $sql = "UPDATE animal SET            Nome='$Nome_update',
-                                        Numero_Cliente=$Numero_Cliente_Update,
-                  
-                  
-                  Alergias='$Alergias_Update'
-                  
-                  
-                  WHERE Numero_Animal=$edit_item_id ";
-                  if ($conn->query($sql) === TRUE) {
-                  echo '<script>window.location.href="ListaAnimaisPremium.php"</script>';
-                  } else {
-                  echo "Error updating record: " . $conn->error;
-                  }
-                  }
-                  //Update Items
-                  if(isset($_POST['update_item'])){
-                  $edit_item_id = $_POST['edit_item_id'];
-                  $Nome_update = $_POST['Nome'];
-                  $Alergias_Update = $_POST['Alergias'];
-                  
-                  $Numero_Cliente_Update=$_POST['Numero_Cliente'];
-                  
-                  
-                  
-                  $sql = "UPDATE animal SET            Nome='$Nome_update',
-                  Numero_Cliente=$Numero_Cliente_Update,
-                  
-                  
-                  Alergias='$Alergias_Update'
-                  
-                  
-                  WHERE Numero_Animal=$edit_item_id ";
-                  if ($conn->query($sql) === TRUE) {
-                  echo '<script>window.location.href="ListaAnimaisPremium.php"</script>';
-                  } else {
-                  echo "Error updating record: " . $conn->error;
-                  }
-                  }
-                  if(isset($_POST['ver'])){
-                  // sql to delete a record
-                  $delete_id = $_POST['delete_id'];
-                  $sql = "DELETE FROM animal WHERE Numero_Animal=$Numero_Animal ";
-                  if ($conn->query($sql) === TRUE) {
-                  $sql = "DELETE FROM animal WHERE Numero_Animal=$Numero_Animal ";
-                  if ($conn->query($sql) === TRUE) {
-                  $sql = "DELETE FROM animal WHERE Numero_Animal=$Numero_Animal";
-                  echo '<script>window.location.href="ListaAnimaisPremium.php"</script>';
-                  } else {
-                  echo "Error deleting record: " . $conn->error;
-                  }
-                  } else {
-                  echo "Error deleting record: " . $conn->error;
-                  }
-                  }
-                  if(isset($_POST['delete'])){
-                  // sql to delete a record
-                  $delete_id = $_POST['delete_id'];
-                  $sql = "DELETE FROM animal WHERE Numero_Animal=$Numero_Animal ";
-                  if ($conn->query($sql) === TRUE) {
-                  $sql = "DELETE FROM animal WHERE Numero_Animal=$Numero_Animal ";
-                  if ($conn->query($sql) === TRUE) {
-                  $sql = "DELETE FROM animal WHERE Numero_Animal=$Numero_Animal";
-                  echo '<script>window.location.href="ListaAnimaisPremium.php"</script>';
-                  } else {
-                  echo "Error deleting record: " . $conn->error;
-                  }
-                  } else {
-                  echo "Error deleting record: " . $conn->error;
-                  }
-                  }
-                  }
-                  
-                  ?>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
+
+
     </section>
     <!-- Page Footer-->
     <footer class="main-footer">

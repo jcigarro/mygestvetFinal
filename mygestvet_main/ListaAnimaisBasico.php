@@ -242,7 +242,7 @@ if ($result2->num_rows > 0) {
                         <tr>
 
                           <th>Nome do Animal</th>
-                          <th>Nº de Chip</th>
+                          <th>Nº de Identificação Nacional</th>
                           <th>Cliente Associado</th>
                           <th></th>
 
