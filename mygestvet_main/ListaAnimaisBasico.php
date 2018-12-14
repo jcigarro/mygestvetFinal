@@ -330,6 +330,7 @@ if ($result2->num_rows > 0) {
                                       <button type='button' class='btn btn-secondary'><i class="fas fa-user-edit"></i></button>
                                     </a>
 
+
                                   </td>
                                 </tr>
 
@@ -461,7 +462,8 @@ if ($result2->num_rows > 0) {
               </div>
             </footer>
           </div>
- 
+           </div>
+
 
 
 
@@ -499,5 +501,5 @@ if ($result2->num_rows > 0) {
     <script src="vendor/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
     <script src="vendor/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
     <script src="js/tables-datatable.js"></script>
-        </body>
-        </html>
+</body>
+</html>

@@ -256,15 +256,11 @@ $foto_perfil2 = $row1['linkimagem'];
                       </select>
                     </div>
 				 
-
-                 
-                  
-                  
-                  <div class="form-group">
+                  <div class="form-group col-6">
                     <label class="form-control-label">Código Postal</label>
-                   <input id="codigo_postal" type="text" name="codigo_postal"  maxlength="8" patern="[0-9]{4}[\-]?[0-9]{3}" minlength="8" maxlength="8"   required data-msg="Insira o Código-Postal (xxxx-xxx)" class="input-material">
+                    <input id="codigo_postal" type="text" name="codigo_postal"  maxlength="8" patern="[0-9]{4}[\-]?[0-9]{3}" minlength="8" maxlength="8"   required data-msg="Insira o Código-Postal (xxxx-xxx)" class="input-material">
                   </div><br>
-                   </div>
+                </div>
                   
                   <div class="form-group">
                     <input type="submit" formaction="GeraRegistoClienteBasico.php" value="Registar" class="btn btn-primary">
