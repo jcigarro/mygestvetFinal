@@ -31,7 +31,7 @@ $foto_perfil4 = $row1['linkimagem'];
 }
 
 
-$localidade_query = "SELECT Codigo_Localidade,Descricao from localidade";
+$localidade_query = "SELECT Codigo_Localidade,Descricao from localidade ORDER BY Descricao ASC";
 $localidade = $conn->query($localidade_query);
 $query2 = "SELECT linkimagem FROM utilizador WHERE utilizador.Numero_Medico=$Numero_Medico";
 $result2 = $conn->query($query2);

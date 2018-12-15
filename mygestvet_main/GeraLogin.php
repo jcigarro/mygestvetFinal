@@ -6,7 +6,7 @@ if (isset($_POST['entrar'])){
 
             $hostname='localhost';
             $user = 'root';
-            $password = '';
+            $password = 'root';
             $mysql_database = 'atual';
             $conn = mysqli_connect($hostname, $user, $password,$mysql_database);
 

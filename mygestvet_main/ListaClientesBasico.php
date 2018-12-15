@@ -344,6 +344,8 @@ if ($result->num_rows > 0) {
                           while($row1 = $result113->fetch_assoc()) {
                               $quantidade=$row1['quantidade'];
                           }
+                        } else {
+                          $quantidade=0;
                         }
 
 
