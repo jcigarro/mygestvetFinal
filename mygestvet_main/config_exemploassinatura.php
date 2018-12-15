@@ -1,7 +1,7 @@
 <?php
-$conn = mysqli_connect("localhost","root","","atual");
+$conn = mysqli_connect("localhost","root","root","atual");
 
-if(!mysqli_connect("localhost","root",""))
+if(!mysqli_connect("localhost","root","root"))
 {
 	die('oops connection problem ! --> '.mysqli_error());
 }
