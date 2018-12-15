@@ -21,15 +21,15 @@ if ($conn->query($sql) === TRUE) {
 $sql2 = "INSERT INTO relacao_servico_material values($cod_servico, $last_id)";
 
 if ($conn->query($sql2) === TRUE) {
-    echo "<div class='alert alert-success' role='alert'>
+    echo "<div class='col-md-12 alert alert-success' role='alert'>
  		 Registo de material efetuado com sucesso!
 		</div>";
 } else {
 	@session_start();
   
 
-	echo "<div class='alert alert-danger' role='alert'>
- 		  Material não registado! Por favor preencha todos os campos!
+	echo "<div class='col-md-12 alert alert-danger' role='alert'>
+ 		  Material não registado! Por favor selecione um animal/serviço!
 		</div>";
 
 }
@@ -37,7 +37,7 @@ if ($conn->query($sql2) === TRUE) {
 	
   
 
-	echo "<div class='alert alert-danger' role='alert'>
+	echo "<div class='col-md-12 alert alert-danger' role='alert'>
  		  Material não registado! Por favor preencha todos os campos!
 		</div>";
 

@@ -234,30 +234,30 @@ $materiais= $conn->query($sql12);
 					  <div class="row">
                         <div class="form-group col-sm-4">
                           <label class="form-control-label">Frequência Cardíaca:</label>
-                          <input type="double" placeholder="FC" class="form-control" required data-msg="Insira a frequência cardíaca!" class="input-material" class="form-control" name="freqCard" id="freqCard" >
+                          <input type="number" placeholder="FC" class="form-control" required data-msg="Insira a frequência cardíaca!" class="input-material" class="form-control" name="freqCard" id="freqCard" >
                         </div>
                          <div class="form-group col-sm-4 ">
                           <label class="form-control-label">Frequência Respiratória:</label>
-                          <input type="double" placeholder="FR" class="form-control" required data-msg="Insira a frequência respiratória!" class="input-material" class="form-control" name="Fr" id="Fr" >
+                          <input type="number" placeholder="FR" class="form-control" required data-msg="Insira a frequência respiratória!" class="input-material" class="form-control" name="Fr" id="Fr" >
                         </div>
 						 <div class="form-group col-sm-4">
                           <label class="form-control-label">Temperatura Corporal:</label>
-                          <input type="double" placeholder="TC" class="form-control" required data-msg="Insira a temperatura corporal!" class="input-material" class="form-control" name="tempCorp" id="tempCorp">
+                          <input type="number" placeholder="TC" class="form-control" required data-msg="Insira a temperatura corporal!" class="input-material" class="form-control" name="tempCorp" id="tempCorp">
                         </div>
                         
 						</div>
 						<div class="row" >
 						 <div class="form-group col-sm-4">
                           <label class="form-control-label">TRC:</label>
-                          <input type="double" placeholder="TRC" class="form-control" required data-msg="Insira a TRC!" class="input-material" class="form-control" name="TRC" id="TRC">
+                          <input type="number" placeholder="TRC" class="form-control" required data-msg="Insira a TRC!" class="input-material" class="form-control" name="TRC" id="TRC">
                         </div>
                         <div class="form-group col-sm-4">
                           <label class="form-control-label">TRPC:</label>
-                          <input type="double" placeholder="TRPC" class="form-control" required data-msg="Insira a TRPC!" class="input-material" class="form-control" name="trpc" id="trpc">
+                          <input type="number" placeholder="TRPC" class="form-control" required data-msg="Insira a TRPC!" class="input-material" class="form-control" name="trpc" id="trpc">
                         </div>
 						<div class="form-group col-sm-4">
                           <label class="form-control-label">Pulso:</label>
-                          <input type="double" placeholder="Pulso" class="form-control" required data-msg="Insira o pulso!" class="input-material" class="form-control" name="pulso" id="pulso">
+                          <input type="number" placeholder="Pulso" class="form-control" required data-msg="Insira o pulso!" class="input-material" class="form-control" name="pulso" id="pulso">
                         </div>
 						
 						</div>

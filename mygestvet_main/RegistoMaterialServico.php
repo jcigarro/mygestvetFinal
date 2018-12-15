@@ -202,6 +202,7 @@ $materiais= $conn->query($sql12);
                           <input type="text" onkeydown="limpaCampo()" placeholder="Procure pelo nome do Animal"  required data-msg="Selecione o Animal!" onkeyup="procuraRegisto(this.value)" class="form-control" id="valorReg" name="valorReg"  required >
                        
                       </div>
+					  <div class="col-lg-12">
 					  <?php
                       @session_start();
                       if(isset($_SESSION['erromsg'])){
@@ -209,6 +210,7 @@ $materiais= $conn->query($sql12);
                       unset($_SESSION['erromsg']);
                       }
                       ?>
+					  </div>
                      <p><span id="txtHint"></span></p>
                     </div>
                   </div>
@@ -226,7 +228,7 @@ $materiais= $conn->query($sql12);
                           <h4 style="font-size: 14px; color: #5d998c">Número de Serviço Selecionado:</h4>
                           <p id="numeroExame" name="numeroExame"></p>
                           <hr>
-						  
+						   <form id="regForm" method="POST"  class="form-validate" ">
                           <p id="valorReg1" name="valorReg1"></p>
                           <input id="numeroExame2" name="numeroExame2" type="hidden">
                         </div>
@@ -261,7 +263,7 @@ $materiais= $conn->query($sql12);
                           <button type="button" class="btn btn-primary" onclick="regMaterial()">Registar</button>
 				</div>
                </form>
-           
+            </form>
                  
              
             </div>

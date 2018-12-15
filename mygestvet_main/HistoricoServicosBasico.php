@@ -407,7 +407,7 @@ $foto_perfil4 = $row1['linkimagem'];
                               <input type="hidden" name="Localidade_Cliente" id="Localidade_Cliente" value="<?php echo $descricao_localidade; ?>">
                               <input type="hidden" name="Morada_Cliente" id="Morada_Cliente" value="<?php echo $Morada_Cliente; ?>">
                               <div class="row">
-                                <div class="col-sm-6 col-md-6">
+                                <div class="col-sm-12 col-md-12">
                                   <div class="form-group mb-4">
                                     <label class=" form-control-label"><b>Nome do Cliente:</b></label>
                                     <?php echo $Nome_Cliente; ?>
@@ -416,7 +416,7 @@ $foto_perfil4 = $row1['linkimagem'];
                               </div>
                               
                               <div class="row">
-                                <div class="col-sm-6 col-md-6">
+                                <div class="col-sm-12 col-md-12">
                                   <div class="form-group mb-4">
                                     <label class=" form-control-label"><b>Nome do Animal:</b></label>
                                     <?php echo $Nome_Animal; ?>
@@ -424,7 +424,7 @@ $foto_perfil4 = $row1['linkimagem'];
                                 </div>
                               </div>
                               <div class="row">
-                                <div class="col-sm-6 col-md-6">
+                                <div class="col-sm-12 col-md-12">
                                   <div class="form-group mb-4">
                                     <label class=" form-control-label"><b>Tratamento:</b></label>
                                     <?php echo $Tratamento; ?>
@@ -432,7 +432,7 @@ $foto_perfil4 = $row1['linkimagem'];
                                 </div>
                               </div>
                               <div class="row">
-                                <div class="col-sm-6 col-md-6">
+                                <div class="col-sm-12 col-md-12">
                                   <div class="form-group mb-4">
                                     <label class=" form-control-label"><b>Anamnese:</b></label>
                                     <?php echo $Anamenese; ?>
@@ -441,7 +441,76 @@ $foto_perfil4 = $row1['linkimagem'];
                               </div>
                               
                               <div class="row">
-                                <div class="col-sm-6 col-md-6">
+                                <div class="col-sm-12 col-md-12">
+                                  <div class="form-group mb-12">
+                                    <label class=" form-control-label"></label>
+                                    <div class="modal-header">
+                                      <h4 id="modalver" class="modal-title">Exame Clínico</h4>
+                                    </div>
+                                   
+                                    <div class="row">
+                                      <div class="col-sm-5 col-md-5">
+                                        <div class="form-group mb-4">
+                                          <label class=" form-control-label"><b>FC:</b></label>
+                                          <?php echo $Fc; ?>
+                                        </div>
+                                      </div>
+                                    
+                                     <div class="col-sm-5 col-md-5">
+                                        <div class="form-group mb-4">
+                                          <label class=" form-control-label"><b>FR:</b></label>
+                                          <?php echo $Fr; ?>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="row">
+                                      <div class="col-sm-5 col-md-5">
+                                        <div class="form-group mb-4">
+                                          <label class=" form-control-label"><b>TRC:</b></label>
+                                          <?php echo $TRC; ?>
+                                        </div>
+                                      </div>
+                                   
+                                      <div class="col-sm-5 col-md-5">
+                                        <div class="form-group mb-4">
+                                          <label class=" form-control-label"><b>TRPC:</b></label>
+                                          <?php echo $TRPC; ?>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="row">
+                                      <div class="col-sm-12 col-md-12">
+                                        <div class="form-group mb-4">
+                                          <label class=" form-control-label"><b>Mucosas:</b></label>
+                                          <?php echo $Mucosas; ?>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="row">
+                                      <div class="col-sm-12 col-md-12">
+                                        <div class="form-group mb-4">
+                                          <label class=" form-control-label"><b>Temperatura Corporal:</b></label>
+                                          <?php echo $Temperatura_Corporal; ?>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="row">
+                                     <div class="col-sm-12 col-md-12">
+                                        <div class="form-group mb-4">
+                                          <label class=" form-control-label"><b>Pulso:</b></label>
+                                          <?php echo $Pulso; ?>
+                                        </div>
+                                      </div>
+                                    </div>
+                                   
+                                    
+                                    
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+							  <div class="row">
+                                <div class="col-sm-12 col-md-12">
                                   <div class="form-group mb-12">
                                     <label class=" form-control-label"></label>
                                     <div class="modal-header">
