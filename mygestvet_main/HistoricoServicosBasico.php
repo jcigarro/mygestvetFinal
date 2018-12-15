@@ -266,6 +266,14 @@ $foto_perfil4 = $row1['linkimagem'];
         <div class="card-header">
           <h3 class="h4">Histórico de Serviços</h3>
         </div>
+		 <?php
+                      @session_start();
+                      if(isset($_SESSION['erromsg'])){
+                      echo $_SESSION['erromsg'];
+                      unset($_SESSION['erromsg']);
+                      }
+                      ?>
+                      
         <div class="card-body">
           <div class="table-responsive">
             <table id="datatable1" style="width: 100%;" class="table">
@@ -290,7 +298,7 @@ $foto_perfil4 = $row1['linkimagem'];
               <tbody>
                 <?php
               
-                $servico = "SELECT servico.Tratamento,servico.Data, servico.Codigo_Servico,cliente.Nome, exame_clinico.Numero_Animal, servico.Anamenese, servico.Historia_Clinica from servico, exame_clinico,cliente,animal,medico WHERE servico.Codigo_Exame_Clinico=exame_clinico.Codigo_Exame_Clinico and exame_clinico.Numero_Animal=animal.Numero_Animal and animal.Numero_Cliente=cliente.Numero_Cliente and cliente.Numero_Medico=medico.Numero_Medico AND medico.Email='$email' group by servico.Codigo_Servico DESC";
+                $servico = "SELECT servico.Historia_Clinica,servico.Diagnostico,servico.Tratamento,servico.Data, servico.Codigo_Servico,cliente.Nome, exame_clinico.Numero_Animal, servico.Anamenese, servico.Historia_Clinica from servico, exame_clinico,cliente,animal,medico WHERE servico.Codigo_Exame_Clinico=exame_clinico.Codigo_Exame_Clinico and exame_clinico.Numero_Animal=animal.Numero_Animal and animal.Numero_Cliente=cliente.Numero_Cliente and cliente.Numero_Medico=medico.Numero_Medico AND medico.Email='$email' group by servico.Codigo_Servico DESC";
 
 
                 
@@ -303,7 +311,9 @@ $foto_perfil4 = $row1['linkimagem'];
                 $Data=$row['Data'];
                 $Codigo_Servico=$row['Codigo_Servico'];
                 $Numero_Animal=$row['Numero_Animal'];
+				$Historia_Clinica=$row['Historia_Clinica'];
                 $Anamenese=$row['Anamenese'];
+				 $Diagnostico=$row['Diagnostico'];
                 $animal = "SELECT * FROM animal where Numero_Animal=$Numero_Animal";
                 $result10 = $conn->query($animal);
                 if ($result10->num_rows > 0) {
@@ -312,7 +322,7 @@ $foto_perfil4 = $row1['linkimagem'];
                     $Nome_Animal=$row['Nome'];
                   }
                 }
-                $exame = "SELECT exame_clinico.Fc, exame_clinico.Fr, exame_clinico.TRC, exame_clinico.TRPC, exame_clinico.Numero_Animal, exame_clinico.Mucosas,exame_clinico.Temperatura_Corporal,exame_clinico.Pulso FROM exame_clinico,servico WHERE exame_clinico.Codigo_Exame_Clinico=servico.Codigo_Exame_Clinico AND Codigo_Servico=$Codigo_Servico";
+                $exame = "SELECT exame_clinico.Fc,exame_clinico.Codigo_Exame_Clinico, exame_clinico.Fr, exame_clinico.TRC, exame_clinico.TRPC, exame_clinico.Numero_Animal, exame_clinico.Mucosas,exame_clinico.Temperatura_Corporal,exame_clinico.Pulso FROM exame_clinico,servico WHERE exame_clinico.Codigo_Exame_Clinico=servico.Codigo_Exame_Clinico AND Codigo_Servico=$Codigo_Servico";
                 
                 $result11 = $conn->query($exame);
                 if ($result11->num_rows > 0) {
@@ -325,7 +335,7 @@ $foto_perfil4 = $row1['linkimagem'];
                     $Mucosas=$row['Mucosas'];
                     $Temperatura_Corporal=$row['Temperatura_Corporal'];
                     $Pulso=$row['Pulso'];
-
+					$Exame_Clinico=$row['Codigo_Exame_Clinico'];
                     $Numero_Animal=$row['Numero_Animal'];
                      $exame6 = "SELECT  * FROM animal WHERE Numero_Animal=$Numero_Animal";
                       
@@ -396,9 +406,10 @@ $foto_perfil4 = $row1['linkimagem'];
                         <!-- Modal content-->
                         <div class="modal-content">
                           <div class="modal-header">
-                            <h4 id="modalver" class="modal-title">Serviço Número : <?php echo  $Codigo_Servico; ?></h4>
+                            <h4 id="modalver" style=" color: #5d998c" class="modal-title"> Serviço nº<?php echo  $Codigo_Servico; ?></h4>
                             <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
                           </div>
+						 
                           <div class="modal-body">
                             <div  method="POST">
                               <input type="hidden" name="edit_item_id" name="Codigo_Servico" id="Codigo_Servico" value="<?php echo $Codigo_Servico; ?>">
@@ -423,6 +434,30 @@ $foto_perfil4 = $row1['linkimagem'];
                                   </div>
                                 </div>
                               </div>
+							  <div class="row">
+                                <div class="col-sm-12 col-md-12">
+                                  <div class="form-group mb-4">
+                                    <label class=" form-control-label"><b>História Clinica:</b></label>
+                                    <?php echo $Historia_Clinica; ?>
+                                  </div>
+                                </div>
+                              </div>
+							   <div class="row">
+                                <div class="col-sm-12 col-md-12">
+                                  <div class="form-group mb-4">
+                                    <label class=" form-control-label"><b>Anamnese:</b></label>
+                                    <?php echo $Anamenese; ?>
+                                  </div>
+                                </div>
+                              </div>
+							   <div class="row">
+                                <div class="col-sm-12 col-md-12">
+                                  <div class="form-group mb-4">
+                                    <label class=" form-control-label"><b>Diagnóstico:</b></label>
+                                    <?php echo $Diagnostico; ?>
+                                  </div>
+                                </div>
+                              </div>
                               <div class="row">
                                 <div class="col-sm-12 col-md-12">
                                   <div class="form-group mb-4">
@@ -431,32 +466,26 @@ $foto_perfil4 = $row1['linkimagem'];
                                   </div>
                                 </div>
                               </div>
-                              <div class="row">
-                                <div class="col-sm-12 col-md-12">
-                                  <div class="form-group mb-4">
-                                    <label class=" form-control-label"><b>Anamnese:</b></label>
-                                    <?php echo $Anamenese; ?>
-                                  </div>
-                                </div>
-                              </div>
+                             
                               
                               <div class="row">
                                 <div class="col-sm-12 col-md-12">
                                   <div class="form-group mb-12">
-                                    <label class=" form-control-label"></label>
+                                    
                                     <div class="modal-header">
-                                      <h4 id="modalver" class="modal-title">Exame Clínico</h4>
+									
+                                      <h4 class="modal-title" style=" color: #5d998c">Exame Clínico</h4>
                                     </div>
-                                   
+                                   <br>
                                     <div class="row">
-                                      <div class="col-sm-5 col-md-5">
+                                      <div class="col-sm-6 col-md-6">
                                         <div class="form-group mb-4">
                                           <label class=" form-control-label"><b>FC:</b></label>
                                           <?php echo $Fc; ?>
                                         </div>
                                       </div>
                                     
-                                     <div class="col-sm-5 col-md-5">
+                                      <div class="col-sm-6 col-md-6">
                                         <div class="form-group mb-4">
                                           <label class=" form-control-label"><b>FR:</b></label>
                                           <?php echo $Fr; ?>
@@ -464,17 +493,32 @@ $foto_perfil4 = $row1['linkimagem'];
                                       </div>
                                     </div>
                                     <div class="row">
-                                      <div class="col-sm-5 col-md-5">
+                                       <div class="col-sm-6 col-md-6">
                                         <div class="form-group mb-4">
                                           <label class=" form-control-label"><b>TRC:</b></label>
                                           <?php echo $TRC; ?>
                                         </div>
                                       </div>
                                    
-                                      <div class="col-sm-5 col-md-5">
+                                       <div class="col-sm-6 col-md-6">
                                         <div class="form-group mb-4">
                                           <label class=" form-control-label"><b>TRPC:</b></label>
                                           <?php echo $TRPC; ?>
+                                        </div>
+                                      </div>
+                                    </div>
+									<div class="row">
+                                      <div class="col-sm-6 col-md-6">
+                                        <div class="form-group mb-4">
+                                          <label class=" form-control-label"><b>Temperatura Corporal:</b></label>
+                                          <?php echo $Temperatura_Corporal; ?>
+                                        </div>
+                                      </div>
+                                    
+                                     <div class="col-sm-6 col-md-6">
+                                        <div class="form-group mb-4">
+                                          <label class=" form-control-label"><b>Pulso:</b></label>
+                                          <?php echo $Pulso; ?>
                                         </div>
                                       </div>
                                     </div>
@@ -486,102 +530,90 @@ $foto_perfil4 = $row1['linkimagem'];
                                         </div>
                                       </div>
                                     </div>
-                                    <div class="row">
-                                      <div class="col-sm-12 col-md-12">
-                                        <div class="form-group mb-4">
-                                          <label class=" form-control-label"><b>Temperatura Corporal:</b></label>
-                                          <?php echo $Temperatura_Corporal; ?>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div class="row">
-                                     <div class="col-sm-12 col-md-12">
-                                        <div class="form-group mb-4">
-                                          <label class=" form-control-label"><b>Pulso:</b></label>
-                                          <?php echo $Pulso; ?>
-                                        </div>
-                                      </div>
-                                    </div>
+                                    
                                    
                                     
                                     
                                   </div>
                                 </div>
                               </div>
-                            </div>
+                          
 							  <div class="row">
+							   </div>
                                 <div class="col-sm-12 col-md-12">
                                   <div class="form-group mb-12">
-                                    <label class=" form-control-label"></label>
+                                   
                                     <div class="modal-header">
-                                      <h4 id="modalver" class="modal-title">Exame Clínico</h4>
+                                      <h4 id="modalver" style=" color: #5d998c" class="modal-title">Materiais Associados</h4>
                                     </div>
-                                   
+									<br>
+                                   <?php $material = "select * from relacao_servico_material, material, tipo_material where relacao_servico_material.Codigo_Material=material.Codigo_Material and material.Codigo_Tipo_Material=tipo_material.Codigo_Tipo_Material and relacao_servico_material.Codigo_Servico=$Codigo_Servico";
+                      
+                      $material = $conn->query($material);
+                      if ($material->num_rows > 0) {
+                        // output data of each row
+                        while($row12 = $material->fetch_assoc()) {
+                          $Preco=$row12['Preco'];
+						  $Descricao1=$row12['Descricao'];
+                          $Quantidade=$row12['Quantidade'];
+							$Codigo_Tipo_Material=$row12['Codigo_Tipo_Material'];
+							
+						
+							
+					  
+							?>
+						 <br>
                                     <div class="row">
-                                      <div class="col-sm-6 col-md-6">
+                                      <div class=" col-md-12">
                                         <div class="form-group mb-4">
-                                          <label class=" form-control-label"><b>FC:</b></label>
-                                          <?php echo $Fc; ?>
+                                          <label class=" form-control-label"><b>Tipo de Material:</b></label>
+                                          <?php echo $Descricao1; ?>
                                         </div>
                                       </div>
-                                    </div>
-                                    <div class="row">
+									   </div>
+                                  <div class="row">
                                       <div class="col-sm-6 col-md-6">
                                         <div class="form-group mb-4">
-                                          <label class=" form-control-label"><b>FR:</b></label>
-                                          <?php echo $Fr; ?>
+                                          <label class=" form-control-label"><b>Preço:</b></label>
+                                          <?php echo $Preco; ?> euros
                                         </div>
                                       </div>
-                                    </div>
-                                    <div class="row">
-                                      <div class="col-sm-6 col-md-6">
-                                        <div class="form-group mb-4">
-                                          <label class=" form-control-label"><b>TRC:</b></label>
-                                          <?php echo $TRC; ?>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div class="row">
-                                      <div class="col-sm-6 col-md-6">
-                                        <div class="form-group mb-4">
-                                          <label class=" form-control-label"><b>TRPC:</b></label>
-                                          <?php echo $TRPC; ?>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div class="row">
-                                      <div class="col-sm-6 col-md-6">
-                                        <div class="form-group mb-4">
-                                          <label class=" form-control-label"><b>Mucosas:</b></label>
-                                          <?php echo $Mucosas; ?>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div class="row">
-                                      <div class="col-sm-6 col-md-6">
-                                        <div class="form-group mb-4">
-                                          <label class=" form-control-label"><b>Temperatura Corporal:</b></label>
-                                          <?php echo $Temperatura_Corporal; ?>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div class="row">
-                                      <div class="col-sm-6 col-md-6">
-                                        <div class="form-group mb-4">
-                                          <label class=" form-control-label"><b>Pulso:</b></label>
-                                          <?php echo $Pulso; ?>
-                                        </div>
-                                      </div>
-                                    </div>
-                                   
                                     
+                                      <div class="col-sm-6 col-md-6">
+                                        <div class="form-group mb-4">
+                                          <label class=" form-control-label"><b>Quantidade:</b></label>
+                                          <?php echo $Quantidade; ?> Un
+                                        </div>
+                                      </div>
+									  <div class="align-items-center" style="  margin-left: 10px; color: #5d998c"  >
+									 <?php echo '________________________________________________'; ?>
+									
+                                    </div>
+									</div>
+									
+                                    
+                                   
+                                    <?php   }
+									
+                      }else{?>
+					  
+				  
+				  <div> Não possui Materiais Associados!</div>
+				  
+				  
+				  <?php } ?>
+		
                                     
                                   </div>
                                 </div>
                               </div>
-                            </div>
+							   </div>
+							 <div class="modal-footer">
+							  <button type="button" data-dismiss="modal" aria-label="Close" class="btn btn-secondary">
+                                                        Cancelar</button></div>
+                           
                             
-                          </div>
+                         
                          
                         </div>
                       </div>
@@ -707,7 +739,7 @@ $foto_perfil4 = $row1['linkimagem'];
     
                           </div>
                     
-								          <button type='button' class='btn btn-primary button save' data-action='save-svg'>Criar Receita</button>
+								          <button type='button' data-dismiss="modal" class='btn btn-primary button save' data-action='save-svg'>Criar Receita</button>
                               
                           <button type="button" data-dismiss="modal" aria-label="Close" class="btn btn-secondary">Cancelar</button>
                         </div>
