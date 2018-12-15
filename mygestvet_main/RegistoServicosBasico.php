@@ -185,24 +185,25 @@ $materiais= $conn->query($sql12);
   <section>
     
     <!--Registar Serviço-->
-    <div class="container-fluid">
+   <div class="container-fluid">
       <div class="row">
-        <!-- Basic Form-->
-        <div class="col-lg-6 col-sm-6 col-md-6">
+	  
+        <div class="col-lg-8 col-sm-6 col-md-6">
           <div class="card">
-            <form class="form-validate">
-              <div class="card-header d-flex align-items-center">
-                <h3 class="h4">Animal</h3>
-              </div>
+		  
+            <div class="card-header d-flex align-items-center">
+              <h3 class="h4">Animal</h3>
+			  </div>
               <div class="card-body">
               <div class="row">
-                <div class="col-sm-6 col-md-6">
+                <div class="col-sm-6 col-md-9">
                   <div class="form-group mb-4">
+				  <form id="regForm"  class="form-validate" method="POST">
                     <div class="form-group">
-                      <form id="regForm" method="POST" action="RegistoExameAnimal.php">
-                        <label class=" form-control-label">Selecione o Animal:</label>
+                      
+                        <label  class=" form-control-label">Selecione o Animal:</label>
                           
-                          <input type="text" onkeydown="limpaCampo()" onkeyup="procuraRegisto(this.value)" class="form-control" id="valorReg" name="valorReg"  required data-msg="Selecione um Animal!" class="input-material" class="form-control">
+                          <input type="text" onkeydown="limpaCampo()" onkeyup="procuraRegisto(this.value)"  placeholder="Procure pelo nome do Animal" class="form-control" id="valorReg" name="valorReg"  required data-msg="Selecione um Animal!" class="input-material" class="form-control" required>
                         
                       </form>
                       </div>
@@ -218,55 +219,61 @@ $materiais= $conn->query($sql12);
                   </div>
                 </div>
               </div>
-              <form id="regForm" method="POST" action="Gera_Registo_Servico.php">
+              <form id="regForm" method="POST"  class="form-validate" action="Gera_Registo_ServicoBasico.php">
                <div class="card-header">
                 <h3 class="h4">Registar Serviço</h3>
               </div>
               <!-- One "tab" for each step in the form: -->
               <div class="card-body">
-                <div class="row">
-                  <div class="col-sm-6 col-md-6">
-                    <div class="form-group mb-4">
-                      <div class="tab">
-                        <div class="form-group">
-                            <h4 style="font-size: 14px; color: #5d998c">Número de Exame Clinico Selecionado:</h4><br>
-                            <p id="numeroExame" name="numeroExame"></p>
-                            <p id="mostraNome" name="mostraNome"></p>
-                            <hr>
+
+                       <div class="form-group mb-4">
+					  
+                            <h4 style="font-size: 14px; color: #5d998c">Número de Exame Clinico Selecionado: </h4>
+							<p id="numeroExame" name="numeroExame"></p>
+							
+                            <p  id="mostraNome" name="mostraNome" > </p>
+							<hr><hr>
+							
                             <input id="numeroExame2" name="numeroExame2" type="hidden">
+							
                           </div>
                           <!-- One "tab" for each step in the form: -->
-                          
-                          <div class="form-group">
+                          <div class="row">
+                          <div class="form-group col-md-6 ">
                             <label class="form-control-label">História Clínica:</label>
                             <textarea rows="2" cols="60" type="text" placeholder="História Clínica" required data-msg="Insira Historia Clinica!"  class="form-control" name="fname" class="form-control"></textarea>
                           </div>
-                          <div class="form-group">
+                          <div class="form-group col-md-6">
                             <label class="form-control-label">Anamnese:</label>
                             <textarea rows="2" cols="60" type="text" placeholder="Anamnese" name="Anamnese"  required data-msg="Insira Anamnese!"  class="form-control"  class="form-control"></textarea>
                           </div>
-                          <div class="form-group">
+						  </div>
+						  <br>
+						  <div class="row">
+                          <div class="form-group col-md-6">
                             <label class="form-control-label">Diagnóstico:</label>
                             <textarea rows="2" cols="60" type="text" placeholder="Diagnóstico" name="diagnostico"  required data-msg="Insira Diagnóstico!"  class="form-control" class="form-control"></textarea>
                           </div>
-                          <div class="form-group">
+                          <div class="form-group col-md-6">
                             <label class="form-control-label">Tratamento:</label>
-                            <textarea rows="2" cols="60"   required data-msg="Insira Trta!"  class="form-control" type="text" placeholder="Tratamento" name="tratamento" class="form-control"></textarea>
+                            <textarea rows="2" cols="60"   required data-msg="Insira Tratamento!"  class="form-control" type="text" placeholder="Tratamento" name="tratamento" class="form-control"></textarea>
                           </div>
+						  </div>
+						  <br>
                           <div class="form-group">
                             <label class="form-control-label">Outras Informações:</label>
                             <textarea rows="2" cols="60" name="outrasInformacoes" type="text" placeholder="Outras informações" class="form-control" ></textarea>
                           </div>
-                        </div><br>
+                        <br>
                         
                         <button type="submit" class="btn btn-primary">Registar</button>
                         <!-- Circles which indicates the steps of the form: -->
-                        
-                      </div>
+						
+						</div>
+                      
                     </form>
-                  </div>
-                </div>
-              </div>
+                 
+             
             </div>
           </div>
           <!-------------------------publicidade------------------------------>
@@ -379,7 +386,7 @@ $materiais= $conn->query($sql12);
       <script>
       function procuraRegisto(str){
       if (str == "") {
-      document.getElementById("txtHint").innerHTML = "Lista de Animais com Exame Clínico";
+      document.getElementById("txtHint").innerHTML = " ";
       return;
       } else {
       if (window.XMLHttpRequest) {

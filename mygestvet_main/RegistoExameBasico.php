@@ -195,18 +195,17 @@ $materiais= $conn->query($sql12);
       <div class="row">
         <div class="col-lg-8 col-sm-6 col-md-6">
           <div class="card">
+		  <form id="regForm"  class="form-validate" method="POST">
             <div class="card-header d-flex align-items-center">
               <h3 class="h4">Animal</h3>
             </div>
             <div class="card-body">
-              <div class="row">
-                <div class="col-sm-6 col-md-6">
-                  <div class="form-group mb-4">
-                    <div class="form-group">
-                      <form id="regForm" method="POST" action="GeraRegistoVacinacao.php">
-                        <label class=" form-control-label">Selecione o Animal:</label>
-                        <select  id="numero_animal"  name="numero_animal" class="form-control mb-3">
-                          <option value= ""> --Selecione um animal-- </option>
+              
+                    <div class="form-group col-sm-6">
+                      
+                        <label class=" form-control-label" >Selecione o Animal:</label>
+                        <select  id="numero_animal" required data-msg="Selecione um Animal" name="numero_animal" class="form-control mb-3">
+                          <option align="center"  value= ""> --Selecione um animal-- </option>
                           <?php while ($row1 = mysqli_fetch_array($animal)):;?>
                           <option value= "<?php  echo $row1[1]; ?>"> <?php  echo 'Nome: '.$row1[0].'  | Numero De Chip: '.$row1[2]; ?></option>
                           <?php endwhile;?>
@@ -221,64 +220,69 @@ $materiais= $conn->query($sql12);
                       }
                       ?>
                       <p><span id="txtHint"></span></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+               </div>
+                 
               <div class="card-header">
                 <h3 class="h4">Registar Exame Clínico</h3>
               </div>
               <!-- One "tab" for each step in the form: -->
               <div class="card-body">
-                <div class="row">
-                  <div class="col-sm-6 col-md-6">
-                    <div class="form-group mb-4">
-                      <div class="tab">
-                        <div class="form-group">
+              
+                 
+                    
+                     
+					  <div class="row">
+                        <div class="form-group col-sm-4">
                           <label class="form-control-label">Frequência Cardíaca:</label>
                           <input type="double" placeholder="FC" class="form-control" required data-msg="Insira a frequência cardíaca!" class="input-material" class="form-control" name="freqCard" id="freqCard" >
                         </div>
-                        <div class="form-group">
+                         <div class="form-group col-sm-4 ">
                           <label class="form-control-label">Frequência Respiratória:</label>
                           <input type="double" placeholder="FR" class="form-control" required data-msg="Insira a frequência respiratória!" class="input-material" class="form-control" name="Fr" id="Fr" >
                         </div>
-                        <div class="form-group">
-                          <label class="form-control-label">TRC:</label>
-                          <input type="double" placeholder="TRC" class="form-control" required data-msg="Insira a TRC!" class="input-material" class="form-control" name="TRC" id="TRC">
-                        </div>
-                        <div class="form-group">
-                          <label class="form-control-label">TRPC:</label>
-                          <input type="double" placeholder="TRPC" class="form-control" required data-msg="Insira a TRPC!" class="input-material" class="form-control" name="trpc" id="trpc">
-                        </div>
-                        <div class="form-group">
-                          <label class="form-control-label">Mucosas:</label>
-                          <input type="text" placeholder="Mucosas" class="form-control" required data-msg="Insira as mucosas!" class="input-material" class="form-control" name="mucosas" id="mucosas">
-                        </div>
-                        <div class="form-group">
+						 <div class="form-group col-sm-4">
                           <label class="form-control-label">Temperatura Corporal:</label>
                           <input type="double" placeholder="TC" class="form-control" required data-msg="Insira a temperatura corporal!" class="input-material" class="form-control" name="tempCorp" id="tempCorp">
                         </div>
-                        <div class="form-group">
+                        
+						</div>
+						<div class="row" >
+						 <div class="form-group col-sm-4">
+                          <label class="form-control-label">TRC:</label>
+                          <input type="double" placeholder="TRC" class="form-control" required data-msg="Insira a TRC!" class="input-material" class="form-control" name="TRC" id="TRC">
+                        </div>
+                        <div class="form-group col-sm-4">
+                          <label class="form-control-label">TRPC:</label>
+                          <input type="double" placeholder="TRPC" class="form-control" required data-msg="Insira a TRPC!" class="input-material" class="form-control" name="trpc" id="trpc">
+                        </div>
+						<div class="form-group col-sm-4">
                           <label class="form-control-label">Pulso:</label>
                           <input type="double" placeholder="Pulso" class="form-control" required data-msg="Insira o pulso!" class="input-material" class="form-control" name="pulso" id="pulso">
                         </div>
-                        <div class="form-group">
-                          <label class="form-control-label">Observações:</label>
-                          <input type="text" placeholder="Observações" class="form-control" class="input-material" class="form-control" name="observa" id="observa">
+						
+						</div>
+                        <div class="form-group  align-items-center" >
+                          <label class="form-control-label">Mucosas:</label>
+                          <input type="text" placeholder="Mucosas" class="form-control" required data-msg="Insira as mucosas!" class="input-material" class="form-control" name="mucosas" id="mucosas">
                         </div>
-                      </div><br>
                       
-                      <button type="submit" formaction="RegistoExameAnimal.php" class="btn btn-primary">Registar</button>
+						  <div class="form-group">
+                            <label class="form-control-label">Observações:</label>
+                            <textarea rows="2" cols="60" type="text" placeholder="Observações" name="observa" id="observa  required data-msg="Insira Diagnóstico!"  class="form-control"></textarea>
+                          </div>
+                       
+                      
+                      
+                      <button type="submit" formaction="RegistoExameAnimalBasico.php" class="btn btn-primary">Registar</button>
                     </div>
                     <!-- Circles which indicates the steps of the form: -->
                     
                   </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-
+				  </form>
+				  </div>
+                
+             
+      
         <!-------------------------publicidade------------------------------>
 
         <div class="card-body" align="center" style="margin-top: 100px;">
@@ -340,6 +344,7 @@ $materiais= $conn->query($sql12);
       </div>
     </div>
   </footer>
+  
 </div>
 <!-- JavaScript files-->
 <script src="vendor/jquery/jquery.min.js"></script>

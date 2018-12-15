@@ -15,10 +15,12 @@ echo '
 <table class="table table-data2">
     <thead>
         <tr>
-            <th>Nome</th>
-            <th>Data</th>
-            <th>Número de Chip</th>
+		<th>Nome</th>
+            <th>Numero de Identificação</th>
+			<th> Cliente </th>
+			<th>Numero do Serviço</th>
             <th>Tratamento</th>
+			<th>Data</th>
 
         </tr>
     </thead>
@@ -38,8 +40,17 @@ $id_exame = $row['Codigo_Servico'];
 $nomeAnimal = $row['Nome'];
 
 $tratamentoServico = $row['Tratamento']; 
-
+$numero_cliente = $row['Numero_Cliente'];
 $numeroChip = $row['Numero_Chip']; 
+
+$sql2="SELECT * FROM cliente WHERE cliente.Numero_Cliente='".$numero_cliente."'";
+$result2 = mysqli_query($conn,$sql2);
+
+while($row2 = mysqli_fetch_array($result2)) {
+
+$Nome_Cliente = $row2['Nome'];
+
+}
 
 echo '
   <tr class="spacer"></tr>
@@ -47,12 +58,12 @@ echo '
     ';
 
       echo '
-      <td>'.$nomeAnimal.'</td>
-      <td>
-          <span class="block-email">'.$data.'</span>
-      </td>
-      <td>'.$numeroChip.'</td>
+	   <td>'.$nomeAnimal.'</td>
+	   <td>'.$numeroChip.'</td>
+      <td>'.$Nome_Cliente.'</td>
+      <td>'.$id_exame.'</td>
       <td>'.$tratamentoServico.'</td>
+      <td>'.$data.'</td>
 
       
 

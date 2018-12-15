@@ -16,29 +16,36 @@ $cod_servico = $_REQUEST['s'];
 $sql = "INSERT INTO material VALUES (NULL, '$tipo_material', '$descricao', $quantidade, $preco)";
 
 if ($conn->query($sql) === TRUE) {
-    
- echo "<div class='alert alert-success' role='alert'>
- 		 Registo de material efetuado com sucesso!
-		</div>";
-    
-} else {
-	
-  @session_start();
-  $_SESSION['erromsg']='Escolha uma animal registado';
-  header("Location: RegistoRegistoMaterial.php");
-
-
-}
-
-$last_id = $conn->insert_id;
+    $last_id = $conn->insert_id;
 
 $sql2 = "INSERT INTO relacao_servico_material values($cod_servico, $last_id)";
 
 if ($conn->query($sql2) === TRUE) {
-    echo "";
+    echo "<div class='alert alert-success' role='alert'>
+ 		 Registo de material efetuado com sucesso!
+		</div>";
 } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+	@session_start();
+  
+
+	echo "<div class='alert alert-danger' role='alert'>
+ 		  Material não registado! Por favor preencha todos os campos!
+		</div>";
+
 }
+} else {
+	
+  
+
+	echo "<div class='alert alert-danger' role='alert'>
+ 		  Material não registado! Por favor preencha todos os campos!
+		</div>";
+
+
+
+}
+
+
 
 $conn->close();
 

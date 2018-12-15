@@ -537,13 +537,7 @@ $foto_perfil4 = $row1['linkimagem'];
                               <input type="hidden" name="Localidade_Cliente" id="Localidade_Cliente" value="<?php echo $descricao_localidade; ?>">
                               <input type="hidden" name="Morada_Cliente" id="Morada_Cliente" value="<?php echo $Morada_Cliente; ?>">
 
-                                  <center>
-                                    <label><?php echo $nome; echo ' '.$apelidos; ?></label><br>
-                                    <label>Médico Veterinário</label><br>
-                                    <label><?php echo $morada_med ?></label><br>
-                                    <label><?php echo $telefone_med ?></label><br>
-                                    <label><?php echo $descricao_localidade ?></label><br>
-                                  </center>
+                                  
 
                               <div  method="POST">
                                 <input type="hidden" name="Codigo_Servico" id="Codigo_Servico" value="<?php echo $Codigo_Servico; ?>">

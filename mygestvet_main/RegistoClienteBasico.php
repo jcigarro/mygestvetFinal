@@ -207,7 +207,7 @@ $foto_perfil2 = $row1['linkimagem'];
                 <form>
                   <div class="form-group">
                     <label class="form-control-label">Nome</label>
-                    <input type="text" name="nome" placeholder="Nome" class="form-control" required data-msg="Insira o Nome do cliente" class="input-material" class="form-control">
+                    <input type="text" name="nome" placeholder="Nome" class="form-control" required data-msg="Insira o Nome do Cliente" class="input-material" class="form-control">
                   </div>
                   
                   <div class="row">

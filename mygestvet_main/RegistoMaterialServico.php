@@ -188,85 +188,84 @@ $materiais= $conn->query($sql12);
       <div class="row">
         <div class="col-lg-8 col-sm-6 col-md-6">
           <div class="card">
-            <form class="form-validate">
+           
               <div class="card-header d-flex align-items-center">
                 <h3 class="h4">Animal</h3>
               </div>
               <div class="card-body">
                 <div class="row">
-                  <div class="col-sm-6 col-md-6">
+                  <div class="col-sm-6 col-md-12">
                     <div class="form-group mb-4">
                       <div class="form-group">
-                        <form action=" " method='post' >
+                        
                           <label class=" form-control-label">Selecione o Animal:</label><br><br>
-                          <input type="text" onkeydown="limpaCampo()" onkeyup="procuraRegisto(this.value)" class="form-control" id="valorReg" name="valorReg"  placeholder="Nome do animal:" required >
-                        </form>
+                          <input type="text" onkeydown="limpaCampo()" placeholder="Procure pelo nome do Animal"  required data-msg="Selecione o Animal!" onkeyup="procuraRegisto(this.value)" class="form-control" id="valorReg" name="valorReg"  required >
+                       
                       </div>
-                      <p><span id="txtHint"></span></p>
+					  <?php
+                      @session_start();
+                      if(isset($_SESSION['erromsg'])){
+                      echo $_SESSION['erromsg'];
+                      unset($_SESSION['erromsg']);
+                      }
+                      ?>
+                     <p><span id="txtHint"></span></p>
                     </div>
                   </div>
                 </div>
               </div>
-              
-              
-              <form id="regForm" method="POST" action="Gera_Registo_Material.php">
-                <div class="card-header">
-                  <h3 class="h4">Registar Material</h3>
-                </div>
-                <?php
-                @session_start();
-                if(isset($_SESSION['erromsg'])){
-                echo $_SESSION['erromsg'];
-                unset($_SESSION['erromsg']);
-                }
-                ?>
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col-sm-6 col-md-6">
-                      <div class="form-group mb-4">
-                        <div class="form-group">
-                          <h4 style="font-size: 14px; color: #5d998c">Número de Consulta Selecionado:</h4><br>
+              <form id="regForm" method="POST"  class="form-validate" action="Gera_Registo_ServicoBasico.php">
+               <div class="card-header">
+                <h3 class="h4">Registar Material</h3>
+              </div>
+              <!-- One "tab" for each step in the form: -->
+              <div class="card-body">
+
+                       <div class="form-group mb-4">
+                      
+                          <h4 style="font-size: 14px; color: #5d998c">Número de Serviço Selecionado:</h4>
                           <p id="numeroExame" name="numeroExame"></p>
                           <hr>
+						  
                           <p id="valorReg1" name="valorReg1"></p>
                           <input id="numeroExame2" name="numeroExame2" type="hidden">
                         </div>
-                        <div class="tab">
-                          <div class="linha">
-                            <div  class="form-group">
+							<div  class="row">
+                            <div  class="form-group col-md-6">
                               <label class="form-control-label">Tipo de Material:</label>
-                              <select id="tipo_material" name="tipo_material" class="form-control mb-3">
-                                <option disabled selected value> -- Escolha uma opção -- </option>
+                              <select id="tipo_material" name="tipo_material"   required data-msg="Selecione o tipo de material!"class="form-control mb-3">
+                                <option disabled selected value> -- Selecione um tipo de material -- </option>
                                 <?php while ($row1 = mysqli_fetch_array($materiais)):;?>
                                 <option value= "<?php  echo $row1[0]; ?>"> <?php  echo $row1[1]; ?></option>
                                 <?php endwhile;?>
                               </select>
                             </div>
-                            <div class="form-group mb-4">
+							
+                            <div class="form-group  col-md-6">
                               <label class=" form-control-label">Descrição:</label>
-                              <input type="text" class="form-control" id="descricao" name="descricao"  placeholder="Descrição" >
+                              <input type="text" class="form-control" id="descricao"  required data-msg="Insira um Descrição!" name="descricao"  placeholder="Descrição" class="form-control" required>
                             </div>
-                            <div class="form-group mb-4">
+							</div>
+							<div  class="row">
+                            <div class="form-group col-md-6">
                               <label class=" form-control-label">Quantidade :</label>
-                              <input type="float" class="form-control" id="quantidade" name="quantidade"  placeholder="Quantidade" >
+                              <input type="number" class="form-control" id="quantidade" name="quantidade"  required data-msg="Insira a Quantidade!"   placeholder="Quantidade" class="form-control" required>
                             </div>
-                            <div class="form-group mb-4">
+                            <div class="form-group col-md-6">
                               <label class=" form-control-label">Preço por Unidade :</label>
-                              <input type="float" class="form-control" id="preco" name="preco"  placeholder="Preço" >
+                              <input type="number" class="form-control" id="preco" name="preco"  required data-msg="Insira o Preço!" placeholder="Preço" class="form-control" required required>
                             </div>
+							</div>
                             <p id="output"></p>
-                          </div>
+                          
                           <button type="button" class="btn btn-primary" onclick="regMaterial()">Registar</button>
-                        </div>
-                       
-                       
-                      </form>
-                    </div>
-                  </div>
-                </div>
-                </div>
-              </div>
+				</div>
+               </form>
+           
+                 
+             
             </div>
+          </div>
             <!-------------------------publicidade------------------------------>
             <div class="card-body" align="center" style="margin-top: 100px;">
               
@@ -369,7 +368,7 @@ $materiais= $conn->query($sql12);
           }
           function procuraRegisto(str){
           if (str == "") {
-          document.getElementById("txtHint").innerHTML = "Lista de Animais com Exame Clínico";
+          document.getElementById("txtHint").innerHTML = "  ";
           return;
           } else {
           if (window.XMLHttpRequest) {
