@@ -346,7 +346,7 @@ $foto_perfil4 = $row1['linkimagem'];
                           $Nome_Animal=$row1['Nome'];
                           $Numero_Chip=$row1['Numero_Chip'];
                           $Numero_Cliente=$row1['Numero_Cliente'];
-
+						$Alergias=$row1['Alergias'];
                           $Numero_Animal=$row['Numero_Animal'];
                      $clientee = "SELECT  * FROM cliente WHERE Numero_Cliente=$Numero_Cliente";
                       
@@ -585,8 +585,8 @@ $foto_perfil4 = $row1['linkimagem'];
                                           <?php echo $Quantidade; ?> Un
                                         </div>
                                       </div>
-									  <div class="align-items-center" style="  margin-left: 10px; color: #5d998c"  >
-									 <?php echo '________________________________________________'; ?>
+									  <div class="align-items-center" style="  margin-left: 7px; color: #5d998c"  >
+									 <?php echo '______________________________________________'; ?>
 									
                                     </div>
 									</div>
@@ -644,55 +644,72 @@ $foto_perfil4 = $row1['linkimagem'];
                                 <input type="hidden" name="Codigo_Servico" id="Codigo_Servico" value="<?php echo $Codigo_Servico; ?>">
                                 
                                 <div class="row">
-                                  <div class="col-sm-6 col-md-6">
+                                  <div class=" col-md-12">
                                     <div class="form-group mb-4">
-                                      <label class=" form-control-label">Cliente:</label>
+                                      <b style=" color: #5d998c">Cliente :</b>
                                       <label class=" form-control-label"><?php echo $Nome_Cliente; ?></label>
-  									                   <input type="hidden" name="NomeC" id="NomeC" value="<?php echo $Nome_Cliente; ?>">
-                                    </div>
+  									  <input type="hidden" name="NomeC" id="NomeC" value="<?php echo $Nome_Cliente; ?>">
+                                    </div></div>
                                   </div>
-                                </div>                              
-                               
-                                <div class="row">
-                                  <div class="col-sm-6 col-md-8">
+								  <div class="row">
+								  <div class=" col-md-6">
                                     <div class="form-group mb-8">
-                                      <label class=" form-control-label">Nº do Chip do Animal:</label>
-                                      <label class=" form-control-label"><?php echo $Numero_Chip; ?></label>
+                                      <b style=" color: #5d998c" >Nome do Animal:</b>
+                                      <label class=" form-control-label"><?php echo $Nome_Animal; ?></label>
+  									   <input type="hidden" name="NomeA" id="NomeA" value="<?php echo $Nome_Animal; ?>">
+                                      
+                                    </div>
+                                  </div></div>
+                                                           
+                                
+                                 
+                                <div class="row">
+                                  <div class=" col-md-6">
+                                    <div class="form-group mb-8">
+                                      <b style=" color: #5d998c"> Nº de Identificação :</b>
+                                      <label  class=" form-control-label"><?php echo $Numero_Chip; ?></label>
                                       <input type="hidden" name="Numero_Chip" id="Numero_Chip" value="<?php echo $Numero_Chip; ?>">
                                     </div>
                                   </div>
-                                </div>
-                                <div class="row">
-                                  <div class="col-sm-6 col-md-8">
+								  </div>
+								  <div class="row">
+                                  <div class=" col-md-12">
                                     <div class="form-group mb-8">
-                                      <label class=" form-control-label">Nome do Animal:</label>
-                                      <label class=" form-control-label"><?php echo $Nome_Animal; ?></label>
-  									                 <input type="hidden" name="NomeA" id="NomeA" value="<?php echo $Nome_Animal; ?>">
-                                      
+                                      <b style=" color: #5d998c"> Alergias e Doenças Crónicas :</b>
+                                      <label  class=" form-control-label"><?php if($Alergias==''){
+                                                  echo ' Não tem alergias ou doenças crónicas';
+                                                }else{
+                                                  echo $Alergias; } ?></label>
+                                      <input type="hidden" name="Numero_Chip" id="Numero_Chip" value="<?php echo $Alergias; ?>">
                                     </div>
                                   </div>
-                                </div>
+								  </div>
+								  <hr>
+								<br>
                                 <div class="row">
-                                  <div class="col-sm-6 col-md-6">
+                                 <div class="col-md-12">
                                     <div class="form-group mb-4">
                                       <label class=" form-control-label">Receita:</label>
-                                      <input type="text" placeholder="Receita" id="receita" name="receita" class="form-control" required data-msg="Insira a receita" class="input-material" class="form-control">
+                                     
+									  <textarea rows="2" cols="60" type="text" placeholder="Receita" name="receita" id="receita"   class="form-control" class="form-control"></textarea>
                                     </div>
                                   </div>
                                 </div>
                                 <div class="row">
-                                  <div class="col-sm-6 col-md-6">
+                                <div class="col-md-12">
                                     <div class="form-group mb-4">
-                                      <label class=" form-control-label">Posologia:</label>
-                                      <input type="text" placeholder="Posologia" id="posologia" name="posologia" class="form-control" required data-msg="Insira a posologia" class="input-material" class="form-control">
+                                      <label  class=" form-control-label">Posologia:</label>
+									  <textarea rows="2" cols="60" type="text" placeholder="Posologia" name="posologia" id="posologia"   class="form-control" class="form-control"></textarea>
+                                     
                                     </div>
                                   </div>
                                 </div>
                                 <div class="row">
-                                  <div class="col-sm-6 col-md-6">
+                                  <div class="col-md-12">
                                     <div class="form-group mb-4">
                                       <label class=" form-control-label">Observações:</label>
-                                      <input type="text" placeholder="Observações"id="observacoes" name="observacoes" class="form-control" class="input-material" class="form-control">
+									   <textarea rows="2" cols="60" type="text" placeholder="Observações" name="observacoes"  id="observacoes"  class="form-control" class="form-control"></textarea>
+                                      
                                     </div>
                                   </div>
                                 </div>

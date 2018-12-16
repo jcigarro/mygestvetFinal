@@ -232,7 +232,7 @@ $materiais= $conn->query($sql12);
 							<p id="numeroExame" name="numeroExame"></p>
 							
                             <p  id="mostraNome" name="mostraNome" > </p>
-							<hr><hr>
+							<hr>
 							
                             <input id="numeroExame2" name="numeroExame2" type="hidden">
 							
