@@ -738,8 +738,8 @@ $foto_perfil4 = $row1['linkimagem'];
                             </div>
     
                           </div>
-                    
-								          <button type='button' data-dismiss="modal" class='btn btn-primary button save' data-action='save-svg'>Criar Receita</button>
+                     
+								          <button type='button' data-dismiss="modal"   class='btn btn-primary button save' data-action='save-svg'>Criar Receita</button>
                               
                           <button type="button" data-dismiss="modal" aria-label="Close" class="btn btn-secondary">Cancelar</button>
                         </div>
@@ -787,9 +787,6 @@ $foto_perfil4 = $row1['linkimagem'];
     </div>
 
 
-
-
-    
    
 
 <script>

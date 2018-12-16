@@ -36,18 +36,17 @@ $sql4 = "SELECT * from medico  where Email='jmcigarro87@gmail.com' ";
 	$sql = "INSERT INTO receita VALUES(NULL,$Codigo_Servico,'$today','$receita','$posologia','$observacoes','$assinatura');";
 
 			if (mysqli_query($conn,$sql) === TRUE) {
-					 header("Location: HistoricoServicosBasico.php");
-				
-				
 				 @session_start();
 						  
-						 $_SESSION['erromsg']="<div class='alert alert-success' role='alert'>
+						 $_SESSION['erromsg']="<div class='alert alert-sucess' role='alert'>
 								Receita criada com sucesso!
 								</div>";
-
+		$msg = "Assinatura gerada com sucesso.";
 		$val = 1;
 				
   
+ 				 $_SESSION['erromsg']='Receita registada com sucesso.';		
+ 			
 $morada_med=$_REQUEST['morada_med'];
 $nome=$_REQUEST['nome'];
 $apelidos=$_REQUEST['apelidos'];
@@ -198,12 +197,8 @@ header("Location: HistoricoReceitas.php");
 				
 			
 			} else {
-				@session_start();
-						  
-						 $_SESSION['erromsg']="<div class='alert alert-danger' role='alert'>
-								Receita criada com sucesso!
-								</div>";
-	 header("Location: HistoricoServicosBasico.php");
+				echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+				echo $Codigo_Servico;
 			}
 			
 

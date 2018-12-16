@@ -291,6 +291,13 @@ $localidade_query = "SELECT Codigo_Localidade,Descricao from localidade";
                 <div class="card-header">
                       <h3 class="h4">Histórico de Receitas</h3>
                 </div>
+				 <?php
+                      @session_start();
+                      if(isset($_SESSION['erromsg'])){
+                      echo $_SESSION['erromsg'];
+                      unset($_SESSION['erromsg']);
+                      }
+                      ?>
                 <div class="card-body">
                   <div class="table-responsive">
                    <table id="datatable1" style="width: 100%;" class="table">
