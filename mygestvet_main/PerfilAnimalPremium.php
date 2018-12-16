@@ -482,14 +482,19 @@ $foto_perfil4 = $row1['linkimagem'];
 ";
                   $result1 = $conn->query($sql1);
                   if ($result1->num_rows > 0) {
-					  ?>
+            ?>
                      <table id="datatable2" style="width: 100%;" class="table">
                 
                 <thead>
                   <tr>
                     <th>Código do Exame</th>
                     <th>Fr</th>
-                    <th>Fc</th>                    
+                    <th>Fc</th>
+                    <th>TRC</th>
+                    <th>TRPC</th>
+                    <th>Temp. Corporal</th>
+                    <th>Pulso</th>
+                    <th>Mucosas</th>                    
                     <th>Observações</th>
                   </tr>
                 </thead>
@@ -500,11 +505,16 @@ $foto_perfil4 = $row1['linkimagem'];
                     while($row = $result1->fetch_assoc()) {
                       $Codigo_Exame_Clinico=$row['Codigo_Exame_Clinico'];
                       $Fr=$row['Fr'];
-					  $Fc=$row['Fc'];					  
-					  $Observacoes=$row['Observacoes'];
+            $Fc=$row['Fc'];           
+            $Observacoes=$row['Observacoes'];
+            $TRC=$row['TRC'];
+            $TRPC=$row['TRPC'];
+            $Temperatura_Corporal=$row['Temperatura_Corporal'];
+            $Pulso=$row['Pulso'];
+            $Mucosas=$row['Mucosas'];
                   ?>
                   <tr>
-				   <td>
+           <td>
                       <?php echo $Codigo_Exame_Clinico; ?>
                     </td>
                     <td>
@@ -513,36 +523,51 @@ $foto_perfil4 = $row1['linkimagem'];
                     <td>
                       <?php echo $Fc; ?>
                     </td>
-					<td>
+                    <td>
+                      <?php echo $TRC; ?>
+                    </td>
+                    <td>
+                      <?php echo $TRPC; ?>
+                    </td>
+                    <td>
+                      <?php echo $Temperatura_Corporal; ?>
+                    </td>
+                    <td>
+                      <?php echo $Pulso; ?>
+                    </td>
+                    <td>
+                      <?php echo $Mucosas; ?>
+                    </td>
+          <td>
                       <?php echo $Observacoes; ?>
                     </td>
                     
                    </tbody>
-					<?php } ?>
-				</table>
-				</div>
+          <?php } ?>
+        </table>
+        </div>
                   <?php
-				  
-				  
+          
+          
                      
                   }else{
-					  
+            
                   
                   ?>
-				  
-				  <div> Não possui Exames</div>
-				  </div>
-				  
-				  <?php } ?>
-		
-		</div>
-		
-		<div class="card">
+          
+          <div> Não possui Exames</div>
+          </div>
+          
+          <?php } ?>
+    
+    </div>
+    
+    <div class="card">
           <div class="card-header">
             <h3 class="h4">Histórico de Vacinações</h3>
           </div>
           <div class="card-body">
-		   <?php
+       <?php
                                 
       
                   
@@ -555,7 +580,9 @@ $foto_perfil4 = $row1['linkimagem'];
                 <thead>
                   <tr>
                     <th>Número de Vacinação</th>
+                    <th>Nome da Vacina</th>
                     <th>Data</th>
+                    <th>Lote</th>
                     <th>Validade</th>                    
                     <th>Outras Informações</th>
                   </tr>
@@ -567,42 +594,50 @@ $foto_perfil4 = $row1['linkimagem'];
                     while($row = $result1->fetch_assoc()) {
                       $Numero_Vacinacao=$row['Numero_Vacinacao'];
                       $Data=$row['Data'];
-					  $Validade=$row['Validade'];					  
-					  $outrasInformacoes=$row['outrasInformacoes'];
+            $Validade=$row['Validade'];           
+            $outrasInformacoes=$row['outrasInformacoes'];
+            $NomeVacina=$row['Nome'];
+            $Lote=$row['Lote'];
                   ?>
                   <tr>
-				   <td>
+           <td>
                       <?php echo $Numero_Vacinacao; ?>
+                    </td>
+                    <td>
+                      <?php echo $NomeVacina; ?>
                     </td>
                     <td>
                       <?php echo $Data; ?>
                     </td>
                     <td>
+                      <?php echo $Lote; ?>
+                    </td>
+                    <td>
                       <?php echo $Validade; ?>
                     </td>
-					<td>
+          <td>
                       <?php echo $outrasInformacoes; ?>
                     </td>
                     
               </tbody>
-					<?php } ?>
-				</table>
-				</div>
+          <?php } ?>
+        </table>
+        </div>
                   <?php
-				  
-				  
+          
+          
                      
                   }else{
-					  
+            
                   
                   ?>
-				  
-				  <div> Não possui Vacinações</div>
-				  </div>
-				  
-				  <?php } ?>
-		
-		</div>
+          
+          <div> Não possui Vacinações</div>
+          </div>
+          
+          <?php } ?>
+    
+    </div>
 		
 		
 		
