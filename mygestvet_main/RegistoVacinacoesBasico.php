@@ -203,7 +203,7 @@ $animal = $conn->query($sql6);
                         <select  id="numero_animal"  name="numero_animal" class="form-control mb-3">
                           <option value= ""> --Selecione um animal-- </option>
                           <?php while ($row1 = mysqli_fetch_array($animal)):;?>
-                           <option value= "<?php  echo $row1[1]; ?>"> <?php  echo 'Nome: '.$row1[0].'  | Numero De Chip: '.$row1[2]; ?></option>
+                           <option value= "<?php  echo $row1[1]; ?>"> <?php  echo 'Nome: '.$row1[0].'  | Nº de Identificação Nacional: '.$row1[2]; ?></option>
                           <?php endwhile;?>
                         </select>
                       </div>
