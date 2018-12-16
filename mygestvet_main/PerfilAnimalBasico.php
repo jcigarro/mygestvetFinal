@@ -408,6 +408,7 @@ $foto_perfil4 = $row1['linkimagem'];
                     
                     <th>História Clínica</th>
                     <th>Anamnese</th>
+                    <th>Diagnóstico</th>
                     <th>Tratamento</th>
                     
                   </tr>
@@ -418,7 +419,8 @@ $foto_perfil4 = $row1['linkimagem'];
                       
                       $Tratamento=$row['Tratamento'];
 					  $Anamenese=$row['Anamenese'];
-					  $Historia_Clinica=$row['Historia_Clinica']; ?>
+					  $Historia_Clinica=$row['Historia_Clinica'];
+            $Diagnostico=$row['Diagnostico']; ?>
                   
 						  <tr>
 						   <td>
@@ -427,6 +429,9 @@ $foto_perfil4 = $row1['linkimagem'];
 							<td>
 							  <?php echo $Anamenese; ?>
 							</td>
+              <td>
+                <?php echo $Diagnostico; ?>
+              </td>
 							<td>
 							  <?php echo $Tratamento; ?>
 							</td>
@@ -472,7 +477,12 @@ $foto_perfil4 = $row1['linkimagem'];
                   <tr>
                     <th>Código do Exame</th>
                     <th>Fr</th>
-                    <th>Fc</th>                    
+                    <th>Fc</th>
+                    <th>TRC</th>
+                    <th>TRPC</th>
+                    <th>Temp. Corporal</th>
+                    <th>Pulso</th>
+                    <th>Mucosas</th>                    
                     <th>Observações</th>
                   </tr>
                 </thead>
@@ -485,6 +495,11 @@ $foto_perfil4 = $row1['linkimagem'];
                       $Fr=$row['Fr'];
 					  $Fc=$row['Fc'];					  
 					  $Observacoes=$row['Observacoes'];
+            $TRC=$row['TRC'];
+            $TRPC=$row['TRPC'];
+            $Temperatura_Corporal=$row['Temperatura_Corporal'];
+            $Pulso=$row['Pulso'];
+            $Mucosas=$row['Mucosas'];
                   ?>
                   <tr>
 				   <td>
@@ -495,6 +510,21 @@ $foto_perfil4 = $row1['linkimagem'];
                     </td>
                     <td>
                       <?php echo $Fc; ?>
+                    </td>
+                    <td>
+                      <?php echo $TRC; ?>
+                    </td>
+                    <td>
+                      <?php echo $TRPC; ?>
+                    </td>
+                    <td>
+                      <?php echo $Temperatura_Corporal; ?>
+                    </td>
+                    <td>
+                      <?php echo $Pulso; ?>
+                    </td>
+                    <td>
+                      <?php echo $Mucosas; ?>
                     </td>
 					<td>
                       <?php echo $Observacoes; ?>
@@ -538,7 +568,9 @@ $foto_perfil4 = $row1['linkimagem'];
                 <thead>
                   <tr>
                     <th>Número de Vacinação</th>
+                    <th>Nome da Vacina</th>
                     <th>Data</th>
+                    <th>Lote</th>
                     <th>Validade</th>                    
                     <th>Outras Informações</th>
                   </tr>
@@ -552,13 +584,21 @@ $foto_perfil4 = $row1['linkimagem'];
                       $Data=$row['Data'];
 					  $Validade=$row['Validade'];					  
 					  $outrasInformacoes=$row['outrasInformacoes'];
+            $NomeVacina=$row['Nome'];
+            $Lote=$row['Lote'];
                   ?>
                   <tr>
 				   <td>
                       <?php echo $Numero_Vacinacao; ?>
                     </td>
                     <td>
+                      <?php echo $NomeVacina; ?>
+                    </td>
+                    <td>
                       <?php echo $Data; ?>
+                    </td>
+                    <td>
+                      <?php echo $Lote; ?>
                     </td>
                     <td>
                       <?php echo $Validade; ?>
