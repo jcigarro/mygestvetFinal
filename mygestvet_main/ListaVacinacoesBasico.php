@@ -375,7 +375,7 @@ $localidade_query = "SELECT Codigo_Localidade,Descricao from localidade";
                                                       
 
                                                       <div class="row">
-                                                        <div class="col-sm-6 col-md-6">
+                                                        <div class=" col-md-12">
                                                           <div class="form-group mb-4"> 
                                                             <label class=" form-control-label"><b>Número de Vacinação:</b></label>
                                                               <?php echo $Numero_Vacinacao; ?> 
@@ -386,7 +386,7 @@ $localidade_query = "SELECT Codigo_Localidade,Descricao from localidade";
                                                       
 
                                                       <div class="row">
-                                                        <div class="col-sm-6 col-md-6">
+                                                        <div class=" col-md-12">
                                                           <div class="form-group mb-4"> 
                                                             <label class=" form-control-label"><b>Nome da Vacina:</b></label>
                                                               <?php echo $Nome_Vacina; ?>
@@ -395,7 +395,7 @@ $localidade_query = "SELECT Codigo_Localidade,Descricao from localidade";
                                                       </div>
 
                                                       <div class="row">
-                                                        <div class="col-sm-6 col-md-6">
+                                                       <div class=" col-md-12">
                                                           <div class="form-group mb-4"> 
                                                             <label class=" form-control-label"><b>Data:</b></label>
                                                               <?php echo $Data; ?>
@@ -405,7 +405,7 @@ $localidade_query = "SELECT Codigo_Localidade,Descricao from localidade";
 
 
                                                       <div class="row">
-                                                        <div class="col-sm-6 col-md-6">
+                                                        <div class=" col-md-12">
                                                           <div class="form-group mb-4"> 
                                                             <label class=" form-control-label"><b>Lote:</b></label>
                                                               <?php echo $Lote; ?>
@@ -414,7 +414,7 @@ $localidade_query = "SELECT Codigo_Localidade,Descricao from localidade";
                                                       </div>
 
                                                       <div class="row">
-                                                        <div class="col-sm-6 col-md-6">
+                                                        <div class=" col-md-12">
                                                           <div class="form-group mb-4"> 
                                                             <label class=" form-control-label"><b>Validade:</b></label>
                                                              <?php echo $Validade; ?>

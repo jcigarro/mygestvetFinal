@@ -391,7 +391,7 @@ $localidade_query = "SELECT Codigo_Localidade,Descricao from localidade";
                                       
                                   </td>
 
-                                  <div id="ver<?php echo $Numero_Receita; ?>"  tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" class="align-items-center  modal fade text-center"  role="dialog"> 
+                                  <div id="ver<?php echo $Numero_Receita; ?>"  tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" class="align-items-center  modal fade "  role="dialog"> 
                       
                             
 
@@ -400,7 +400,7 @@ $localidade_query = "SELECT Codigo_Localidade,Descricao from localidade";
                                               <!-- Modal content-->
                                               <div class="modal-content">
                                                 <div class="modal-header">
-                                                  <h4 id="exampleModalLabel" class="modal-title">Cliente: <?php echo $NomeC; ?></h4>
+                                                  <h4 id="exampleModalLabel" class="modal-title">Receita nº <?php echo $Numero_Receita; ?></h4>
                                                   <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
                                                 </div>
 
@@ -410,7 +410,7 @@ $localidade_query = "SELECT Codigo_Localidade,Descricao from localidade";
                                                       
 
                                                       <div class="row">
-                                                        <div class="col-sm-6 col-md-6">
+                                                        <div class=" col-md-12">
                                                           <div class="form-group mb-4"> 
                                                             <label class=" form-control-label"><b>Animal:</b></label>
                                                               <?php echo $NomeA; ?> 
@@ -423,7 +423,7 @@ $localidade_query = "SELECT Codigo_Localidade,Descricao from localidade";
                                                       
 
                                                       <div class="row">
-                                                        <div class="col-sm-6 col-md-6">
+                                                        <div class=" col-md-12">
                                                           <div class="form-group mb-4"> 
                                                             <label class=" form-control-label"><b>Receita:</b></label>
                                                               <?php echo $receita; ?>
@@ -432,7 +432,7 @@ $localidade_query = "SELECT Codigo_Localidade,Descricao from localidade";
                                                       </div>
 
                                                       <div class="row">
-                                                        <div class="col-sm-6 col-md-6">
+                                                        <div class=" col-md-12">
                                                           <div class="form-group mb-4"> 
                                                             <label class=" form-control-label"><b>Posologia:</b></label>
                                                               <?php echo $posologia; ?>
@@ -442,7 +442,7 @@ $localidade_query = "SELECT Codigo_Localidade,Descricao from localidade";
 
 
                                                       <div class="row">
-                                                        <div class="col-sm-6 col-md-6">
+                                                        <div class=" col-md-12">
                                                           <div class="form-group mb-4"> 
                                                             <label class=" form-control-label"><b>Observações:</b></label>
                                                               <?php echo $observacoes; ?>
@@ -451,7 +451,7 @@ $localidade_query = "SELECT Codigo_Localidade,Descricao from localidade";
                                                       </div>
 
                                                       <div class="row">
-                                                        <div class="col-sm-6 col-md-6">
+                                                        <div class=" col-md-12">
                                                           <div class="form-group mb-4"> 
                                                             <label class=" form-control-label"><b>Data:</b></label>
                                                              <?php echo $Data_Receita; ?>

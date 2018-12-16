@@ -395,7 +395,7 @@ if ($result->num_rows > 0) {
                                                       
 
                                                       <div class="row">
-                                                        <div class="col-sm-6 col-md-6">
+                                                        <div class="col-md-12">
                                                           <div class="form-group mb-4"> 
                                                             <label class=" form-control-label"><b>Nome:</b></label>
                                                               <?php echo $Nome; ?> 
@@ -404,7 +404,7 @@ if ($result->num_rows > 0) {
                                                       </div>
 
                                                       <div class="row">
-                                                        <div class="col-sm-6 col-md-6">
+                                                        <div class="col-md-12">
                                                           <div class="form-group mb-4"> 
                                                             <label class=" form-control-label"><b>Telefone:</b></label>
                                                               <?php echo $Telefone; ?>
@@ -414,7 +414,7 @@ if ($result->num_rows > 0) {
 
 
                                                       <div class="row">
-                                                        <div class="col-sm-6 col-md-6">
+                                                        <div class="col-md-12">
                                                           <div class="form-group mb-4"> 
                                                             <label class=" form-control-label"><b>Email:</b></label>
                                                               <?php echo $Email; ?>
@@ -423,7 +423,7 @@ if ($result->num_rows > 0) {
                                                       </div>
 
                                                       <div class="row">
-                                                        <div class="col-sm-6 col-md-6">
+                                                       <div class="col-md-12">
                                                           <div class="form-group mb-4"> 
                                                             <label class=" form-control-label"><b>Morada:</b></label>
                                                               <?php echo $Morada; ?>
@@ -432,7 +432,7 @@ if ($result->num_rows > 0) {
                                                       </div>
 
                                                      <div class="row">
-                                                        <div class="col-sm-6 col-md-6">
+                                                       <div class="col-md-12">
                                                           <div class="form-group mb-4"> 
                                                             <label class=" form-control-label"><b>Localidade:</b></label>
                                                               <?php echo $descricao_localidade; ?>
@@ -442,7 +442,7 @@ if ($result->num_rows > 0) {
                                                           
                                                     </div>  
                                                       <div class="row">
-                                                        <div class="col-sm-6 col-md-6">
+                                                        <div class="col-md-12">
                                                           <div class="form-group mb-4"> 
                                                             <label class=" form-control-label"><b>Código-Postal:</b></label>
                                                              <?php echo $Codigo_Postal; ?>
@@ -482,7 +482,7 @@ if ($result->num_rows > 0) {
                                                       
 
                                                       <div class="row">
-                                                        <div class="col-sm-6 col-md-6">
+                                                        <div class="col-md-12">
                                                           <div class="form-group mb-4"> 
                                                             <label class=" form-control-label">Nome:</label>
                                                               <input type="text" class="form-control" id="Nome" name="Nome" value="<?php echo $Nome; ?>" placeholder="Nome" required autofocus> 
@@ -491,7 +491,7 @@ if ($result->num_rows > 0) {
                                                       </div>
 
                                                       <div class="row">
-                                                        <div class="col-sm-6 col-md-6">
+                                                        <div class="col-md-12">
                                                           <div class="form-group mb-4"> 
                                                             <label class=" form-control-label">Telefone:</label>
                                                               <input type="int" class="form-control" id="Telefone" name="Telefone" value="<?php echo $Telefone; ?>" placeholder="Telefone" required autofocus> 
@@ -501,7 +501,7 @@ if ($result->num_rows > 0) {
 
 
                                                       <div class="row">
-                                                        <div class="col-sm-6 col-md-6">
+                                                       <div class="col-md-12">
                                                           <div class="form-group mb-4"> 
                                                             <label class=" form-control-label">Email:</label>
                                                               <input type="text" class="form-control" id="Email" name="Email" value="<?php echo $Email; ?>" placeholder="Email" required autofocus> 
@@ -510,7 +510,7 @@ if ($result->num_rows > 0) {
                                                       </div>
                             
                                                        <div class="row">
-                                                        <div class="col-sm-6 col-md-6">
+                                                       <div class="col-md-12">
                                                           <div class="form-group mb-4"> 
                                                             <label class=" form-control-label">Morada:</label>
                                                               <input type="text" class="form-control" id="Morada" name="Morada" value="<?php echo $Morada; ?>" placeholder="Email" required autofocus> 
@@ -520,7 +520,7 @@ if ($result->num_rows > 0) {
 
 
                                                       <div class="row">
-                                                        <div class="col-sm-6 col-md-6">
+                                                        <div class="col-md-8">
                                                           <div class="form-group mb-4">
                                                             <label class=" form-control-label">Localidade</label>
                                                           
@@ -539,13 +539,11 @@ if ($result->num_rows > 0) {
                                                             </select>
                                                           </div>
                                                         </div>
-                                                      </div>
-                                                       
-                                                      <div class="row">
-                                                        <div class="col-sm-6 col-md-6">
+
+                                                        <div class="col-md-4">
                                                           <div class="form-group mb-4"> 
                                                             <label class=" form-control-label">Código-Postal:</label>
-                                                              <input type="text" class="form-control" id="Codigo_Postal" name="Codigo_Postal" value="<?php echo $Codigo_Postal; ?>" placeholder="Codigo_Postal" required autofocus>  
+                                                              <input type="text" patern="[0-9]{4}[\-]?[0-9]{3}" minlength="8" maxlength="8"  class="form-control" id="Codigo_Postal" name="Codigo_Postal" value="<?php echo $Codigo_Postal; ?>" placeholder="Codigo_Postal" required autofocus>  
                                                           </div>
                                                         </div>
                                                       </div>

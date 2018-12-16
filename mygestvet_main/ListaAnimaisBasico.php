@@ -376,7 +376,8 @@ if ($result2->num_rows > 0) {
                                                 <div class="form-group mb-4">
 
                                                   <label class=" form-control-label">Cliente Associado</label>
-                                                  <select name="Numero_Cliente" class="form-control mb-3">
+                                                  <select  name="Numero_Cliente" class="form-control mb-3" required>
+												  <option style=" color: #5d998c"  value= "<?php echo $Numero_Cliente ?>"> <b><?php echo $Nome_Cliente ?></b></option>
                                                     <?php
                                                     $sql2 = "SELECT Nome, Numero_Cliente from cliente WHERE Numero_Medico=$numero";
                                                     $cliente1 = $conn->query($sql2);

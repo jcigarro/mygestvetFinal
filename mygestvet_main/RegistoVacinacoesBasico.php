@@ -191,12 +191,14 @@ $animal = $conn->query($sql6);
             <div class="card-header d-flex align-items-center">
               <h3 class="h4">Animal</h3>
             </div>
+			 <form  class="form-validade" method="POST" >
             <div class="card-body">
               <div class="row">
-                <div class="col-sm-6 col-md-6">
+                <div class=" col-md-12">
                   <div class="form-group mb-4">
                     <div class="form-group">
-                      <form id="regForm" method="POST" action="GeraRegistoVacinacao.php">
+                     
+					 
                         <label class=" form-control-label">Selecione o Animal:</label>
                         <select  id="numero_animal"  name="numero_animal" class="form-control mb-3">
                           <option value= ""> --Selecione um animal-- </option>
@@ -217,60 +219,69 @@ $animal = $conn->query($sql6);
                   </div>
                 </div>
               </div>
+			 
               <div class="card-header">
                 <h3 class="h4">Registar Vacinação</h3>
               </div>
               <!-- One "tab" for each step in the form: -->
               
               <div class="card-body">
-                <div class="row">
-                  <div class="col-sm-6 col-md-6">
-                    <div class="form-group mb-4">
-                      <div class="tab">
-                        
+                
+						 <div class="row">
                         <div class="form-group">
+						<div class="col-lg-12">
                           <h3 style="color: #52b2a4; font-size: 14px"></h3><br>
                           <label class="form-control-label">Nome da Vacina </label>
-                          <input type="text" name="nome" id="nome" class="form-control" required placeholder="Insira o Nome" class="input-material" class="form-control" placeholder="Nome da Vacina">
-                        </div>
+                          <input type="text" name="nome" id="nome" class="form-control" required data-msg="Insira o Nome da Vacina" class="input-material" class="form-control" placeholder="Nome da Vacina" >
+                        </div></div>
                         <div class="form-group">
-                          
+                         <div class="col-lg-12">
                           <h3 style="color: #52b2a4; font-size: 14px"></h3><br>
                           <label class="form-control-label">Número do Lote</label>
-                          <input type="number" name="lote" id="lote" class="form-control" required placeholder="Insira o Nome" class="input-material" class="form-control" placeholder="Número do Lote">
-                        </div>
+                          <input type="number" name="lote" id="lote" class="form-control" required data-msg="Insira o Numero de Lote" class="input-material" class="form-control" placeholder="Número do Lote">
+                        </div></div>
                         
                         <div class="form-group">
+							<div class="col-lg-12">
                           <h3 style="color: #52b2a4; font-size: 14px"></h3><br>
                           <label class="form-control-label">Validade:</label>
                           <input  type="data" placeholder='<?php echo date("d/m/Y"); ?>' name="validade" id="validade" class="form-control input-datepicker" >
                         </div>
+						</div>
+						</div> 
+						<br>
+						<br>
                         <div class="form-group">
                           <label class="form-control-label">Outras Informações:</label>
-                          <textarea rows="2" cols="60" name="outrasInformacoes" type="text" placeholder="Outras informações" placeholder="Outras Informações" class="form-control"></textarea>
+                          <textarea rows="2" cols="60" name="outrasInformacoes" type="text"  placeholder="Outras Informações" class="form-control"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Registar</button>
-                      </div>
+						<br>
+                        <button type="submit" formaction="GeraRegistoVacinacao.php" class="btn btn-primary">Registar</button>
+						</form>
+                      <br>
                       <!-- Circles which indicates the steps of the form: -->
                       
-                    </div>
-                  </form>
-                </div>
-              </div>
-</div>
+				</div>
+               
+              
+			  
+
         </div>
-                </div>
+               
 
               
 
- <div class="card-body" align="center" style="margin-top: 100px;">
+
+        </div>
+		<div class="card-body" align="center" style="margin-top: 100px;">
             
             <img src="img/pub2.jpg"><br><br>
             <button type="submit" align="center" class="btn btn-secundary" >Activar Conta Premium</button>
             
           </div>
-        </div>
-
+		</div>
+		</div>
+ 
 
 
             </section>
@@ -287,7 +298,7 @@ $animal = $conn->query($sql6);
                 </div>
               </div>
             </footer>
-          </div>
+        
           
           
           

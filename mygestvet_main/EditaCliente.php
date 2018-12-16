@@ -68,7 +68,7 @@
         
     
 
-          echo "<script>alert('Alterado com sucesso!'); </script>";
+          
           echo "<script>location.href='ListaClientesBasico.php'</script>";
 
          

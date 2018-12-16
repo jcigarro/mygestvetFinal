@@ -148,7 +148,7 @@ $html = '
         <h2 class="cabeçalho">'.$Telefone_Cliente.' </h2>
         <h2 class="cabeçalho">'.$Morada_Cli.', '.$Localidade_Cli.' </h2>
         <h2 class="cabeçalho">Animal: '.$Nome_Animal.'</h2>
-        <h2 class="cabeçalho">Nº Chip: '.$Numero_Chip.'</h2>
+        <h2 class="cabeçalho">Nº Identificação: '.$Numero_Chip.'</h2>
       </td>
 
   </tr>
