@@ -351,7 +351,7 @@ if ($result2->num_rows > 0) {
                                           <input type="hidden" name="edit_item_id" name="Numero_Cliente" id="Numero_Cliente" value="<?php echo $Numero_Animal; ?>">
 
                                           <div class="row">
-                                            <div class="col-sm-6 col-md-6">
+                                            <div class=" col-md-12">
                                               <div class="form-group mb-4">
                                                 <label class=" form-control-label">Nome:</label>
                                                 <input type="text" class="form-control" id="Nome" name="Nome" value="<?php echo $Nome ?>" placeholder="Nome" required autofocus>
@@ -360,7 +360,7 @@ if ($result2->num_rows > 0) {
                                           </div>
 
                                           <div class="row">
-                                            <div class="col-sm-6 col-md-6">
+                                            <div class=" col-md-12">
                                               <div class="form-group mb-4">
                                                 <label class=" form-control-label">Alergias:</label>
                                                 <input type="text" class="form-control" id="Alergias" name="Alergias" value="<?php if($Alergias==''){
@@ -372,7 +372,7 @@ if ($result2->num_rows > 0) {
                                             </div>
 
                                             <div class="row">
-                                              <div class="col-sm-6 col-md-6">
+                                              <div class=" col-md-12">
                                                 <div class="form-group mb-4">
 
                                                   <label class=" form-control-label">Cliente Associado</label>
