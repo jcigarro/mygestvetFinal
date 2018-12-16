@@ -206,7 +206,7 @@ $foto_perfil4 = $row1['linkimagem'];
         </div>
         <!-- Sidebar Navidation Menus--><span class="heading"></span>
         <ul class="list-unstyled">
-          <li class="active"><a href="#"> <i class="fas fa-home"></i>Início</a></li>
+          <li class="active"><a href="inicioBasico.php"> <i class="fas fa-home"></i>Início</a></li>
                     <li><a href="#tablesDropdown" aria-expanded="false" data-toggle="collapse"> <i class="fas fa-user-friends"></i>Clientes </a>
                       <ul id="tablesDropdown" class="collapse list-unstyled ">
                         <li><a href="RegistoClienteBasico.php">Registar Clientes</a></li>
@@ -666,7 +666,7 @@ $foto_perfil4 = $row1['linkimagem'];
                                 <div class="row">
                                   <div class=" col-md-6">
                                     <div class="form-group mb-8">
-                                      <b style=" color: #5d998c"> Nº de Identificação :</b>
+                                      <b style=" color: #5d998c"> Nº de Identificação Nacional :</b>
                                       <label  class=" form-control-label"><?php echo $Numero_Chip; ?></label>
                                       <input type="hidden" name="Numero_Chip" id="Numero_Chip" value="<?php echo $Numero_Chip; ?>">
                                     </div>

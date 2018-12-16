@@ -17,9 +17,9 @@ echo '
     <thead>
         <tr>
             <th>Nome </th>
-			<th>Nº Identificação</th>
+			<th>Nº Identificação Nacional</th>
 			<th>Cliente </th>
-			<th>Codigo de Exame</th>
+			<th>Código de Exame</th>
 			<th>Data Do Exame</th>
         </tr>
     </thead>

@@ -16,9 +16,9 @@ echo '
     <thead>
         <tr>
 		<th>Nome</th>
-            <th>Numero de Identificação</th>
+            <th>Nº de Indentificação Nacional</th>
 			<th> Cliente </th>
-			<th>Numero do Serviço</th>
+			<th>Nº do Serviço</th>
             <th>Tratamento</th>
 			<th>Data</th>
 

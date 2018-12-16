@@ -223,7 +223,7 @@ $localidade_query = "SELECT Codigo_Localidade,Descricao from localidade";
           </div>
           <!-- Sidebar Navidation Menus--><span class="heading"></span>
           <ul class="list-unstyled">
-                         <li class="active"><a href="#"> <i class="fas fa-home"></i>Início</a></li>
+                         <li class="active"><a href="inicioBasico.php"> <i class="fas fa-home"></i>Início</a></li>
                     <li><a href="#tablesDropdown" aria-expanded="false" data-toggle="collapse"> <i class="fas fa-user-friends"></i>Clientes </a>
                       <ul id="tablesDropdown" class="collapse list-unstyled ">
                         <li><a href="RegistoClienteBasico.php">Registar Clientes</a></li>

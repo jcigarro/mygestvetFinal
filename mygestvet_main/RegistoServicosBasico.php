@@ -132,7 +132,7 @@ $materiais= $conn->query($sql12);
           </div>
           <!-- Sidebar Navidation Menus--><span class="heading"></span>
           <ul class="list-unstyled">
-            <li class="active"><a href="#"> <i class="fas fa-home"></i>Início</a></li>
+            <li class="active"><a href="inicioBasico.php"> <i class="fas fa-home"></i>Início</a></li>
             <li><a href="#tablesDropdown" aria-expanded="false" data-toggle="collapse"> <i class="fas fa-user-friends"></i>Clientes </a>
             <ul id="tablesDropdown" class="collapse list-unstyled ">
               <li><a href="RegistoClienteBasico.php">Registar Clientes</a></li>
@@ -196,7 +196,7 @@ $materiais= $conn->query($sql12);
 			  </div>
               <div class="card-body">
               <div class="row">
-                <div class="col-sm-6 col-md-9">
+                <div class="col-sm-6 col-md-12">
                   <div class="form-group mb-4">
 				  <form id="regForm"  class="form-validate" method="POST">
                     <div class="form-group">

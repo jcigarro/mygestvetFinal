@@ -138,7 +138,7 @@ $materiais= $conn->query($sql12);
           </div>
           <!-- Sidebar Navidation Menus--><span class="heading"></span>
           <ul class="list-unstyled">
-            <li class="active"><a href="#"> <i class="fas fa-home"></i>Início</a></li>
+            <li class="active"><a href="inicioBasico.php"> <i class="fas fa-home"></i>Início</a></li>
             <li><a href="#tablesDropdown" aria-expanded="false" data-toggle="collapse"> <i class="fas fa-user-friends"></i>Clientes </a>
             <ul id="tablesDropdown" class="collapse list-unstyled ">
               <li><a href="RegistoClienteBasico.php">Registar Clientes</a></li>
@@ -207,7 +207,7 @@ $materiais= $conn->query($sql12);
                         <select  id="numero_animal" required data-msg="Selecione um Animal" name="numero_animal" class="form-control mb-3">
                           <option align="center"  value= ""> --Selecione um animal-- </option>
                           <?php while ($row1 = mysqli_fetch_array($animal)):;?>
-                          <option value= "<?php  echo $row1[1]; ?>"> <?php  echo 'Nome: '.$row1[0].'  | Numero De Chip: '.$row1[2]; ?></option>
+                          <option value= "<?php  echo $row1[1]; ?>"> <?php  echo 'Nome: '.$row1[0].'  | Nº de Identificação Nacional: '.$row1[2]; ?></option>
                           <?php endwhile;?>
                         </select>
                       </div>
