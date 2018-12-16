@@ -167,7 +167,7 @@ include("config.php");
           </div>
           <!-- Sidebar Navidation Menus--><span class="heading"></span>
           <ul class="list-unstyled">
-                    <li class="active"><a href="#"> <i class="fas fa-home"></i>Início</a></li>
+                    <li class="active"><a href="inicioPremium.php"> <i class="fas fa-home"></i>Início</a></li>
                     <li><a href="#tablesDropdown" aria-expanded="false" data-toggle="collapse"> <i class="fas fa-user-friends"></i>Clientes </a>
                       <ul id="tablesDropdown" class="collapse list-unstyled ">
                         <li><a href="RegistoClientePremium.php">Registar Clientes</a></li>
@@ -182,22 +182,22 @@ include("config.php");
                     </li>
                      <li><a href="#chartsDropdown1" aria-expanded="false" data-toggle="collapse"> <i class="fas fa-user-md"></i>Serviços</a>
                       <ul id="chartsDropdown1" class="collapse list-unstyled ">
-                        <li><a href="RegistoExameBasico.php">Registar Exame Clínico</a></li>
+                        <li><a href="RegistoExamePremium.php">Registar Exame Clínico</a></li>
                         <li><a href="RegistoServicosPremium.php">Registar Serviço</a></li>
-                        <li><a href="RegistoMaterialServico.php">Registar Material Utilizado</a></li>
-                        <li><a href="HistoricoServicosBasico.php">Histórico de Serviços</a></li>
+                        <li><a href="RegistoMaterialServicoPremium.php">Registar Material Utilizado</a></li>
+                        <li><a href="HistoricoServicosPremium.php">Histórico de Serviços</a></li>
                       </ul>
                     </li>
                     <li><a href="#chartsDropdown2" aria-expanded="false" data-toggle="collapse"> <i class="fas fa-syringe"></i>Vacinações</a>
                       <ul id="chartsDropdown2" class="collapse list-unstyled ">
-                        <li><a href="RegistoVacinacoesBasico.php">Registar Vacinação</a></li>
-                        <li><a href="ListaVacinacoesBasico.php">Histórico de Vacinações</a></li>
+                        <li><a href="RegistoVacinacoesPremium.php">Registar Vacinação</a></li>
+                        <li><a href="ListaVacinacoesPremium.php">Histórico de Vacinações</a></li>
                       </ul>
                     </li>
                     <li><a href="#chartsDropdown3" aria-expanded="false" data-toggle="collapse"> <i class="fas fa-file-invoice"></i>Documentos</a>
                       <ul id="chartsDropdown3" class="collapse list-unstyled ">
-                        <li><a href="HistoricoServicosBasico.php">Receitas</a></li>
-                        <li><a href="HistoricoReceitas.php">Histórico de Receitas</a></li>
+                        <li><a href="HistoricoServicosPremium.php">Receitas</a></li>
+                        <li><a href="HistoricoReceitasPremium.php">Histórico de Receitas</a></li>
                         <li><a href="">Faturas/Recibos</a></li>
                       </ul>
                     </li>
@@ -300,11 +300,11 @@ include("config.php");
                  
                   
                   
-                  <div class="form-group">
+                  <div class="form-group col-6">
                     <label class="form-control-label">Código Postal</label>
-                   <input id="codigo_postal" type="text" name="codigo_postal"  maxlength="8" patern="[0-9]{4}[\-]?[0-9]{3}" minlength="8" maxlength="8"   required data-msg="Insira o Código-Postal (xxxx-xxx)" class="input-material">
+                    <input id="codigo_postal" type="text" name="codigo_postal"  maxlength="8" patern="[0-9]{4}[\-]?[0-9]{3}" minlength="8" maxlength="8"   required data-msg="Insira o Código-Postal (xxxx-xxx)" class="input-material">
                   </div><br>
-                   </div>
+                </div>
                   
                   <div class="form-group">
                     <input type="submit" formaction="GeraRegistoClientePremium.php" value="Registar" class="btn btn-primary">

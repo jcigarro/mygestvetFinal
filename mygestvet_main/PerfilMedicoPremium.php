@@ -170,7 +170,7 @@ if ($result2->num_rows > 0) {
                         
                         
                         <!-- Logout    -->
-                        <li class="nav-item"><a href="logout.php" class="nav-link logout"> <span class="d-none d-sm-inline">Terminar Sessão</span><i class="fas fa-sign-out-alt"></i></a></li>
+                        <li class="nav-item"><a href="Login.php" class="nav-link logout"> <span class="d-none d-sm-inline">Terminar Sessão</span><i class="fas fa-sign-out-alt"></i></a></li>
                       </ul>
                     </div>
                   </div>
@@ -188,7 +188,7 @@ if ($result2->num_rows > 0) {
                   </div>
                   <!-- Sidebar Navidation Menus--><span class="heading"></span>
                   <ul class="list-unstyled">
-                    <li class="active"><a href="#"> <i class="fas fa-home"></i>Início</a></li>
+                    <li class="active"><a href="inicioPremium.php"> <i class="fas fa-home"></i>Início</a></li>
                     <li><a href="#tablesDropdown" aria-expanded="false" data-toggle="collapse"> <i class="fas fa-user-friends"></i>Clientes </a>
                       <ul id="tablesDropdown" class="collapse list-unstyled ">
                         <li><a href="RegistoClientePremium.php">Registar Clientes</a></li>
@@ -203,22 +203,22 @@ if ($result2->num_rows > 0) {
                     </li>
                      <li><a href="#chartsDropdown1" aria-expanded="false" data-toggle="collapse"> <i class="fas fa-user-md"></i>Serviços</a>
                       <ul id="chartsDropdown1" class="collapse list-unstyled ">
-                        <li><a href="RegistoExameBasico.php">Registar Exame Clínico</a></li>
+                        <li><a href="RegistoExamePremium.php">Registar Exame Clínico</a></li>
                         <li><a href="RegistoServicosPremium.php">Registar Serviço</a></li>
-                        <li><a href="RegistoMaterialServico.php">Registar Material Utilizado</a></li>
-                        <li><a href="HistoricoServicosBasico.php">Histórico de Serviços</a></li>
+                        <li><a href="RegistoMaterialServicoPremium.php">Registar Material Utilizado</a></li>
+                        <li><a href="HistoricoServicosPremium.php">Histórico de Serviços</a></li>
                       </ul>
                     </li>
                     <li><a href="#chartsDropdown2" aria-expanded="false" data-toggle="collapse"> <i class="fas fa-syringe"></i>Vacinações</a>
                       <ul id="chartsDropdown2" class="collapse list-unstyled ">
-                        <li><a href="RegistoVacinacoesBasico.php">Registar Vacinação</a></li>
-                        <li><a href="ListaVacinacoesBasico.php">Histórico de Vacinações</a></li>
+                        <li><a href="RegistoVacinacoesPremium.php">Registar Vacinação</a></li>
+                        <li><a href="ListaVacinacoesPremium.php">Histórico de Vacinações</a></li>
                       </ul>
                     </li>
                     <li><a href="#chartsDropdown3" aria-expanded="false" data-toggle="collapse"> <i class="fas fa-file-invoice"></i>Documentos</a>
                       <ul id="chartsDropdown3" class="collapse list-unstyled ">
-                        <li><a href="HistoricoServicosBasico.php">Receitas</a></li>
-                        <li><a href="HistoricoReceitas.php">Histórico de Receitas</a></li>
+                        <li><a href="HistoricoServicosPremium.php">Receitas</a></li>
+                        <li><a href="HistoricoReceitasPremium.php">Histórico de Receitas</a></li>
                         <li><a href="">Faturas/Recibos</a></li>
                       </ul>
                     </li>
@@ -400,7 +400,7 @@ if ($result2->num_rows > 0) {
                       </div>
                     </div>
                     <div class="card-footer text-right">
-                      <button type="submit" formaction="EditarPerfil.php" class="btn btn-primary">Guardar</button>
+                      <button type="submit" formaction="EditarPerfilPremium.php" class="btn btn-primary">Guardar</button>
                     </div>
                   </form>
                 </div>

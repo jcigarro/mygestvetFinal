@@ -79,94 +79,107 @@ $materiais= $conn->query($sql12);
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     
   </head>
-  <body>
+    <body>
     <div class="page">
       <!-- Main Navbar-->
       <header class="header">
         <nav class="navbar">
+         
           <div class="container-fluid">
             <div class="navbar-holder d-flex align-items-center justify-content-between">
               <!-- Navbar Header-->
               <div class="navbar-header">
-                <!-- Navbar Brand --><a href="inicioBasico.php" class="navbar-brand d-none d-sm-inline-block">
-                <a href="inicioBasico.php" >
-                  <img src="img/logo2-02.png" alt="MyGestVet logo" width="110" height="100" >
-                </a>
+                <!-- Navbar Brand --><a href="inicioPremium.php" class="navbar-brand d-none d-sm-inline-block">
+                  <a href="inicioPremium.php" >
+                    <img src="img/logo2-02.png" alt="MyGestVet logo" width="110" height="100" >
+                  </a>
+ 
               </div>
               <!-- Toggle Button-->
-              <a id="toggle-btn" href="#" class="menu-btn active"> <span></span><span></span><span></span></a>
+                <a id="toggle-btn" href="#" class="menu-btn active"> <span></span><span></span><span></span></a>
               <p class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">Bem-vindo ao MyGestVet!</p>
               <!-- Navbar Menu -->
               <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
-                <!-- Definiçoes   -->
+                
+          
+                
+ 
+                 <!-- Definiçoes   -->
+
                 <li class="nav-item dropdown">
                   <a href="#insurance-head-section" class="nav-link" data-toggle="dropdown">Definições&ensp;<i class="fas fa-cog"></i></a>
                   <div class="dropdown-menu">
-                    <a href="RegistoClienteBasico.php" class="dropdown-item"><i class="fas fa-user"></i>Registar Cliente</a>
-                    <a href="RegistoAnimalBasico.php" class="dropdown-item"><i class="fas fa-dog"></i>Registar Animal</a>
-                    <a href="PerfilMedicoBasico.php" class="dropdown-item"><i class="fas fa-user-edit"></i>Editar Perfil</a>
-                    <a href="RegistoExameBasico.php" class="dropdown-item"><i class="fas fa-file-medical-alt"></i>Registar Exame Clínico</a>
-                    <a href="RegistoVacinacoesBasico.php" class="dropdown-item"><i class="fas fa-syringe"></i>Registar Vacinação</a>
+                    <a href="RegistoClientePremium.php" class="dropdown-item"><i class="fas fa-user"></i>Registar Cliente</a>
+                    <a href="RegistoAnimalPremium.php" class="dropdown-item"><i class="fas fa-dog"></i>Registar Animal</a>
+                    <a href="PerfilMedicoPremium.php" class="dropdown-item"><i class="fas fa-user-edit"></i>Editar Perfil</a>
+                    <a href="AgendaPremium.php" class="dropdown-item"><i class="fas fa-calendar-alt"></i>Agenda</a>
+                    <a href="MapaPremium.php" class="dropdown-item"><i class="fas fa-map-marker-alt"></i>Mapa</a>
                     
                   </div>
                 </li>
+
+                 
+                 
+ 
                 <!-- Logout    -->
-                <li class="nav-item"><a href="Login.php" class="nav-link logout"> <span class="d-none d-sm-inline">Terminar Sessão</span><i class="fas fa-sign-out-alt"></i></a></li>
+                <li class="nav-item"><a href="logout.php" class="nav-link logout"> <span class="d-none d-sm-inline">Terminar Sessão</span><i class="fas fa-sign-out-alt"></i></a></li>
               </ul>
             </div>
           </div>
         </nav>
       </header>
-      <div class="page-content d-flex align-items-stretch">
+      <div class="page-content d-flex align-items-stretch"> 
         <!-- Side Navbar -->
         <nav class="side-navbar">
           <!-- Sidebar Header-->
           <div class="sidebar-header d-flex align-items-center">
-            <div class="avatar"><img src="uploads/<?php echo $foto_perfil4;?>" width=120 height=120 alt="..." class="img-fluid rounded-circle"></div>
+              <div class="avatar"><img src="uploads/<?php echo $foto_perfil4;?>" width=120 height=120 alt="..." class="img-fluid rounded-circle"></div>
             <div class="title">
               <h1 class="h4"><?php  echo $nome. ' '.$apelidos ?> </h1>
-              <a href="PerfilMedicoBasico.php">
-                <p>Editar Perfil</p>
+              <a href="PerfilMedicoPremium.php">
+              <p>Editar Perfil</p>
               </a>
             </div>
           </div>
           <!-- Sidebar Navidation Menus--><span class="heading"></span>
           <ul class="list-unstyled">
-            <li class="active"><a href="#"> <i class="fas fa-home"></i>Início</a></li>
-            <li><a href="#tablesDropdown" aria-expanded="false" data-toggle="collapse"> <i class="fas fa-user-friends"></i>Clientes </a>
-            <ul id="tablesDropdown" class="collapse list-unstyled ">
-              <li><a href="RegistoClienteBasico.php">Registar Clientes</a></li>
-              <li><a href="ListaClientesBasico.php">Lista de Clientes</a></li>
-            </ul>
-          </li>
-          <li><a href="#chartsDropdown" aria-expanded="false" data-toggle="collapse"> <i class="fas fa-dog"></i>Animais</a>
-          <ul id="chartsDropdown" class="collapse list-unstyled ">
-            <li><a href="RegistoAnimalBasico.php">Registar Animal</a></li>
-            <li><a href="ListaAnimaisBasico.php">Lista de Animais</a></li>
-          </ul>
-        </li>
-        <li><a href="#chartsDropdown1" aria-expanded="false" data-toggle="collapse"> <i class="fas fa-user-md"></i>Serviços</a>
-        <ul id="chartsDropdown1" class="collapse list-unstyled ">
-          <li><a href="RegistoExameBasico.php">Registar Exame Clínico</a></li>
-          <li><a href="RegistoServicosBasico.php">Registar Serviço</a></li>
-          <li><a href="RegistoMaterialServico.php">Registar Material Utilizado</a></li>
-          <li><a href="HistoricoServicosBasico.php">Histórico de Serviços</a></li>
-        </ul>
-      </li>
-      <li><a href="#chartsDropdown2" aria-expanded="false" data-toggle="collapse"> <i class="fas fa-syringe"></i>Vacinações</a>
-      <ul id="chartsDropdown2" class="collapse list-unstyled ">
-        <li><a href="RegistoVacinacoesBasico.php">Registar Vacinação</a></li>
-        <li><a href="ListaVacinacoesBasico.php">Histórico de Vacinações</a></li>
-      </ul>
-    </li>
-    <li><a href="#chartsDropdown3" aria-expanded="false" data-toggle="collapse"> <i class="fas fa-file-invoice"></i>Documentos</a>
-    <ul id="chartsDropdown3" class="collapse list-unstyled ">
-      <li><a href="HistoricoServicosBasico.php">Receitas</a></li>
-      <li><a href="HistoricoReceitas.php">Histórico de Receitas</a></li>
-      <li><a href="">Faturas/Recibos</a></li>
-    </ul>
-  </li>
-</nav>
+                    <li class="active"><a href="inicioPremium.php"> <i class="fas fa-home"></i>Início</a></li>
+                    <li><a href="#tablesDropdown" aria-expanded="false" data-toggle="collapse"> <i class="fas fa-user-friends"></i>Clientes </a>
+                      <ul id="tablesDropdown" class="collapse list-unstyled ">
+                        <li><a href="RegistoClientePremium.php">Registar Clientes</a></li>
+                        <li><a href="ListaClientesPremium.php">Lista de Clientes</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#chartsDropdown" aria-expanded="false" data-toggle="collapse"> <i class="fas fa-dog"></i>Animais</a>
+                      <ul id="chartsDropdown" class="collapse list-unstyled ">
+                        <li><a href="RegistoAnimalPremium.php">Registar Animal</a></li>
+                        <li><a href="ListaAnimaisPremium.php">Lista de Animais</a></li>
+                      </ul>
+                    </li>
+                     <li><a href="#chartsDropdown1" aria-expanded="false" data-toggle="collapse"> <i class="fas fa-user-md"></i>Serviços</a>
+                      <ul id="chartsDropdown1" class="collapse list-unstyled ">
+                        <li><a href="RegistoExamePremium.php">Registar Exame Clínico</a></li>
+                        <li><a href="RegistoServicosPremium.php">Registar Serviço</a></li>
+                        <li><a href="RegistoMaterialServicoPremium.php">Registar Material Utilizado</a></li>
+                        <li><a href="HistoricoServicosPremium.php">Histórico de Serviços</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#chartsDropdown2" aria-expanded="false" data-toggle="collapse"> <i class="fas fa-syringe"></i>Vacinações</a>
+                      <ul id="chartsDropdown2" class="collapse list-unstyled ">
+                        <li><a href="RegistoVacinacoesPremium.php">Registar Vacinação</a></li>
+                        <li><a href="ListaVacinacoesPremium.php">Histórico de Vacinações</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#chartsDropdown3" aria-expanded="false" data-toggle="collapse"> <i class="fas fa-file-invoice"></i>Documentos</a>
+                      <ul id="chartsDropdown3" class="collapse list-unstyled ">
+                        <li><a href="HistoricoServicosPremium.php">Receitas</a></li>
+                        <li><a href="HistoricoReceitasPremium.php">Histórico de Receitas</a></li>
+                        <li><a href="">Faturas/Recibos</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="AgendaPremium.php">  <i class="fas fa-calendar-alt"></i> Agenda</a></li>
+                    <li><a href="MapaPremium.php">  <i class="fas fa-map-marker-alt"></i> Mapa</a></li> 
+ </nav>
 <div class="content-inner">
   <!-- Page Header-->
   <header class="page-header">
@@ -177,7 +190,7 @@ $materiais= $conn->query($sql12);
   <!-- Breadcrumb-->
   <div class="breadcrumb-holder container-fluid">
     <ul class="breadcrumb">
-      <li class="breadcrumb-item"><a href="inicioBasico.php">Início</a></li>
+      <li class="breadcrumb-item"><a href="inicioPremium.php">Início</a></li>
       <li class="breadcrumb-item active">Registar Material Utilizado</li>
     </ul>
   </div>
@@ -188,85 +201,86 @@ $materiais= $conn->query($sql12);
       <div class="row">
         <div class="col-lg-8 col-sm-6 col-md-6">
           <div class="card">
-            <form class="form-validate">
+           
               <div class="card-header d-flex align-items-center">
                 <h3 class="h4">Animal</h3>
               </div>
               <div class="card-body">
                 <div class="row">
-                  <div class="col-sm-6 col-md-6">
+                  <div class="col-sm-6 col-md-12">
                     <div class="form-group mb-4">
                       <div class="form-group">
-                        <form action=" " method='post' >
+                        
                           <label class=" form-control-label">Selecione o Animal:</label><br><br>
-                          <input type="text" onkeydown="limpaCampo()" onkeyup="procuraRegisto(this.value)" class="form-control" id="valorReg" name="valorReg"  placeholder="Nome do animal:" required >
-                        </form>
+                          <input type="text" onkeydown="limpaCampo()" placeholder="Procure pelo nome do Animal"  required data-msg="Selecione o Animal!" onkeyup="procuraRegisto(this.value)" class="form-control" id="valorReg" name="valorReg"  required >
+                       
                       </div>
-                      <p><span id="txtHint"></span></p>
+            <div class="col-lg-12">
+            <?php
+                      @session_start();
+                      if(isset($_SESSION['erromsg'])){
+                      echo $_SESSION['erromsg'];
+                      unset($_SESSION['erromsg']);
+                      }
+                      ?>
+            </div>
+                     <p><span id="txtHint"></span></p>
                     </div>
                   </div>
                 </div>
               </div>
-              
-              
-              <form id="regForm" method="POST" action="Gera_Registo_Material.php">
-                <div class="card-header">
-                  <h3 class="h4">Registar Material</h3>
-                </div>
-                <?php
-                @session_start();
-                if(isset($_SESSION['erromsg'])){
-                echo $_SESSION['erromsg'];
-                unset($_SESSION['erromsg']);
-                }
-                ?>
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col-sm-6 col-md-6">
-                      <div class="form-group mb-4">
-                        <div class="form-group">
-                          <h4 style="font-size: 14px; color: #5d998c">Número de Consulta Selecionado:</h4><br>
+              <form id="regForm" method="POST"  class="form-validate" action="Gera_Registo_ServicoPremium.php">
+               <div class="card-header">
+                <h3 class="h4">Registar Material</h3>
+              </div>
+              <!-- One "tab" for each step in the form: -->
+              <div class="card-body">
+
+                       <div class="form-group mb-4">
+                      
+                          <h4 style="font-size: 14px; color: #5d998c">Número de Serviço Selecionado:</h4>
                           <p id="numeroExame" name="numeroExame"></p>
                           <hr>
+               <form id="regForm" method="POST"  class="form-validate" ">
                           <p id="valorReg1" name="valorReg1"></p>
                           <input id="numeroExame2" name="numeroExame2" type="hidden">
                         </div>
-                        <div class="tab">
-                          <div class="linha">
-                            <div  class="form-group">
+              <div  class="row">
+                            <div  class="form-group col-md-6">
                               <label class="form-control-label">Tipo de Material:</label>
-                              <select id="tipo_material" name="tipo_material" class="form-control mb-3">
-                                <option disabled selected value> -- Escolha uma opção -- </option>
+                              <select id="tipo_material" name="tipo_material"   required data-msg="Selecione o tipo de material!"class="form-control mb-3">
+                                <option disabled selected value> -- Selecione um tipo de material -- </option>
                                 <?php while ($row1 = mysqli_fetch_array($materiais)):;?>
                                 <option value= "<?php  echo $row1[0]; ?>"> <?php  echo $row1[1]; ?></option>
                                 <?php endwhile;?>
                               </select>
                             </div>
-                            <div class="form-group mb-4">
+              
+                            <div class="form-group  col-md-6">
                               <label class=" form-control-label">Descrição:</label>
-                              <input type="text" class="form-control" id="descricao" name="descricao"  placeholder="Descrição" >
+                              <input type="text" class="form-control" id="descricao"  required data-msg="Insira um Descrição!" name="descricao"  placeholder="Descrição" class="form-control" required>
                             </div>
-                            <div class="form-group mb-4">
-                              <label class=" form-control-label">Quantidade :</label>
-                              <input type="float" class="form-control" id="quantidade" name="quantidade"  placeholder="Quantidade" >
-                            </div>
-                            <div class="form-group mb-4">
-                              <label class=" form-control-label">Preço por Unidade :</label>
-                              <input type="float" class="form-control" id="preco" name="preco"  placeholder="Preço" >
-                            </div>
-                            <p id="output"></p>
-                          </div>
-                          <button type="button" class="btn btn-primary" onclick="regMaterial()">Registar</button>
-                        </div>
-                       
-                       
-                      </form>
-                    </div>
-                  </div>
-                </div>
-                </div>
               </div>
+              <div  class="row">
+                            <div class="form-group col-md-6">
+                              <label class=" form-control-label">Quantidade :</label>
+                              <input type="number" class="form-control" id="quantidade" name="quantidade"  required data-msg="Insira a Quantidade!"   placeholder="Quantidade" class="form-control" required>
+                            </div>
+                            <div class="form-group col-md-6">
+                              <label class=" form-control-label">Preço por Unidade :</label>
+                              <input type="number" class="form-control" id="preco" name="preco"  required data-msg="Insira o Preço!" placeholder="Preço" class="form-control" required required>
+                            </div>
+              </div>
+                            <p id="output"></p>
+                          
+                          <button type="button" class="btn btn-primary" onclick="regMaterial()">Registar</button>
+        </div>
+               </form>
+            </form>
+                 
+             
             </div>
+          </div>
             <!-------------------------publicidade------------------------------>
             <div class="card-body" align="center" style="margin-top: 100px;">
               
@@ -369,7 +383,7 @@ $materiais= $conn->query($sql12);
           }
           function procuraRegisto(str){
           if (str == "") {
-          document.getElementById("txtHint").innerHTML = "Lista de Animais com Exame Clínico";
+          document.getElementById("txtHint").innerHTML = "  ";
           return;
           } else {
           if (window.XMLHttpRequest) {

@@ -22,12 +22,12 @@ if ($conn->query($sql) === TRUE) {
  		 Registo do exame animal efetuado com sucesso!
 		</div>";
  
-  header("Location: RegistoExameBasico.php");
+  header("Location: RegistoExamePremium.php");
 } else {
     @session_start();
   $_SESSION['erromsg']='Escolha uma animal registado';
   $_SESSION['erromsg']=$sql;
-  header("Location: RegistoExameBasico.php");
+  header("Location: RegistoExamePremium.php");
 }
 $conn->close();
 

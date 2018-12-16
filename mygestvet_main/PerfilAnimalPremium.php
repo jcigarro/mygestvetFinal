@@ -233,7 +233,7 @@ $foto_perfil4 = $row1['linkimagem'];
               <div class="avatar"><img src="uploads/<?php echo $foto_perfil4;?>" width=120 height=120 alt="..." class="img-fluid rounded-circle"></div>
             <div class="title">
               <h1 class="h4"><?php  echo $nome. ' '.$apelidos ?> </h1>
-              <a href="PerfilMedicoBasico.php">
+              <a href="PerfilMedicoPremium.php">
               <p>Editar Perfil</p>
               </a>
             </div>
@@ -294,7 +294,7 @@ $foto_perfil4 = $row1['linkimagem'];
     <!-- Breadcrumb-->
     <div class="breadcrumb-holder container-fluid">
       <ul class="breadcrumb">
-        <li class="breadcrumb-item"><a href="ListaAnimaisBasico.php">Lista de Animais</a></li>
+        <li class="breadcrumb-item"><a href="ListaAnimaisPremium.php">Lista de Animais</a></li>
         <li class="breadcrumb-item active"><?php echo $Nome ?></li>
       </ul>
     </div>

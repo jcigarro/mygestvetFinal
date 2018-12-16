@@ -165,7 +165,7 @@ if ($result2->num_rows > 0) {
           </div>
           <!-- Sidebar Navidation Menus--><span class="heading"></span>
           <ul class="list-unstyled">
-                    <li class="active"><a href="#"> <i class="fas fa-home"></i>Início</a></li>
+                    <li class="active"><a href="inicioPremium.php"> <i class="fas fa-home"></i>Início</a></li>
                     <li><a href="#tablesDropdown" aria-expanded="false" data-toggle="collapse"> <i class="fas fa-user-friends"></i>Clientes </a>
                       <ul id="tablesDropdown" class="collapse list-unstyled ">
                         <li><a href="RegistoClientePremium.php">Registar Clientes</a></li>
@@ -182,7 +182,7 @@ if ($result2->num_rows > 0) {
                       <ul id="chartsDropdown1" class="collapse list-unstyled ">
                         <li><a href="RegistoExamePremium.php">Registar Exame Clínico</a></li>
                         <li><a href="RegistoServicosPremium.php">Registar Serviço</a></li>
-                        <li><a href="RegistoMaterialServico.php">Registar Material Utilizado</a></li>
+                        <li><a href="RegistoMaterialServicoPremium.php">Registar Material Utilizado</a></li>
                         <li><a href="HistoricoServicosPremium.php">Histórico de Serviços</a></li>
                       </ul>
                     </li>
@@ -195,7 +195,7 @@ if ($result2->num_rows > 0) {
                     <li><a href="#chartsDropdown3" aria-expanded="false" data-toggle="collapse"> <i class="fas fa-file-invoice"></i>Documentos</a>
                       <ul id="chartsDropdown3" class="collapse list-unstyled ">
                         <li><a href="HistoricoServicosPremium.php">Receitas</a></li>
-                        <li><a href="HistoricoReceitas.php">Histórico de Receitas</a></li>
+                        <li><a href="HistoricoReceitasPremium.php">Histórico de Receitas</a></li>
                         <li><a href="">Faturas/Recibos</a></li>
                       </ul>
                     </li>

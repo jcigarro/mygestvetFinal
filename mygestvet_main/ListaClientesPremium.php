@@ -204,7 +204,7 @@ $foto_perfil4 = "perso1.jpg";
                 </div>
                 <!-- Sidebar Navidation Menus--><span class="heading"></span>
                 <ul class="list-unstyled">
-                  <li class="active"><a href="#"> <i class="fas fa-home"></i>Início</a></li>
+                  <li class="active"><a href="inicioPremium.php"> <i class="fas fa-home"></i>Início</a></li>
                   <li><a href="#tablesDropdown" aria-expanded="false" data-toggle="collapse"> <i class="fas fa-user-friends"></i>Clientes </a>
                   <ul id="tablesDropdown" class="collapse list-unstyled ">
                     <li><a href="RegistoClientePremium.php">Registar Clientes</a></li>
@@ -219,22 +219,22 @@ $foto_perfil4 = "perso1.jpg";
               </li>
               <li><a href="#chartsDropdown1" aria-expanded="false" data-toggle="collapse"> <i class="fas fa-user-md"></i>Serviços</a>
               <ul id="chartsDropdown1" class="collapse list-unstyled ">
-                <li><a href="RegistoExameBasico.php">Registar Exame Clínico</a></li>
+                <li><a href="RegistoExamePremium.php">Registar Exame Clínico</a></li>
                 <li><a href="RegistoServicosPremium.php">Registar Serviço</a></li>
-                <li><a href="RegistoMaterialServico.php">Registar Material Utilizado</a></li>
-                <li><a href="HistoricoServicosBasico.php">Histórico de Serviços</a></li>
+                <li><a href="RegistoMaterialServicoPremium.php">Registar Material Utilizado</a></li>
+                <li><a href="HistoricoServicosPremium.php">Histórico de Serviços</a></li>
               </ul>
             </li>
             <li><a href="#chartsDropdown2" aria-expanded="false" data-toggle="collapse"> <i class="fas fa-syringe"></i>Vacinações</a>
             <ul id="chartsDropdown2" class="collapse list-unstyled ">
-              <li><a href="RegistoVacinacoesBasico.php">Registar Vacinação</a></li>
-              <li><a href="ListaVacinacoesBasico.php">Histórico de Vacinações</a></li>
+              <li><a href="RegistoVacinacoesPremium.php">Registar Vacinação</a></li>
+              <li><a href="ListaVacinacoesPremium.php">Histórico de Vacinações</a></li>
             </ul>
           </li>
           <li><a href="#chartsDropdown3" aria-expanded="false" data-toggle="collapse"> <i class="fas fa-file-invoice"></i>Documentos</a>
           <ul id="chartsDropdown3" class="collapse list-unstyled ">
-            <li><a href="HistoricoServicosBasico.php">Receitas</a></li>
-            <li><a href="HistoricoReceitas.php">Histórico de Receitas</a></li>
+            <li><a href="HistoricoServicosPremium.php">Receitas</a></li>
+            <li><a href="HistoricoReceitasPremium.php">Histórico de Receitas</a></li>
             <li><a href="">Faturas/Recibos</a></li>
           </ul>
         </li>
@@ -354,7 +354,7 @@ $foto_perfil4 = "perso1.jpg";
                                     <div class="row">
                                       <div class="col-sm-6 col-md-6">
                                         <div class="form-group mb-4">
-                                          <label class=" form-control-label">Nome:</label>
+                                          <label class=" form-control-label"><b>Nome:</b></label>
                                           <?php echo $Nome; ?>
                                         </div>
                                       </div>
@@ -362,7 +362,7 @@ $foto_perfil4 = "perso1.jpg";
                                     <div class="row">
                                       <div class="col-sm-6 col-md-6">
                                         <div class="form-group mb-4">
-                                          <label class=" form-control-label">Telefone:</label>
+                                          <label class=" form-control-label"><b>Telefone:</b></label>
                                           <?php echo $Telefone; ?>
                                         </div>
                                       </div>
@@ -370,7 +370,7 @@ $foto_perfil4 = "perso1.jpg";
                                     <div class="row">
                                       <div class="col-sm-6 col-md-6">
                                         <div class="form-group mb-4">
-                                          <label class=" form-control-label">Email:</label>
+                                          <label class=" form-control-label"><b>Email:</b></label>
                                           <?php echo $Email; ?>
                                         </div>
                                       </div>
@@ -378,7 +378,7 @@ $foto_perfil4 = "perso1.jpg";
                                     <div class="row">
                                       <div class="col-sm-6 col-md-6">
                                         <div class="form-group mb-4">
-                                          <label class=" form-control-label">Morada:</label>
+                                          <label class=" form-control-label"><b>Morada:</b></label>
                                           <?php echo $Morada; ?>
                                         </div>
                                       </div>
@@ -386,7 +386,7 @@ $foto_perfil4 = "perso1.jpg";
                                     <div class="row">
                                       <div class="col-sm-6 col-md-6">
                                         <div class="form-group mb-4">
-                                          <label class=" form-control-label">Localidade:</label>
+                                          <label class=" form-control-label"><b>Localidade:</b></label>
                                           <?php echo $descricao_localidade; ?>
                                         </div>
                                       </div>
@@ -396,7 +396,7 @@ $foto_perfil4 = "perso1.jpg";
                                   <div class="row">
                                     <div class="col-sm-6 col-md-6">
                                       <div class="form-group mb-4">
-                                        <label class=" form-control-label">Código-Postal:</label>
+                                        <label class=" form-control-label"><b>Código-Postal:</b></label>
                                         <?php echo $Codigo_Postal; ?>
                                       </div>
                                     </div>
@@ -415,7 +415,7 @@ $foto_perfil4 = "perso1.jpg";
                         
                         <!--Edit Item Modal -->
                         <div id="edit<?php echo $Numero_Cliente; ?>"  tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade text-left"  role="dialog">
-                          <form method="post" action="EditaCliente.php"  role="form">
+                          <form method="post" action="EditaClientePremium.php"  role="form">
                             <div class="modal-dialog ">
                               <!-- Modal content-->
                               <div class="modal-content">

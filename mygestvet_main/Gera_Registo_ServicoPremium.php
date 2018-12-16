@@ -22,13 +22,13 @@ if ($conn->query($sql) === TRUE) {
   $_SESSION['erromsg']="<div class='alert alert-success' role='alert'>
  		 Registo do serviço efetuado com sucesso!
 		</div>";
-   header("Location: RegistoServicosBasico.php");
+   header("Location: RegistoServicosPremium.php");
 } else {
 @session_start();
   
   $_SESSION['erromsg']='Escolha um animal registado.';
 
-  header("Location: RegistoServicosBasico.php");
+  header("Location: RegistoServicosPremium.php");
 
 
 }
