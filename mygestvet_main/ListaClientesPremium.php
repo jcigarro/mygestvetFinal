@@ -352,7 +352,7 @@ $foto_perfil4 = "perso1.jpg";
                                     <input type="hidden" name="edit_item_id" name="Numero_Cliente" id="Numero_Cliente" value="<?php echo $Numero_Cliente; ?>">
                                     
                                     <div class="row">
-                                      <div class="col-sm-6 col-md-6">
+                                      <div class=" col-md-12">
                                         <div class="form-group mb-4">
                                           <label class=" form-control-label"><b>Nome:</b></label>
                                           <?php echo $Nome; ?>
@@ -360,7 +360,7 @@ $foto_perfil4 = "perso1.jpg";
                                       </div>
                                     </div>
                                     <div class="row">
-                                      <div class="col-sm-6 col-md-6">
+                                       <div class=" col-md-12">
                                         <div class="form-group mb-4">
                                           <label class=" form-control-label"><b>Telefone:</b></label>
                                           <?php echo $Telefone; ?>
@@ -368,7 +368,7 @@ $foto_perfil4 = "perso1.jpg";
                                       </div>
                                     </div>
                                     <div class="row">
-                                      <div class="col-sm-6 col-md-6">
+                                      <div class=" col-md-12">
                                         <div class="form-group mb-4">
                                           <label class=" form-control-label"><b>Email:</b></label>
                                           <?php echo $Email; ?>
@@ -376,7 +376,7 @@ $foto_perfil4 = "perso1.jpg";
                                       </div>
                                     </div>
                                     <div class="row">
-                                      <div class="col-sm-6 col-md-6">
+										<div class=" col-md-12">
                                         <div class="form-group mb-4">
                                           <label class=" form-control-label"><b>Morada:</b></label>
                                           <?php echo $Morada; ?>
@@ -384,7 +384,7 @@ $foto_perfil4 = "perso1.jpg";
                                       </div>
                                     </div>
                                     <div class="row">
-                                      <div class="col-sm-6 col-md-6">
+                                  <div class=" col-md-12">
                                         <div class="form-group mb-4">
                                           <label class=" form-control-label"><b>Localidade:</b></label>
                                           <?php echo $descricao_localidade; ?>
@@ -394,7 +394,7 @@ $foto_perfil4 = "perso1.jpg";
                                     
                                   </div>
                                   <div class="row">
-                                    <div class="col-sm-6 col-md-6">
+                                    <div class=" col-md-12">
                                       <div class="form-group mb-4">
                                         <label class=" form-control-label"><b>Código-Postal:</b></label>
                                         <?php echo $Codigo_Postal; ?>

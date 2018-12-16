@@ -428,7 +428,7 @@ $foto_perfil4 = $row1['linkimagem'];
                               <input type="hidden" name="Localidade_Cliente" id="Localidade_Cliente" value="<?php echo $descricao_localidade; ?>">
                               <input type="hidden" name="Morada_Cliente" id="Morada_Cliente" value="<?php echo $Morada_Cliente; ?>">
                               <div class="row">
-                                <div class="col-sm-12 col-md-12">
+                                 <div class=" col-md-12">
                                   <div class="form-group mb-4">
                                     <label class=" form-control-label"><b>Nome do Cliente:</b></label>
                                     <?php echo $Nome_Cliente; ?>
@@ -437,7 +437,7 @@ $foto_perfil4 = $row1['linkimagem'];
                               </div>
                               
                               <div class="row">
-                                <div class="col-sm-12 col-md-12">
+                                 <div class=" col-md-12">
                                   <div class="form-group mb-4">
                                     <label class=" form-control-label"><b>Nome do Animal:</b></label>
                                     <?php echo $Nome_Animal; ?>
@@ -445,7 +445,7 @@ $foto_perfil4 = $row1['linkimagem'];
                                 </div>
                               </div>
                 <div class="row">
-                                <div class="col-sm-12 col-md-12">
+                                <div class=" col-md-12">
                                   <div class="form-group mb-4">
                                     <label class=" form-control-label"><b>História Clinica:</b></label>
                                     <?php echo $Historia_Clinica; ?>
@@ -453,7 +453,7 @@ $foto_perfil4 = $row1['linkimagem'];
                                 </div>
                               </div>
                  <div class="row">
-                                <div class="col-sm-12 col-md-12">
+                                <div class=" col-md-12">
                                   <div class="form-group mb-4">
                                     <label class=" form-control-label"><b>Anamnese:</b></label>
                                     <?php echo $Anamenese; ?>
@@ -461,7 +461,7 @@ $foto_perfil4 = $row1['linkimagem'];
                                 </div>
                               </div>
                  <div class="row">
-                                <div class="col-sm-12 col-md-12">
+                                 <div class=" col-md-12">
                                   <div class="form-group mb-4">
                                     <label class=" form-control-label"><b>Diagnóstico:</b></label>
                                     <?php echo $Diagnostico; ?>
@@ -469,7 +469,7 @@ $foto_perfil4 = $row1['linkimagem'];
                                 </div>
                               </div>
                               <div class="row">
-                                <div class="col-sm-12 col-md-12">
+                                <div class=" col-md-12">
                                   <div class="form-group mb-4">
                                     <label class=" form-control-label"><b>Tratamento:</b></label>
                                     <?php echo $Tratamento; ?>
@@ -662,7 +662,7 @@ $foto_perfil4 = $row1['linkimagem'];
                                     </div></div>
                                   </div>
                   <div class="row">
-                  <div class=" col-md-6">
+                  <div class=" col-md-12">
                                     <div class="form-group mb-8">
                                       <b style=" color: #5d998c" >Nome do Animal:</b>
                                       <label class=" form-control-label"><?php echo $Nome_Animal; ?></label>
@@ -674,7 +674,7 @@ $foto_perfil4 = $row1['linkimagem'];
                                 
                                  
                                 <div class="row">
-                                  <div class=" col-md-6">
+                                  <div class=" col-md-12">
                                     <div class="form-group mb-8">
                                       <b style=" color: #5d998c"> Nº de Identificação Nacional :</b>
                                       <label  class=" form-control-label"><?php echo $Numero_Chip; ?></label>

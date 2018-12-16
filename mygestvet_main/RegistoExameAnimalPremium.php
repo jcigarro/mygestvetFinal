@@ -19,7 +19,7 @@ $sql = "INSERT INTO exame_clinico VALUES (NULL, $Numero_Animal, $FreqCard,$fr, $
 if ($conn->query($sql) === TRUE) {
      @session_start();
   $_SESSION['erromsg']="<div class='alert alert-success' role='alert'>
- 		 Registo do exame animal efetuado com sucesso!
+ 		 Registo do exame clinico efetuado com sucesso!
 		</div>";
  
   header("Location: RegistoExamePremium.php");

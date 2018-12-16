@@ -308,7 +308,7 @@ $foto_perfil4 = $row1['linkimagem'];
           </div>
           <div class="card-body">
 									<div class="row">
-                                      <div class="col-sm-6 col-md-6">
+                                      <div class=" col-md-12">
                                         <div class="form-group mb-4">
                                           <label class=" form-control-label"><b>Nome:</b></label>
                                           <?php echo $Nome; ?>
@@ -317,7 +317,7 @@ $foto_perfil4 = $row1['linkimagem'];
 									  </div>
                                     
                                     <div class="row">
-                                      <div class="col-sm-6 col-md-6">
+                                      <div class=" col-md-12">
                                         <div class="form-group mb-4">
                                           <label class=" form-control-label"><b>Cliente Associado:</b></label>
                                           <?php echo $Nome_Cliente; ?>
@@ -326,7 +326,7 @@ $foto_perfil4 = $row1['linkimagem'];
                                     </div>
 
                                    <div class="row">
-                                      <div class="col-sm-6 col-md-6">
+                                      <div class=" col-md-12">
                                         <div class="form-group mb-4">
                                           <label class=" form-control-label"><b>Espécie:</b></label>
                                           <?php echo $Descricao1; ?>
@@ -335,7 +335,7 @@ $foto_perfil4 = $row1['linkimagem'];
                                     </div>
 
                                     <div class="row">
-                                      <div class="col-sm-6 col-md-6">
+                                      <div class=" col-md-12">
                                         <div class="form-group mb-4">
                                           <label class=" form-control-label"><b>Raça:</b></label>
                                           <?php echo $Raca; ?>
@@ -344,16 +344,16 @@ $foto_perfil4 = $row1['linkimagem'];
                                     </div>
 
                                     <div class="row">
-                                      <div class="col-sm-6 col-md-6">
+                                       <div class=" col-md-12">
                                         <div class="form-group mb-4">
-                                          <label class=" form-control-label"><b>Número de Chip:</b></label>
+                                          <label class=" form-control-label"><b>Número de Identificação Internacional:</b></label>
                                           <?php echo $Numero_Chip; ?>
                                         </div>
                                       </div>
                                     </div>
                                     
                                     <div class="row">
-                                      <div class="col-sm-6 col-md-6">
+                                 <div class=" col-md-12">
                                         <div class="form-group mb-4">
                                           <label class=" form-control-label"><b>Data de Nascimento:</b></label>
                                           <?php echo $Data_Nascimento; ?>
@@ -362,7 +362,7 @@ $foto_perfil4 = $row1['linkimagem'];
                                     </div>
 
                                     <div class="row">
-                                      <div class="col-sm-6 col-md-6">
+                                      <div class=" col-md-12">
                                         <div class="form-group mb-4">
                                           <label class=" form-control-label"><b>Sexo:</b></label>
                                           <?php echo $Descricao2; ?>
@@ -371,7 +371,7 @@ $foto_perfil4 = $row1['linkimagem'];
                                     </div>
 
                                     <div class="row">
-                                      <div class="col-sm-6 col-md-6">
+                                       <div class=" col-md-12">
                                         <div class="form-group mb-4">
                                           <label class=" form-control-label"><b>Porte:</b></label>
                                           <?php echo $Descricao3; ?>
@@ -381,7 +381,7 @@ $foto_perfil4 = $row1['linkimagem'];
                                     
                                     
                                     <div class="row">
-                                      <div class="col-sm-6 col-md-6">
+                                      <div class=" col-md-12">
                                         <div class="form-group mb-4">
                                           <label class=" form-control-label"><b>Alergias/Doenças Crónicas:</b></label>
                                           <?php
