@@ -227,7 +227,7 @@ $foto_perfil2 = $row1['linkimagem'];
                   
                   <div class="form-group ">
                     <label class="form-control-label">E-mail</label>
-                    <input type="email" placeholder="E-mail" name="email_cliente" required data-msg="Insira um e-mail valido" class="form-control" class="input-material" class="form-control">
+                    <input type="email" placeholder="E-mail" name="email_cliente"  class="form-control" class="input-material" class="form-control">
                   </div>
 				  <div class="row">
                   <div class="form-group col-6">
