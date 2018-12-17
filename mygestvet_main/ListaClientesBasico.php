@@ -504,7 +504,7 @@ if ($result->num_rows > 0) {
                                                        <div class="col-md-12">
                                                           <div class="form-group mb-4"> 
                                                             <label class=" form-control-label">Email:</label>
-                                                              <input type="text" class="form-control" id="Email" name="Email" value="<?php echo $Email; ?>" placeholder="Email" required autofocus> 
+                                                              <input type="text" class="form-control" id="Email" name="Email" value="<?php echo $Email; ?>" placeholder="Email"> 
                                                           </div>
                                                         </div>
                                                       </div>
