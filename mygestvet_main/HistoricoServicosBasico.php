@@ -259,6 +259,14 @@ $foto_perfil4 = $row1['linkimagem'];
     </ul>
   </div>
   <section>
+
+     <?php
+                      @session_start();
+                      if(isset($_SESSION['erromsg'])){
+                      echo $_SESSION['erromsg'];
+                      unset($_SESSION['erromsg']);
+                      }
+                      ?>
     
     
     <div class="container-fluid">
@@ -266,13 +274,6 @@ $foto_perfil4 = $row1['linkimagem'];
         <div class="card-header">
           <h3 class="h4">Histórico de Serviços</h3>
         </div>
-		 <?php
-                      @session_start();
-                      if(isset($_SESSION['erromsg'])){
-                      echo $_SESSION['erromsg'];
-                      unset($_SESSION['erromsg']);
-                      }
-                      ?>
                       
         <div class="card-body">
           <div class="table-responsive">

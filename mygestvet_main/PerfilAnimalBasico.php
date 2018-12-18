@@ -329,7 +329,7 @@ $foto_perfil4 = $row1['linkimagem'];
                                     <div class="row">
                                       <div class="col-sm-6 col-md-6">
                                         <div class="form-group mb-4">
-                                          <label class=" form-control-label"><b>Número de Chip:</b></label>
+                                          <label class=" form-control-label"><b>Número de Identificação Nacional:</b></label>
                                           <?php echo $Numero_Chip; ?>
                                         </div>
                                       </div>
