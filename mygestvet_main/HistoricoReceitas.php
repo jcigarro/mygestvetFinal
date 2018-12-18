@@ -496,7 +496,7 @@ $localidade_query = "SELECT Codigo_Localidade,Descricao from localidade";
                                                      <br>
 
                                                   <div>                                                     
-                                                    <button type='submit' formaction="enviaReceita.php" class='btn btn-primary '><i ></i> Enviar Email</button>
+                                                    <button type='submit' onclick="alert('Receita Enviada Com Sucesso'); $('#receita<?php echo $Numero_Receita; ?>').modal('hide');" formaction="enviaReceita.php" class='btn btn-primary '><i ></i> Enviar Email</button>
                                                   
                                                     <button type='submit' class='btn btn-secondary '><i></i> Fechar</button><br>
                                                   </div>
