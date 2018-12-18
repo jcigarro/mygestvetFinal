@@ -55,7 +55,7 @@ $foto_perfil4 = $row1['linkimagem'];
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Registar Cliente</title>
+    <title>Registar Animal</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="robots" content="all,follow">
@@ -199,7 +199,7 @@ $foto_perfil4 = $row1['linkimagem'];
     <div class="container-fluid">
       <div class="row">
         <!-- Basic Form-->
-        <div class="col-lg-6">
+        <div class="col-lg-7">
           <div class="card">
             
             <form method='post' class="form-validate">

@@ -757,7 +757,7 @@ $foto_perfil4 = $row1['linkimagem'];
     
                           </div>
                      
-								          <button type='button' data-dismiss="modal"   class='btn btn-primary button save' data-action='save-svg'>Criar Receita</button>
+								          <button type='button' onclick="alert('Receita Gerada Com Sucesso'); $('#receita<?php echo $Codigo_Servico; ?>').modal('hide');"  class='btn btn-primary button save' data-action='save-svg'>Criar Receita</button>
                               
                           <button type="button" data-dismiss="modal" aria-label="Close" class="btn btn-secondary">Cancelar</button>
                         </div>

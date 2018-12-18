@@ -358,7 +358,7 @@ if ($result2->num_rows > 0) {
                             <input type="text" name="apelidos" value="<?php  echo $apelidos; ?>" class="form-control">
                           </div>
                         </div>
-                        <div class="col-sm-6 col-md-3">
+                        <div class="col-sm-6 col-md-4">
                           <div class="form-group mb-4">
                             <label class="form-label">Telefone/Telemóvel</label>
                             <input type="int" name="telefone" value="<?php  echo $telefone; ?>" value="" class="form-control">

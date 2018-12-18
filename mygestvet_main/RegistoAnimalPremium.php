@@ -257,7 +257,7 @@ include("config.php");
     <div class="container-fluid">
       <div class="row">
         <!-- Basic Form-->
-        <div class="col-lg-6">
+        <div class="col-lg-7">
           <div class="card">
             
             <form method='post' class="form-validate">

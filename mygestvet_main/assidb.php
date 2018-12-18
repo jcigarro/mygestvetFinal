@@ -191,14 +191,22 @@ $mpdf->WriteHTML($html);
 // Output a PDF file directly to the browser
 $mpdf->Output($Numero_Receita.'.pdf');
 
+@session_start();
+         $_SESSION['erromsg']="<div class='alert alert-success' role='alert'>
+                     sucessol! 
+                    </div>";    
+
 header("Location: HistoricoReceitas.php");
 
 	
 				
 			
 			} else {
-				echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-				echo $Codigo_Servico;
+				$_SESSION['erromsg']="<div class='alert alert-danger' role='alert'>
+                     sucessol! 
+                    </div>";    
+
+header("Location: HistoricoServicosBasico.php");
 			}
 			
 

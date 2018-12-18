@@ -48,10 +48,11 @@ $email_ = $_SESSION['pass_rec_email'];
                 <div class="content">
                 <center>
                   <div class="logo">
-                    <img src="img\icon.png" align="center" style=" width: 60%">
+                    <a href="Login.php">
+                      <img src="img\logo2-02.png" align="center" style=" width: 70%">
+                    </a>
                   </div>
-                  <br><br><br>
-
+                  
                   <p><em>O MyGestVet é um Sistema de Gestão no âmbito da Medicina Veterinária com o objetivo de gerir todo o trabalho de um Médico Veterinário.</em></p>
                 </center>
                 </div>

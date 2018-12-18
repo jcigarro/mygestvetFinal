@@ -186,7 +186,7 @@ $animal = $conn->query($sql6);
   <section>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-lg-8">
+        <div class="col-lg-8 ">
           <div class="card">
             <div class="card-header d-flex align-items-center">
               <h3 class="h4">Animal</h3>
@@ -194,7 +194,7 @@ $animal = $conn->query($sql6);
 			 <form  class="form-validade" method="POST" >
             <div class="card-body">
               <div class="row">
-                <div class=" col-md-12">
+                <div class=" col-md-9">
                   <div class="form-group mb-4">
                     <div class="form-group">
                      
@@ -229,20 +229,20 @@ $animal = $conn->query($sql6);
                 
 						 <div class="row">
                         <div class="form-group">
-						<div class="col-lg-12">
+						<div class="col-lg-10">
                           <h3 style="color: #52b2a4; font-size: 14px"></h3><br>
                           <label class="form-control-label">Nome da Vacina </label>
                           <input type="text" name="nome" id="nome" class="form-control" required data-msg="Insira o Nome da Vacina" class="input-material" class="form-control" placeholder="Nome da Vacina" >
                         </div></div>
                         <div class="form-group">
-                         <div class="col-lg-12">
+                         <div class="col-lg-10">
                           <h3 style="color: #52b2a4; font-size: 14px"></h3><br>
                           <label class="form-control-label">Número do Lote</label>
                           <input type="number" name="lote" id="lote" class="form-control" required data-msg="Insira o Numero de Lote" class="input-material" class="form-control" placeholder="Número do Lote">
                         </div></div>
                         
                         <div class="form-group">
-							<div class="col-lg-12">
+							<div class="col-lg-10">
                           <h3 style="color: #52b2a4; font-size: 14px"></h3><br>
                           <label class="form-control-label">Validade:</label>
                           <input  type="data" placeholder='<?php echo date("d/m/Y"); ?>' name="validade" id="validade" class="form-control input-datepicker" >
@@ -250,11 +250,17 @@ $animal = $conn->query($sql6);
 						</div>
 						</div> 
 						<br>
-						<br>
+						<br>        
+                        <div class="row">
                         <div class="form-group">
+                          <div class="col-lg-12">
                           <label class="form-control-label">Outras Informações:</label>
-                          <textarea rows="2" cols="60" name="outrasInformacoes" type="text"  placeholder="Outras Informações" class="form-control"></textarea>
+                          <textarea rows="2" cols="80" name="outrasInformacoes" type="text"  placeholder="Outras Informações" class="form-control"></textarea>
                         </div>
+                        </div>
+                        </div>
+
+
 						<br>
                         <button type="submit" formaction="GeraRegistoVacinacao.php" class="btn btn-primary">Registar</button>
 						</form>
@@ -273,6 +279,7 @@ $animal = $conn->query($sql6);
 
 
         </div>
+        <div class="col-md-4">
 		<div class="card-body" align="center" style="margin-top: 100px;">
             
             <img src="img/pub2.jpg"><br><br>
@@ -280,6 +287,7 @@ $animal = $conn->query($sql6);
             
           </div>
 		</div>
+  </div>
 		</div>
  
 
